@@ -17,6 +17,7 @@ Release:	2
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/GnuPG/gnupg/%{name}-%{version}.tar.bz2
+# Source0-md5:	4e1b357b22e1d45d14d340ce03d39b63
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pl.po-update.patch
 Patch2:		%{name}-missing-nls.patch

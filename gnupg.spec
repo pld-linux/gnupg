@@ -179,7 +179,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %attr(755,root,root) %{_bindir}/*
 
-%dir %{_libdir}/gnupg
+%dir %{_libexecdir}/gnupg
 
 %{_mandir}/man?/*
 %{_infodir}/*info*
@@ -189,9 +189,9 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with ldap}
 %files plugin-keys_ldap
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/gnupg/gpgkeys_ldap
+%attr(755,root,root) %{_libexecdir}/gnupg/gpgkeys_ldap
 %endif
 
 %files plugin-keys_mailto
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/gnupg/gpgkeys_mailto
+%attr(755,root,root) %{_libexecdir}/gnupg/gpgkeys_mailto

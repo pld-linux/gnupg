@@ -18,7 +18,7 @@ License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/%{name}-%{version}.tar.gz
 # Source0-md5:	69a8be8f0d236df96f948348f6fda162
-Source1:	%{name}-xinitrc-agent.sh
+Source1:	%{name}-agent.sh
 Patch0:		%{name}-info.patch
 #Patch1:		%{name}-pl.po-update.patch
 #Patch2:		%{name}-missing-nls.patch
@@ -180,13 +180,14 @@ Rozszerzenie GnuPG - agent.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_sysconfdir}/X11/xinit/xinitrc.d/
+install -d $RPM_BUILD_ROOT%{_sysconfdir}/{profile.d,X11/xinit/xinitrc.d}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 ln -sf gpg2 $RPM_BUILD_ROOT%{_bindir}/gpg
-install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/X11/xinit/xinitrc.d/%{name}-agent.sh
+install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/profile.d/%{name}-agent.sh
+ln -s %{_sysconfdir}/profile.d/%{name}-agent.sh $RPM_BUILD_ROOT%{_sysconfdir}/X11/xinit/xinitrc.d/%{name}-agent.sh 
 
 #%%find_lang %{name}
 
@@ -224,6 +225,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/sc-investigate
 %attr(755,root,root) %{_bindir}/scdaemon
 %attr(755,root,root) %{_libdir}/gnupg/gpg-protect-tool
+%attr(755,root,root) %{_sysconfdir}/profile.d/%{name}-agent.sh
 %attr(755,root,root) %{_sysconfdir}/X11/xinit/xinitrc.d/%{name}-agent.sh
 
 %if 0

@@ -14,7 +14,7 @@ Summary(uk):	GNU Privacy Guard - 爪特瘟 诹挺瘟 PGP
 Summary(zh_CN):	GPL的PGP加密程序
 Name:		gnupg
 Version:	1.9.7
-Release:	1.1
+Release:	2
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/%{name}-%{version}.tar.gz

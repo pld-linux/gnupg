@@ -1,6 +1,6 @@
 Summary:	gpg - GNU Privacy Guard
 Name:		gnupg
-Version:	0.9.5
+Version:	0.9.6
 Release:	1
 Copyright:	GPL
 Group:		Utilities/File
@@ -22,6 +22,7 @@ handle sensitive data ans therefore has no need to allocate secure memory.
 %setup -q
 
 %build
+autoconf
 LDFLAGS="-s" CFLAGS="$RPM_OPT_FLAGS" \
 ./configure %{_target} \
 	--prefix=/usr \
@@ -33,10 +34,10 @@ make
 rm -rf $RPM_BUILD_ROOT
 make install prefix=$RPM_BUILD_ROOT/usr
 
-rm -f $RPM_BUILD_ROOT/usr/man/man1/gpgm.1
-echo ".so gpg.1" >$RPM_BUILD_ROOT/usr/man/man1/gpgm.1
+rm -f $RPM_BUILD_ROOT/usr/share/man/man1/gpgm.1
+echo ".so gpg.1" >$RPM_BUILD_ROOT/usr/share/man/man1/gpgm.1
 
-gzip -9nf $RPM_BUILD_ROOT/usr/man/man1/* \
+gzip -9nf $RPM_BUILD_ROOT/usr/share/man/man1/* \
 	{AUTHORS,ChangeLog,NEWS,README,THANKS,TODO,doc/{DETAILS,FAQ,OpenPGP}}
 
 %clean
@@ -46,7 +47,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc {AUTHORS,ChangeLog,NEWS,README,THANKS,TODO,doc/{DETAILS,FAQ,OpenPGP}}.gz
 %attr(755,root,root) /usr/bin/*
-/usr/man/man1/*
+/usr/share/man/man1/*
 %attr(755,root,root) /usr/lib/gnupg
 /usr/share/gnupg
 
@@ -59,6 +60,10 @@ rm -rf $RPM_BUILD_ROOT
 %lang(ru)    /usr/share/locale/ru/LC_MESSAGES/gnupg.mo
 
 %changelog
+* Fri May  7 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [0.9.6-1]
+- naw package is FHS 2.0 compiliat.
+
 * Fri Mar 19 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [0.9.5-1]
 - removed man group from man pages,

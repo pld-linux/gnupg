@@ -49,15 +49,15 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) /usr/bin/*
 %{_mandir}/man1/*
 %attr(755,root,root) %{_libdir}/gnupg
-/usr/share/gnupg
+%{_datadir}/gnupg
 
-%lang(de)    /usr/share/locale/de/LC_MESSAGES/gnupg.mo
-%lang(es_ES) /usr/share/locale/es_ES/LC_MESSAGES/gnupg.mo
-%lang(fr)    /usr/share/locale/fr/LC_MESSAGES/gnupg.mo
-%lang(it)    /usr/share/locale/it/LC_MESSAGES/gnupg.mo
-%lang(pl)    /usr/share/locale/pl/LC_MESSAGES/gnupg.mo
-%lang(pt_BR) /usr/share/locale/pt_BR/LC_MESSAGES/gnupg.mo
-%lang(ru)    /usr/share/locale/ru/LC_MESSAGES/gnupg.mo
+%lang(de)    %{_datadir}/locale/de/LC_MESSAGES/gnupg.mo
+%lang(es_ES) %{_datadir}/locale/es_ES/LC_MESSAGES/gnupg.mo
+%lang(fr)    %{_datadir}/locale/fr/LC_MESSAGES/gnupg.mo
+%lang(it)    %{_datadir}/locale/it/LC_MESSAGES/gnupg.mo
+%lang(pl)    %{_datadir}/locale/pl/LC_MESSAGES/gnupg.mo
+%lang(pt_BR) %{_datadir}/locale/pt_BR/LC_MESSAGES/gnupg.mo
+%lang(ru)    %{_datadir}/locale/ru/LC_MESSAGES/gnupg.mo
 
 %changelog
 * Fri May  7 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
@@ -72,7 +72,7 @@ rm -rf $RPM_BUILD_ROOT
 
 * Mon Dec 21 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [0.9.0-1]
-- added /usr/share/gnupg.
+- added %{_datadir}/gnupg.
 
 * Sat Dec 12 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [0.4.5-1]

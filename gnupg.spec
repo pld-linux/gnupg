@@ -40,12 +40,12 @@ make install DESTDIR=$RPM_BUILD_ROOT
 gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* \
 	{AUTHORS,ChangeLog,NEWS,README,THANKS,TODO,doc/{DETAILS,FAQ,OpenPGP}}
 
-%find_lang gnupg
+%find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -f gnupg.lang
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc {AUTHORS,ChangeLog,NEWS,README,THANKS,TODO,doc/{DETAILS,FAQ,OpenPGP}}.gz
 %attr(755,root,root) %{_bindir}/*

@@ -1,0 +1,730 @@
+--- gnupg-1.2.0/po/pl.po.orig	Sat Oct  5 01:50:21 2002
++++ gnupg-1.2.0/po/pl.po	Sat Oct  5 08:47:50 2002
+@@ -2514,9 +2514,8 @@
+ msgstr "   (0) Nie odpowiem na to pytanie. %s\n"
+ 
+ #: g10/keyedit.c:565 g10/keyedit.c:567 g10/keyedit.c:569 g10/keyedit.c:571
+-#, fuzzy
+ msgid " (default)"
+-msgstr "(domyślnie 1)"
++msgstr "(domyślne)"
+ 
+ #: g10/keyedit.c:566
+ #, c-format
+@@ -3158,20 +3157,17 @@
+ msgstr "Nic nie zostało usunięte.\n"
+ 
+ #: g10/keyedit.c:2275
+-#, fuzzy
+ msgid ""
+ "WARNING: This is a PGP 2.x-style key.  Adding a designated revoker may "
+ "cause\n"
+ "         some versions of PGP to reject this key.\n"
+ msgstr ""
+-"OSTRZEŻENIE: To jest klucz PGP wersji 2. Dodanie zdjęcia spowoduje, że "
+-"niektóre \n"
+-"             wersje przestaną go rozumieć.\n"
++"OSTRZEŻENIE: To jest klucz PGP wersji 2. Dodanie klucza unieważniającego\n"
++"             spowoduje, że niektóre wersje przestaną go rozumieć.\n"
+ 
+ #: g10/keyedit.c:2286
+-#, fuzzy
+ msgid "You may not add a designated revoker to a PGP 2.x-style key.\n"
+-msgstr "Do klucza dla wersji 2 PGP nie można dodać zdjęcia.\n"
++msgstr "Do klucza dla wersji 2 PGP nie można dodać klucza unieważniającego.\n"
+ 
+ #: g10/keyedit.c:2309
+ msgid "Enter the user ID of the designated revoker: "
+@@ -3847,7 +3843,7 @@
+ "krytycznego\n"
+ 
+ #: g10/sig-check.c:549
+-#, fuzzy, c-format
++#, c-format
+ msgid "key %08lX: no subkey for subkey revocation packet\n"
+ msgstr "klucz %08lX: brak podklucza, którego dotyczy unieważnienie\n"
+ 
+@@ -4688,683 +4684,3 @@
+ #, c-format
+ msgid "%s: keyring created\n"
+ msgstr "%s: zbiór kluczy utworzony\n"
+-
+-#, fuzzy
+-#~ msgid ""
+-#~ "you have to start GnuPG again, so it can read the new configuration file\n"
+-#~ msgstr "aby użyć nowego pliku ustawień, należy od nowa uruchomić GnuPG\n"
+-
+-#~ msgid "changing permission of  `%s' failed: %s\n"
+-#~ msgstr "zmiana uprawnień do `%s' nie powiodła się: %s\n"
+-
+-#~ msgid "Fingerprint:"
+-#~ msgstr "Odcisk klucza:"
+-
+-#~ msgid "             Fingerprint:"
+-#~ msgstr "                  Odcisk:"
+-
+-#~ msgid "|NAME=VALUE|use this notation data"
+-#~ msgstr "|NAZWA=TREŚĆ|adnotacje"
+-
+-#~ msgid ""
+-#~ "the first character of a notation name must be a letter or an underscore\n"
+-#~ msgstr "adnotacja musi zaczynać się od podkreślenia lub litery\n"
+-
+-#~ msgid "dots in a notation name must be surrounded by other characters\n"
+-#~ msgstr "kropki w adnotacji muszą znajdować się pomiędzy innymi znakami\n"
+-
+-#~ msgid ""
+-#~ "WARNING: This key already has a photo ID.\n"
+-#~ "         Adding another photo ID may confuse some versions of PGP.\n"
+-#~ msgstr ""
+-#~ "OSTRZEŻENIE: Do tego klucza dodano już zdjęcie użytkownika.\n"
+-#~ "             Dodanie drugiego spowoduje, że niektóre wersje PGP "
+-#~ "przestaną\n"
+-#~ "             rozumieć ten klucz.\n"
+-
+-#~ msgid "You may only have one photo ID on a key.\n"
+-#~ msgstr "Do klucza można dołączyć tylko jedno zdjęcie.\n"
+-
+-#~ msgid "Are you sure you still want to sign it?\n"
+-#~ msgstr "Czy na pewno chcesz to podpisać?\n"
+-
+-#~ msgid "  Are you sure you still want to sign it?\n"
+-#~ msgstr "  Czy na pewno chcesz go podpisać?\n"
+-
+-#~ msgid "Really sign? (y/N) "
+-#~ msgstr "Czy na pewno podpisać? (t/N) "
+-
+-#~ msgid "Do you really need such a large keysize? "
+-#~ msgstr "Czy naprawdę potrzebujesz takiego długiego klucza? "
+-
+-#~ msgid "key %08lX: our copy has no self-signature\n"
+-#~ msgstr "klucz %08lX: dostępna kopia nie jest podpisana nią samą\n"
+-
+-#~ msgid "   signed by %08lX at %s\n"
+-#~ msgstr "podpisany przez %08lX w %s\n"
+-
+-#~ msgid "--delete-secret-key user-id"
+-#~ msgstr "--delete-secret-key nazwa użytkownika"
+-
+-#~ msgid "--delete-key user-id"
+-#~ msgstr "--delete-key nazwa użytkownika"
+-
+-#~ msgid "--delete-secret-and-public-key user-id"
+-#~ msgstr "--delete-secret-and-public-key key nazwa użytkownika"
+-
+-#~ msgid "Enter the user ID: "
+-#~ msgstr "Podaj identyfikator użytkownika (user ID): "
+-
+-#~ msgid "skipped: public key already set with --encrypt-to\n"
+-#~ msgstr "pominięty: klucz publiczny już wybrany w --encrypt-to\n"
+-
+-#~ msgid ""
+-#~ "\n"
+-#~ "WARNING: This is a PGP2-style key\n"
+-#~ msgstr ""
+-#~ "\n"
+-#~ "OSTRZEŻENIE: Klucz z PGP wersji 2.\n"
+-
+-#~ msgid "sSmMqQ"
+-#~ msgstr "iIpPwW"
+-
+-#~ msgid "no keyserver known (use option --keyserver)\n"
+-#~ msgstr "brak znanyk serwerów kluczy (użyj opcji --keyserver)\n"
+-
+-#~ msgid "%s: not a valid key ID\n"
+-#~ msgstr "%s: nie jest poprawnym identyfikatorem klucza\n"
+-
+-#~ msgid "duplicate (short) key ID %08lX\n"
+-#~ msgstr "skrócony numer klucza się powtarza %08lX\n"
+-
+-#~ msgid "%lu key(s) to refresh\n"
+-#~ msgstr "%lu klucz(y) do odświeżenia\n"
+-
+-#~ msgid "too many random bits requested; the limit is %d\n"
+-#~ msgstr "żądanie zbyt wielu losowych bitów; ograniczenie wynosi %d\n"
+-
+-#~ msgid "|[NAMES]|check the trust database"
+-#~ msgstr "|[NAZWY]|sprawdzenie bazy zaufania"
+-
+-#~ msgid "For info see http://www.gnupg.org"
+-#~ msgstr "Dalsze informacje znajdują się na http://www.gnupg.org/"
+-
+-#~ msgid ""
+-#~ "Could not find a valid trust path to the key.  Let's see whether we\n"
+-#~ "can assign some missing owner trust values.\n"
+-#~ "\n"
+-#~ msgstr ""
+-#~ "Niemożliwe jest znalezienie poprawnej scieżki zaufania do tego klucza.\n"
+-#~ "Sprawdźmy czy można przypisać brakujące wartości zaufania.\n"
+-#~ "\n"
+-
+-#~ msgid ""
+-#~ "No path leading to one of our keys found.\n"
+-#~ "\n"
+-#~ msgstr ""
+-#~ "Brak ścieżki prowadzącej do któregoś z naszych kluczy.\n"
+-#~ "\n"
+-
+-#~ msgid ""
+-#~ "No certificates with undefined trust found.\n"
+-#~ "\n"
+-#~ msgstr ""
+-#~ "Brak certyfikatów o niezdefiniowanym poziomie zaufania.\n"
+-#~ "\n"
+-
+-#~ msgid ""
+-#~ "No trust values changed.\n"
+-#~ "\n"
+-#~ msgstr ""
+-#~ "Parametry zaufania nie zostały zmienione.\n"
+-#~ "\n"
+-
+-#~ msgid "%08lX: no info to calculate a trust probability\n"
+-#~ msgstr "%08lX: brak informacji aby obliczyć prawdopodobieństwo zaufania\n"
+-
+-#~ msgid "%s: error checking key: %s\n"
+-#~ msgstr "%s: błąd podczas sprawdzania klucza: %s\n"
+-
+-#~ msgid "Do you really want to create a sign and encrypt key? "
+-#~ msgstr "Czy na pewno chcesz stworzyć klucz do szyfrowania i podpisywania? "
+-
+-#~ msgid "%s: user not found: %s\n"
+-#~ msgstr "%s: nie znaleziono użytkownika %s\n"
+-
+-#~ msgid "certificate read problem: %s\n"
+-#~ msgstr "błąd przy odczycie certyfikatu: %s\n"
+-
+-#~ msgid "too many entries in unk cache - disabled\n"
+-#~ msgstr "zbyt wiele wpisów w buforze nieznanych kluczy - wyłączony\n"
+-
+-#~ msgid "no default public keyring\n"
+-#~ msgstr "brak domyślnego zbioru kluczy publicznych\n"
+-
+-#~ msgid "secret key %08lX not imported (use %s to allow for it)\n"
+-#~ msgstr "klucz tajny %08lX nie został wczytany (aby to zrobić użyj %s)\n"
+-
+-#~ msgid "%s: user not found\n"
+-#~ msgstr "%s: nie znaleziono użytkownika\n"
+-
+-#~ msgid "update of trustdb failed: %s\n"
+-#~ msgstr "naniesienie poprawek bazy zaufania nie powiodło się: %s\n"
+-
+-#~ msgid "assuming bad MDC due to an unknown critical bit\n"
+-#~ msgstr ""
+-#~ "przyjęto niepoprawność MDC z powonu ustawienia nieznanego bitu "
+-#~ "krytycznego\n"
+-
+-#~ msgid "error reading dir record for LID %lu: %s\n"
+-#~ msgstr "błąd odczytu wpisu katalogowego dla LID %lu: %s\n"
+-
+-#~ msgid "lid %lu: expected dir record, got type %d\n"
+-#~ msgstr "lid %lu: oczekiwany wpis katalogowy, napotkano typ %d\n"
+-
+-#~ msgid "no primary key for LID %lu\n"
+-#~ msgstr "brak klucza głównego dla LID %lu\n"
+-
+-#~ msgid "error reading primary key for LID %lu: %s\n"
+-#~ msgstr "błąd odczytu głównego klucza dla LID %lu: %s\n"
+-
+-#~ msgid "get_dir_record: search_record failed: %s\n"
+-#~ msgstr "get_dir_record: funkcja search_record zawiodła: %s\n"
+-
+-#~ msgid "key %08lX: query record failed\n"
+-#~ msgstr "klucz %08lX: wyszukanie zapisu nie powiodło się\n"
+-
+-#~ msgid "key %08lX: already in trusted key table\n"
+-#~ msgstr "klucz %08lX: już znajduje się w tablicy kluczy zaufanych\n"
+-
+-#~ msgid "NOTE: secret key %08lX is NOT protected.\n"
+-#~ msgstr "UWAGA: klucz tajny %08lX NIE jest chroniony.\n"
+-
+-#~ msgid "key %08lX: secret and public key don't match\n"
+-#~ msgstr "klucz %08lX: klucz tajny nie pasuje do klucza jawnego\n"
+-
+-#~ msgid "enumerate secret keys failed: %s\n"
+-#~ msgstr "wyliczenie kluczy tajnych nie powiodło się %s\n"
+-
+-#~ msgid "key %08lX.%lu: Good subkey binding\n"
+-#~ msgstr "klucz %08lX.%lu Dobre dowiązanie podklucza\n"
+-
+-#~ msgid "key %08lX.%lu: Invalid subkey binding: %s\n"
+-#~ msgstr "klucz %08lX.%lu: Niepoprawne dowiązanie podklucza %s\n"
+-
+-#~ msgid "key %08lX.%lu: Valid key revocation\n"
+-#~ msgstr "klucz %08lX.%lu: Poprawne unieważnienie klucza\n"
+-
+-#~ msgid "key %08lX.%lu: Invalid key revocation: %s\n"
+-#~ msgstr "klucz %08lX.%lu: Niewłaściwe unieważnienie klucza: %s\n"
+-
+-#~ msgid "Good self-signature"
+-#~ msgstr "Poprawny podpis klucza nim samym"
+-
+-#~ msgid "Invalid self-signature"
+-#~ msgstr "Niepoprawny podpis klucza nim samym"
+-
+-#~ msgid "Valid user ID revocation skipped due to a newer self signature"
+-#~ msgstr ""
+-#~ "Poprawne unieważnienie identyfikatora użytkownika pominięte z powodu\n"
+-#~ "nowszego podpisu tym samym kluczem"
+-
+-#~ msgid "Valid user ID revocation"
+-#~ msgstr "Poprawne unieważnienie identyfikatora użytkownika"
+-
+-#~ msgid "Invalid user ID revocation"
+-#~ msgstr "Niepoprawne unieważnienie identyfikatora użytkownika"
+-
+-#~ msgid "Valid certificate revocation"
+-#~ msgstr "Poprawne unieważnienie certyfikatu"
+-
+-#~ msgid "Good certificate"
+-#~ msgstr "Poprawny certyfikat"
+-
+-#~ msgid "Invalid certificate revocation"
+-#~ msgstr "Niepoprawne unieważnienie certyfikatu"
+-
+-#~ msgid "Invalid certificate"
+-#~ msgstr "Niepoprawny certyfikat"
+-
+-#~ msgid "sig record %lu[%d] points to wrong record.\n"
+-#~ msgstr "zapis o podpisach %lu[%d] wskazuje na zły wpis.\n"
+-
+-#~ msgid "duplicated certificate - deleted"
+-#~ msgstr "podwójny certyfikat - usunięty"
+-
+-#~ msgid "tdbio_search_dir failed: %s\n"
+-#~ msgstr "Procedura tdbio_search_dir nie powiodła się: %s\n"
+-
+-#~ msgid "lid ?: insert failed: %s\n"
+-#~ msgstr "lid ?: wpisanie nie powiodło się: %s\n"
+-
+-#~ msgid "lid %lu: insert failed: %s\n"
+-#~ msgstr "lid %lu: wpisanie nie powiodło się: %s\n"
+-
+-#~ msgid "lid %lu: inserted\n"
+-#~ msgstr "lid %lu: wpisany\n"
+-
+-#~ msgid "error reading dir record: %s\n"
+-#~ msgstr "błąd podczas odczytu wpisu katalogowego: %s\n"
+-
+-#~ msgid "\t%lu keys inserted\n"
+-#~ msgstr "\t%lu kluczy wpisanych\n"
+-
+-#~ msgid "lid %lu: dir record w/o key - skipped\n"
+-#~ msgstr "lid %lu: wpis katalogowy bez bloku klucza - pominięty\n"
+-
+-#~ msgid "\t%lu due to new pubkeys\n"
+-#~ msgstr "        %lu z powodu nowych podkluczy\n"
+-
+-#~ msgid "\t%lu keys skipped\n"
+-#~ msgstr "\t%lu kluczy pominiętych\n"
+-
+-#~ msgid "\t%lu keys updated\n"
+-#~ msgstr "\t%lu kluczy uaktualnionych\n"
+-
+-#~ msgid "Ooops, no keys\n"
+-#~ msgstr "Oops, brak kluczy\n"
+-
+-#~ msgid "Ooops, no user IDs\n"
+-#~ msgstr "Oops, brak identyfikatorów użytkowników\n"
+-
+-#~ msgid "check_trust: search dir record failed: %s\n"
+-#~ msgstr "check_trust: poszukiwanie wpisu katalogowego nie powiodło się: %s\n"
+-
+-#~ msgid "key %08lX: insert trust record failed: %s\n"
+-#~ msgstr "klucz %08lX: wprowadzenie wpisu zaufania nie powiodło się: %s\n"
+-
+-#~ msgid "key %08lX.%lu: inserted into trustdb\n"
+-#~ msgstr "Klucz %08lX.%lu: wprowadzony do bazy zaufania\n"
+-
+-#~ msgid "key %08lX.%lu: created in future (time warp or clock problem)\n"
+-#~ msgstr ""
+-#~ "Klucz %08lX.%lu: stworzony w przyszłości (zaburzenia czasoprzestrzeni,\n"
+-#~ "lub źle ustawiony zegar systemowy)\n"
+-
+-#~ msgid "key %08lX.%lu: expired at %s\n"
+-#~ msgstr "klucz %08lX.%lu: okres ważności upłynął %s\n"
+-
+-#~ msgid "key %08lX.%lu: trust check failed: %s\n"
+-#~ msgstr "klucz %08lX.%lu: błąd przy sprawdzaniu zaufania: %s\n"
+-
+-#~ msgid "problem finding '%s' in trustdb: %s\n"
+-#~ msgstr "problem podczas szukania '%s' w bazie zaufania: %s\n"
+-
+-#~ msgid "user '%s' not in trustdb - inserting\n"
+-#~ msgstr "brak użytkownika '%s' w bazie zaufania - dodano\n"
+-
+-#~ msgid "failed to put '%s' into trustdb: %s\n"
+-#~ msgstr "umieszczenie '%s' w Bazie Zaufania nie powiodło się: %s\n"
+-
+-#~ msgid "WARNING: can't yet handle long pref records\n"
+-#~ msgstr "OSTRZEŻENIE: długie wpisy ustawień jeszcze nie są obsługiwane.\n"
+-
+-#~ msgid "%s: can't create keyring: %s\n"
+-#~ msgstr "%s: stworzenie zbioru kluczy jest niemożliwe: %s\n"
+-
+-#~ msgid "RSA key cannot be used in this version\n"
+-#~ msgstr "W tej wersji nie można używać kluczy RSA\n"
+-
+-#~ msgid "No key for user ID\n"
+-#~ msgstr "Brak klucza z takim identyfikatorem użytkownika.\n"
+-
+-#~ msgid "No user ID for key\n"
+-#~ msgstr "Brak identyfikatora użytkownika dla klucza.\n"
+-
+-#~ msgid "invalid"
+-#~ msgstr "niepoprawny"
+-
+-#~ msgid "no secret key for decryption available\n"
+-#~ msgstr "odszyfrowujący klucz tajny do jest niedostępny\n"
+-
+-#~ msgid "set debugging flags"
+-#~ msgstr "ustawienie opcji śledzenia wykonania programu"
+-
+-#~ msgid "enable full debugging"
+-#~ msgstr "umożliwienie pełnego śledzenia programu"
+-
+-#~ msgid "do not write comment packets"
+-#~ msgstr "nie zapisywać pakietów z komentarzem"
+-
+-#~ msgid "(default is 3)"
+-#~ msgstr "(domyślnie 3)"
+-
+-#~ msgid "   (%d) ElGamal in a v3 packet\n"
+-#~ msgstr ""
+-#~ "   (%d) Klucz dla algorytmu ElGamala w pakiecie w trzeciej wersji "
+-#~ "formatu\n"
+-
+-#~ msgid "Key generation can only be used in interactive mode\n"
+-#~ msgstr "Generację klucza można wykonywać tylko w trybie interaktywnym\n"
+-
+-#~ msgid ""
+-#~ "RSA keys are deprecated; please consider creating a new key and use this "
+-#~ "key in the future\n"
+-#~ msgstr ""
+-#~ "Odradza się stosowanie kluczy RSA; proszę rozważyć przejście na inne "
+-#~ "algorytmy\n"
+-#~ "po wygenerowaniu odpowiednich kluczy.\n"
+-
+-#~ msgid "print all message digests"
+-#~ msgstr "wszystkie skróty wiadomości"
+-
+-#~ msgid "can't lock keyring `%': %s\n"
+-#~ msgstr "nie można zablokować zbioru kluczy publicznych: %s\n"
+-
+-#~ msgid "error writing keyring `%': %s\n"
+-#~ msgstr "błąd zapisu zbioru kluczy '%': %s\n"
+-
+-#~ msgid "NOTE: sig rec %lu[%d] in hintlist of %lu but marked as checked\n"
+-#~ msgstr ""
+-#~ "UWAGA: wpis podpisu %lu[%d] znajduje się w liście domyślnej %lu,\n"
+-#~ "ale jest zaznaczony jako sprawdzony.\n"
+-
+-#~ msgid "NOTE: sig rec %lu[%d] in hintlist of %lu but not marked\n"
+-#~ msgstr ""
+-#~ "UWAGA: wpis podpisu %lu[%d] znajduje się w liście domyślnej %lu,\n"
+-#~ "ale nie jest zaznaczony.\n"
+-
+-#~ msgid "sig rec %lu[%d] in hintlist of %lu does not point to a dir record\n"
+-#~ msgstr ""
+-#~ "wpis oi podpisie %lu[%d] w liście domyślnej %lu nie wskazuje \n"
+-#~ "na wpis katalogowy\n"
+-
+-#~ msgid "lid %lu: no primary key\n"
+-#~ msgstr "lid %lu: brak klucza głównego\n"
+-
+-#~ msgid "lid %lu: user id not found in keyblock\n"
+-#~ msgstr ""
+-#~ "lid %lu: identyfikator użytkownika nie został odnaleziony w bloku "
+-#~ "klucza\n"
+-
+-#~ msgid "lid %lu: user id without signature\n"
+-#~ msgstr "lid %lu: niepodpisany identyfikator użytkownika\n"
+-
+-#~ msgid "lid %lu: self-signature in hintlist\n"
+-#~ msgstr "lid %lu: podpis klucza nim samym w liście domyślnej\n"
+-
+-#~ msgid "very strange: no public key\n"
+-#~ msgstr "bardzo dziwne: brak klucza publicznego\n"
+-
+-#~ msgid "hintlist %lu[%d] of %lu does not point to a dir record\n"
+-#~ msgstr "lista domyślna %lu[%d] z %lu nie wskazuje na wpis katalogowy\n"
+-
+-#~ msgid "lid %lu does not have a key\n"
+-#~ msgstr "lid %lu nie ma klucza\n"
+-
+-#~ msgid "lid %lu: can't get keyblock: %s\n"
+-#~ msgstr "lid %lu: pobranie bloku klucza niemożliwe: %s\n"
+-
+-#~ msgid "Too many preference items"
+-#~ msgstr "Zbyt wiele pozycji w ustawieniach"
+-
+-#~ msgid "public key not anymore available"
+-#~ msgstr "klucz publiczny jest już niedostępny"
+-
+-#~ msgid "uid %08lX.%lu/%02X%02X: has shadow dir %lu but is not yet marked.\n"
+-#~ msgstr ""
+-#~ "identyfikator %08lX.%lu/%02X%02X: ma zdublowany katalog %lu,\n"
+-#~ "ale nie jest jeszcze zaznaczony.\n"
+-
+-#~ msgid "insert_trust_record: keyblock not found: %s\n"
+-#~ msgstr "insert_trust_record: brak bloku klucza: %s\n"
+-
+-#~ msgid "lid %lu: update failed: %s\n"
+-#~ msgstr "lid %lu: naniesienie poprawek nie powiodło się: %s\n"
+-
+-#~ msgid "lid %lu: updated\n"
+-#~ msgstr "lid %lu: uaktualniony\n"
+-
+-#~ msgid "lid %lu: okay\n"
+-#~ msgstr "lid %lu: OK\n"
+-
+-#~ msgid "%s: update failed: %s\n"
+-#~ msgstr "%s: zapis zmian nie powiodł się: %s\n"
+-
+-#~ msgid "%s: updated\n"
+-#~ msgstr "%s: uaktualniony\n"
+-
+-#~ msgid "%s: okay\n"
+-#~ msgstr "%s: OK\n"
+-
+-#~ msgid "lid %lu: keyblock not found: %s\n"
+-#~ msgstr "lid %lu: blok klucza nie został odnaleziony: %s\n"
+-
+-#~ msgid "edit_ownertrust.value"
+-#~ msgstr ""
+-#~ "Przypisanie tych wartości należy do Ciebie, nie będą one udostępnione\n"
+-#~ "nikomu innemu. Są one używane do stworzenia sieci zaufania i nie ma\n"
+-#~ "to nic wspólnego z tworzoną siecią certyfikatów."
+-
+-#~ msgid "revoked_key.override"
+-#~ msgstr ""
+-#~ "Jeśli mimo wszystko chcesz użyć tego unieważnionego klucza, odpowiedz "
+-#~ "\"tak\"."
+-
+-#~ msgid "untrusted_key.override"
+-#~ msgstr ""
+-#~ "Jeśli mimo wszystko chcesz użyć tego klucza, klucza do którego nie "
+-#~ "masz\n"
+-#~ "zaufania, odpowiedz \"tak\"."
+-
+-#~ msgid "pklist.user_id.enter"
+-#~ msgstr "Podaj identyfikator użytkownika adresata tych informacji."
+-
+-#~ msgid "keygen.algo"
+-#~ msgstr ""
+-#~ "Wybór algorytmu:\n"
+-#~ "DSA (znany też jako DSS) to Algorytm Podpisu Cyfrowego - używać go "
+-#~ "można tylko\n"
+-#~ "do tworzenia cyfrowych podpisów. Jego wybór jest sugerowany ponieważ\n"
+-#~ "sprawdzanie podpisów złożonych algorytmem DSA jest dużo szybsze niż "
+-#~ "tych\n"
+-#~ "złożonych algorytmem ElGamala.\n"
+-#~ "Algorytm ElGamala to algorytm klucza publicznego który nadaje można "
+-#~ "stosować\n"
+-#~ "zarówno do szyfrowania jak i do tworzenia podpisów cyfrowych\n"
+-#~ "W standardzie OpenPGP algorytm ElGamala występuje w dwóch wersjach:\n"
+-#~ "obsługującej podpisywanie, oraz obsługującej podpisywanie i szyfrowanie; z\n"
+-#~ "technicznego punktu widzenia algorytm działa tak samo, ale pewne "
+-#~ "współczynniki\n"
+-#~ "muszą być dobrane tak aby klucz nadawał się do składania bezpiecznych\n"
+-#~ "podpisów. Ten program obsługuje obie wersje, ale inne implementacje "
+-#~ "OpenPGP\n"
+-#~ "nie muszą rozumieć obsługiwać klucza przeznaczonego jednocześnie do\n"
+-#~ "podpisywania i szyfrowania.\n"
+-#~ "Główny klucz musi być zawsze kluczem służącym umożliwiającym podpisywanie,\n"
+-#~ "dlatego też ten program nie obsługuje osobnych kluczy ElGamala służących tylko\n"
+-#~ "do szyfrowania."
+-
+-#~ msgid "keygen.algo.elg_se"
+-#~ msgstr ""
+-#~ "Mimo że ten rodzaj kluczy jest zdefiniowany w RFC 2440, wybór takiego "
+-#~ "klucza\n"
+-#~ "nie jest sugerowany. Nie wszystkie programy taki klucz są w stanie obsłużyć,\n"
+-#~ "a podpisy złożone za jego pomocą są duże i ich sprawdzenie zajmuje dużo czasu."
+-
+-#~ msgid "keygen.size"
+-#~ msgstr "Rozmiar klucza"
+-
+-#~ msgid "keygen.size.huge.okay"
+-#~ msgstr "Odpowiedz \"tak\" lub \"nie\""
+-
+-#~ msgid "keygen.size.large.okay"
+-#~ msgstr "Odpowiedz \"tak\" lub \"nie\""
+-
+-#~ msgid "keygen.valid"
+-#~ msgstr "Podaj żądaną wartość"
+-
+-#~ msgid "keygen.valid.okay"
+-#~ msgstr "Odpowiedz \"tak\" lub \"nie\""
+-
+-#~ msgid "keygen.name"
+-#~ msgstr "Podaj nazwę (imię, nazwisko) właściciela klucza"
+-
+-#~ msgid "keygen.email"
+-#~ msgstr "Adres e-mail (opcjonalny ale warto go wpisać)"
+-
+-#~ msgid "keygen.comment"
+-#~ msgstr "Komentarz (opcjonalny)"
+-
+-#~ msgid "keygen.userid.cmd"
+-#~ msgstr ""
+-#~ "I  - zmiana imienia lub nazwiska.\n"
+-#~ "K  - zmiana komentarza.\n"
+-#~ "E  - zmiana adresu email.\n"
+-#~ "D  - przejście do właściwej generacji klucza.\n"
+-#~ "W  - wyjście z procedury generacji i z programu."
+-
+-#~ msgid "keygen.sub.okay"
+-#~ msgstr ""
+-#~ "Odpowiedz \"tak\" (lub po prostu \"t\") jeśli zgadzasz się na stworzenie "
+-#~ "podklucza."
+-
+-#~ msgid "sign_uid.okay"
+-#~ msgstr "Odpowiedz \"tak\" lub \"nie\""
+-
+-#~ msgid "change_passwd.empty.okay"
+-#~ msgstr "Odpowiedz \"tak\" lub \"nie\""
+-
+-#~ msgid "keyedit.cmd"
+-#~ msgstr "Podaj \"help\" aby zobaczyć listę poleceń."
+-
+-#~ msgid "keyedit.save.okay"
+-#~ msgstr "Odpowiedz \"tak\" lub \"nie\""
+-
+-#~ msgid "keyedit.cancel.okay"
+-#~ msgstr "Odpowiedz \"tak\" lub \"nie\""
+-
+-#~ msgid "keyedit.sign_all.okay"
+-#~ msgstr ""
+-#~ "Odpowiedz \"tak\" jeśli chcesz podpisać wszystkie identyfikatory klucza"
+-
+-#~ msgid "keyedit.remove.uid.okay"
+-#~ msgstr ""
+-#~ "Odpowiedz \"tak\" jeśli na pewno chcesz skasować ten identyfikator "
+-#~ "klucza.\n"
+-#~ "Utracisz wszystkie podpisy innych użytkowników złożone na tym "
+-#~ "identyfikatorze!"
+-
+-#~ msgid "keyedit.remove.subkey.okay"
+-#~ msgstr "Odpowiedz \"tak\" jeśli na pewno chcesz skasować ten podklucz"
+-
+-#~ msgid "passphrase.enter"
+-#~ msgstr ""
+-#~ "Proszę wprowadzić wyrażenie przejściowe (tajne zdanie)\n"
+-#~ "  Bla, bla, bla ..."
+-
+-#~ msgid "passphrase.repeat"
+-#~ msgstr ""
+-#~ "Proszę powtórzyć podane wyrażenie przejściowe dla wyeliminowania "
+-#~ "pomyłek."
+-
+-#~ msgid "detached_signature.filename"
+-#~ msgstr "Nazwa pliku którego dotyczy ten podpis"
+-
+-#~ msgid "openfile.overwrite.okay"
+-#~ msgstr "Odpowiedz \"tak\" jeśli na pewno chcesz nadpisać ten plik"
+-
+-#~ msgid "can't open file: %s\n"
+-#~ msgstr "nie można otworzyć pliku: %s\n"
+-
+-#~ msgid "read error: %s\n"
+-#~ msgstr "błąd odczytu: %s\n"
+-
+-#~ msgid "writing keyblock\n"
+-#~ msgstr "zapisuję blok klucza\n"
+-
+-#~ msgid "can't write keyblock: %s\n"
+-#~ msgstr "nie mogę zapisać bloku klucza: %s\n"
+-
+-#~ msgid "encrypted message is valid\n"
+-#~ msgstr "zaszyfrowana wiadomość jest poprawna\n"
+-
+-#~ msgid "Can't check MDC: %s\n"
+-#~ msgstr "Sprawdzenie MDC niemożliwe: %s\n"
+-
+-#~ msgid "Usage: gpgm [options] [files] (-h for help)"
+-#~ msgstr "Wywołanie: gpgm [opcje] [pliki] (-h podaje pomoc)"
+-
+-#~ msgid ""
+-#~ "Syntax: gpgm [options] [files]\n"
+-#~ "GnuPG maintenance utility\n"
+-#~ msgstr ""
+-#~ "Składnia: gpgm [opcje] [pliki]\n"
+-#~ "GnuPG program obsługujący\n"
+-
+-#~ msgid "usage: gpgm [options] "
+-#~ msgstr "sposób użycia: gpgm [opcje]"
+-
+-#~ msgid "chained sigrec %lu has a wrong owner\n"
+-#~ msgstr "powiązany rekord podpisu %lu ma niewłaściwego właściciela\n"
+-
+-#~ msgid "lid %lu: read dir record failed: %s\n"
+-#~ msgstr "lid %lu: odczyt wpisu katalogowego nie powiódł się: %s\n"
+-
+-#~ msgid "lid %lu: read key record failed: %s\n"
+-#~ msgstr "lid %lu: odczyt wpisu klucza nie powiódł się: %s\n"
+-
+-#~ msgid "lid %lu: read uid record failed: %s\n"
+-#~ msgstr "lid %lu: odczyt wpisu z identyfikatorem nie powiódł się; %s\n"
+-
+-#~ msgid "lid %lu: read pref record failed: %s\n"
+-#~ msgstr "lid %lu: odczyt wpisu ustawień nie powiódł się: %s\n"
+-
+-#~ msgid "user '%s' read problem: %s\n"
+-#~ msgstr "użytkownik '%s' błąd przy odczycie: %s\n"
+-
+-#~ msgid "user '%s' list problem: %s\n"
+-#~ msgstr "użytkownik '%s' błąd listy: %s\n"
+-
+-#~ msgid "user '%s' not in trustdb\n"
+-#~ msgstr "brak użytkownika '%s' w bazie zaufania\n"
+-
+-#~ msgid ""
+-#~ "# List of assigned trustvalues, created %s\n"
+-#~ "# (Use \"gpgm --import-ownertrust\" to restore them)\n"
+-#~ msgstr ""
+-#~ "# Lista przypisanych wartości zaufania, stworzona %s\n"
+-#~ "# (użyj \"gpgm --import-ownertrust\" aby ją przywrócić)\n"
+-
+-#~ msgid "directory record w/o primary key\n"
+-#~ msgstr "wpis katalogowy bez klucza głównego\n"
+-
+-#~ msgid "error: missing colon\n"
+-#~ msgstr "błąd: brak dwukropka\n"
+-
+-#~ msgid "error: invalid fingerprint\n"
+-#~ msgstr "błąd: niewłaściwy odcisk klucza\n"
+-
+-#~ msgid "error: no ownertrust value\n"
+-#~ msgstr "błąd: brak wartośći zaufania właściciela\n"
+-
+-#~ msgid "key not in trustdb, searching ring.\n"
+-#~ msgstr "brak klucza w bazie zaufania, przeszukiwany jest zbiór kluczy\n"
+-
+-#~ msgid "key not in ring: %s\n"
+-#~ msgstr "klucza nie ma w zbiorze: %s\n"
+-
+-#~ msgid "Oops: key is now in trustdb???\n"
+-#~ msgstr "Oops: klucz już jest w bazie zaufania???\n"
+-
+-#~ msgid "Hmmm, public key lost?"
+-#~ msgstr "Hmmm, klucz publiczny utracony?"
+-
+-#~ msgid "did not use primary key for insert_trust_record()\n"
+-#~ msgstr "głowny klucz nie został użyty w procedurze insert_trust_record()\n"
+-
+-#~ msgid "second"
+-#~ msgstr "sekunda"
+-
+-#~ msgid "seconds"
+-#~ msgstr "sekund"
+-
+-#~ msgid "invalid clear text header: "
+-#~ msgstr "niepoprawny nagłówek tekstu jawnego:"
+-
+-#~ msgid "This key belongs to us (we have the secret key)\n"
+-#~ msgstr "Ten klucz należy do nas (mamy odpowiadający mu klucz tajny).\n"
+-
+-# %d niepoprawnych podpisów
+-#~ msgid "You will see a list of signators etc. here\n"
+-#~ msgstr "Tu ukaże się lista podpisów itd.\n"

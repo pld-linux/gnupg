@@ -9,11 +9,12 @@ Summary(uk):	GNU Privacy Guard - ×¦ÌØÎÁ ÚÁÍ¦ÎÁ PGP
 Summary(zh_CN):	GPLµÄPGP¼ÓÃÜ³ÌÐò
 Name:		gnupg
 Version:	1.2.0
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/GnuPG/gnupg/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-pl.po-UTF-8.patch
+Patch1:		%{name}-pl.po-update.patch
 Icon:		gnupg.gif
 URL:		http://www.gnupg.org/
 BuildRequires:	gdbm-devel
@@ -100,23 +101,33 @@ GnuPG ×¦ÄÐÏ×¦ÄÁ¤ ÓÐÅÃÉÆ¦ËÁÃ¦§ OpenPGP (RFC2440).
 
 %package plugin-keys_ldap
 Summary:	GnuPG plugin for allow talk to a LDAP keyserver
+Summary(pl):	Wtyczka GnuPG pozwalaj±ca komunikowaæ siê z serwerem kluczy LDAP
 Group:		Applications/File
 Requires:	%{name} = %{version}
 
 %description plugin-keys_ldap
 GnuPG plugin for allow talk to a LDAP keyserver.
 
+%description plugin-keys_ldap -l pl
+Wtyczka GnuPG pozwalaj±ca komunikowaæ siê z serwerem kluczy LDAP.
+
 %package plugin-keys_mailto
 Summary:	GnuPG plugin for allow talk to a email keyserver
+Summary(pl):	Wtyczka GnuPG pozwalaj±ca komunikowaæ siê z e-mailowym serwerem kluczy
 Group:		Applications/File
 Requires:	%{name} = %{version}
 
 %description plugin-keys_mailto
 GnuPG plugin for allow talk to a email keyserver.
 
+%description plugin-keys_mailto -l pl
+Wtyczka GnuPG pozwalaj±ca komunikowaæ siê z e-mailowym serwerem
+kluczy.
+
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %configure \

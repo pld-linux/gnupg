@@ -18,7 +18,7 @@ Release:	1
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/%{name}-%{version}.tar.gz
-# Source0-md5:	72b56586392c7be6668df4ef8ea7c879
+# Source0-md5:	c1955d88280ff6e847f82f37b9a9a008
 Source1:	%{name}-agent.sh
 Patch0:		%{name}-info.patch
 #Patch1:		%{name}-pl.po-update.patch

@@ -4,6 +4,7 @@ Version:	0.9.5
 Release:	1
 Copyright:	GPL
 Group:		Utilities/File
+Group(pl):	Narzêdzia/Pliki
 Source:		ftp://ftp.guug.de/pub/gcrypt/%{name}-%{version}.tar.gz
 Icon:		gnupg.gif
 URL:		http://www.d.shuttle.de/isil/gnupg/
@@ -42,7 +43,7 @@ gzip -9nf $RPM_BUILD_ROOT/usr/man/man1/* \
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(644, root, root, 755)
+%defattr(644,root,root,755)
 %doc {AUTHORS,ChangeLog,NEWS,README,THANKS,TODO,doc/{DETAILS,FAQ,OpenPGP}}.gz
 %attr(755,root,root) /usr/bin/*
 /usr/man/man1/*

@@ -142,7 +142,9 @@ kluczy.
 	--enable-m-guard \
 %endif
 	--without-included-gettext \
-	--disable-m-debug
+	--disable-m-debug \
+	--with-mailprog=/usr/sbin/sendmail
+
 %{__make}
 
 %install

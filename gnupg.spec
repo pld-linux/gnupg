@@ -1,21 +1,24 @@
 Summary:	gpg - GNU Privacy Guard
+Summary(pl):	gpg Stra¿nik Prywatno¶ci GNU
 Name:		gnupg
-Version:	1.0.4
-Release:	6
+Version:	1.0.5
+Release:	1
 License:	GPL
 Group:		Applications/File
 Group(de):	Applikationen/Datei
 Group(pl):	Aplikacje/Pliki
 Source0:	ftp://ftp.gnupg.org/pub/gcrypt/gnupg/%{name}-%{version}.tar.gz
-Patch0:		ftp://ftp.gnupg.org/pub/gcrypt/gnupg/%{name}-%{version}.security-patch1.diff
-Patch1:		gnupg-locale.patch
-Patch2:		gnupg-rijndael.patch
-Patch3:		gnupg-typos.patch
+Patch0:		%{name}-locale.patch
+Patch1:		%{name}-am.patch
 Icon:		gnupg.gif
 URL:		http://www.gnupg.org/
 BuildRequires:	gdbm-devel
 BuildRequires:	zlib-devel
 BuildRequires:	gettext-devel
+BuildRequires:	libcap-devel
+BuildRequires:	libtool
+BuildRequires:	automake
+BuildRequires:	autoconf
 Provides:	pgp
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -33,25 +36,35 @@ Guard, odpowiednik programu Pretty Good Privacy na licencji GNU).
 %setup -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
-%patch3 -p1
 
 %build
+rm scripts/missing
 gettextize --force --copy
+aclocal
+autoconf
+automake -a -c --no-force
 %configure \
+	--with-capabilities \
+	--enable-m-guard \
 	--without-included-gettext \
-	--disable-m-debug \
-	--disable-m-guard
+	--disable-m-debug
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 gzip -9nf AUTHORS ChangeLog NEWS README THANKS TODO \
-	doc/{DETAILS,FAQ,OpenPGP}
+	  doc/{DETAILS,FAQ,OpenPGP}
 
 %find_lang %{name}
+
+%post
+[ ! -x %{_sbindir}/fix-info-dir ] || %{_sbindir}/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+
+%postun
+[ ! -x %{_sbindir}/fix-info-dir ] || %{_sbindir}/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -60,7 +73,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc *.gz doc/*.gz
 %attr(755,root,root) %{_bindir}/*
-%{_mandir}/man1/*
+%{_mandir}/man?/*
 %dir %{_libdir}/gnupg
 %attr(755,root,root) %{_libdir}/gnupg/*
 %{_datadir}/gnupg
+%{_infodir}/*info*

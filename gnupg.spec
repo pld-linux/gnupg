@@ -30,6 +30,7 @@ BuildRequires:	libcap-devel
 BuildRequires:	libgcrypt-devel >= 1.1.91
 BuildRequires:	libgpg-error-devel >= 0.6
 BuildRequires:	libksba-devel >= 0.9.3
+BuildRequires:	pcsc-lite-devel
 #BuildRequires:	libusb-devel >= unreleased yet
 %{?with_ldap:BuildRequires:	openldap-devel}
 BuildRequires:	opensc-devel >= 0.8.0

@@ -23,6 +23,7 @@ Patch1:		%{name}-pl.po-update.patch
 Patch2:		%{name}-missing-nls.patch
 Icon:		gnupg.gif
 URL:		http://www.gnupg.org/
+BuildRequires:	automake
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
 BuildRequires:	libcap-devel
@@ -138,6 +139,7 @@ kluczy.
 %patch2 -p1
 
 %build
+cp /usr/share/automake/config.sub scripts
 %configure \
 	--with-capabilities \
 	%{?with_ldap:--enable-ldap} \

@@ -13,11 +13,11 @@ Release:	1
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/GnuPG/gnupg/%{name}-%{version}.tar.bz2
-Patch0:		%{name}-pl.po-UTF-8.patch
-Patch1:		%{name}-pl.po-update.patch
+Patch0:		%{name}-pl.po-update.patch
 Icon:		gnupg.gif
 URL:		http://www.gnupg.org/
 BuildRequires:	gdbm-devel
+BuildRequires:	gettext-devel
 BuildRequires:	libcap-devel
 BuildRequires:	openldap-devel
 BuildRequires:	texinfo
@@ -126,8 +126,7 @@ kluczy.
 
 %prep
 %setup -q
-#%patch0 -p1
-#%patch1 -p1
+%patch0 -p1
 
 %build
 %configure \

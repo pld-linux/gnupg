@@ -1,6 +1,27 @@
---- gnupg-1.2.0/po/pl.po.orig	Sat Oct  5 01:50:21 2002
-+++ gnupg-1.2.0/po/pl.po	Sat Oct  5 08:47:50 2002
-@@ -2514,9 +2514,8 @@
+--- gnupg-1.2.1/po/pl.po.orig	Fri Oct 25 12:06:45 2002
++++ gnupg-1.2.1/po/pl.po	Mon Oct 28 23:55:41 2002
+@@ -8,7 +8,7 @@
+ msgstr ""
+ "Project-Id-Version: gnupg-1.0.6\n"
+ "POT-Creation-Date: 2002-10-25 11:00+0200\n"
+-"PO-Revision-Date: 2002-09-15 01:53+0200\n"
++"PO-Revision-Date: 2002-10-28 23:43+0100\n"
+ "Last-Translator: Janusz A. Urbanowicz <alex@bofh.net.pl>\n"
+ "Language-Team: Polish <pl@li.org>\n"
+ "MIME-Version: 1.0\n"
+@@ -2215,9 +2215,9 @@
+ msgstr "klucz %08lX: ,,%s'' bez zmian\n"
+ 
+ #: g10/import.c:844
+-#, fuzzy, c-format
++#, c-format
+ msgid "key %08lX: secret key with invalid cipher %d - skipped\n"
+-msgstr "klucz %08lX: klucz tajny bez klucza jawnego - pominięty\n"
++msgstr "klucz %08lX: klucz tajny z błędnym szyfrem %d - pominięty\n"
+ 
+ #: g10/import.c:859
+ #, c-format
+@@ -2526,9 +2526,8 @@
  msgstr "   (0) Nie odpowiem na to pytanie. %s\n"
  
  #: g10/keyedit.c:565 g10/keyedit.c:567 g10/keyedit.c:569 g10/keyedit.c:571
@@ -11,7 +32,7 @@
  
  #: g10/keyedit.c:566
  #, c-format
-@@ -3158,20 +3157,17 @@
+@@ -3170,20 +3169,17 @@
  msgstr "Nic nie zostało usunięte.\n"
  
  #: g10/keyedit.c:2275
@@ -35,16 +56,28 @@
  
  #: g10/keyedit.c:2309
  msgid "Enter the user ID of the designated revoker: "
-@@ -3847,7 +3843,7 @@
+@@ -3853,7 +3849,7 @@
  "krytycznego\n"
  
- #: g10/sig-check.c:549
+ #: g10/sig-check.c:550
 -#, fuzzy, c-format
 +#, c-format
  msgid "key %08lX: no subkey for subkey revocation packet\n"
  msgstr "klucz %08lX: brak podklucza, którego dotyczy unieważnienie\n"
  
-@@ -4688,683 +4684,3 @@
+@@ -4082,9 +4078,9 @@
+ "klucz %08lX: brak klucza publicznego dla zaufanego klucza - pominięty\n"
+ 
+ #: g10/trustdb.c:298
+-#, fuzzy, c-format
++#, c-format
+ msgid "key %08lX marked as ultimately trusted\n"
+-msgstr "klucz został oznaczony jako obdarzony absolutnym zaufaniem.\n"
++msgstr "klucz %08lX został oznaczony jako obdarzony absolutnym zaufaniem\n"
+ 
+ #: g10/trustdb.c:324
+ #, c-format
+@@ -4696,684 +4692,3 @@
  #, c-format
  msgid "%s: keyring created\n"
  msgstr "%s: zbiór kluczy utworzony\n"
@@ -434,8 +467,7 @@
 -
 -#~ msgid "lid %lu: user id not found in keyblock\n"
 -#~ msgstr ""
--#~ "lid %lu: identyfikator użytkownika nie został odnaleziony w bloku "
--#~ "klucza\n"
+-#~ "lid %lu: identyfikator użytkownika nie został odnaleziony w bloku klucza\n"
 -
 -#~ msgid "lid %lu: user id without signature\n"
 -#~ msgstr "lid %lu: niepodpisany identyfikator użytkownika\n"
@@ -503,8 +535,7 @@
 -
 -#~ msgid "untrusted_key.override"
 -#~ msgstr ""
--#~ "Jeśli mimo wszystko chcesz użyć tego klucza, klucza do którego nie "
--#~ "masz\n"
+-#~ "Jeśli mimo wszystko chcesz użyć tego klucza, klucza do którego nie masz\n"
 -#~ "zaufania, odpowiedz \"tak\"."
 -
 -#~ msgid "pklist.user_id.enter"
@@ -513,17 +544,17 @@
 -#~ msgid "keygen.algo"
 -#~ msgstr ""
 -#~ "Wybór algorytmu:\n"
--#~ "DSA (znany też jako DSS) to Algorytm Podpisu Cyfrowego - używać go "
--#~ "można tylko\n"
+-#~ "DSA (znany też jako DSS) to Algorytm Podpisu Cyfrowego - używać go można "
+-#~ "tylko\n"
 -#~ "do tworzenia cyfrowych podpisów. Jego wybór jest sugerowany ponieważ\n"
--#~ "sprawdzanie podpisów złożonych algorytmem DSA jest dużo szybsze niż "
--#~ "tych\n"
+-#~ "sprawdzanie podpisów złożonych algorytmem DSA jest dużo szybsze niż tych\n"
 -#~ "złożonych algorytmem ElGamala.\n"
 -#~ "Algorytm ElGamala to algorytm klucza publicznego który nadaje można "
 -#~ "stosować\n"
 -#~ "zarówno do szyfrowania jak i do tworzenia podpisów cyfrowych\n"
 -#~ "W standardzie OpenPGP algorytm ElGamala występuje w dwóch wersjach:\n"
--#~ "obsługującej podpisywanie, oraz obsługującej podpisywanie i szyfrowanie; z\n"
+-#~ "obsługującej podpisywanie, oraz obsługującej podpisywanie i szyfrowanie; "
+-#~ "z\n"
 -#~ "technicznego punktu widzenia algorytm działa tak samo, ale pewne "
 -#~ "współczynniki\n"
 -#~ "muszą być dobrane tak aby klucz nadawał się do składania bezpiecznych\n"
@@ -531,16 +562,20 @@
 -#~ "OpenPGP\n"
 -#~ "nie muszą rozumieć obsługiwać klucza przeznaczonego jednocześnie do\n"
 -#~ "podpisywania i szyfrowania.\n"
--#~ "Główny klucz musi być zawsze kluczem służącym umożliwiającym podpisywanie,\n"
--#~ "dlatego też ten program nie obsługuje osobnych kluczy ElGamala służących tylko\n"
+-#~ "Główny klucz musi być zawsze kluczem służącym umożliwiającym "
+-#~ "podpisywanie,\n"
+-#~ "dlatego też ten program nie obsługuje osobnych kluczy ElGamala służących "
+-#~ "tylko\n"
 -#~ "do szyfrowania."
 -
 -#~ msgid "keygen.algo.elg_se"
 -#~ msgstr ""
 -#~ "Mimo że ten rodzaj kluczy jest zdefiniowany w RFC 2440, wybór takiego "
 -#~ "klucza\n"
--#~ "nie jest sugerowany. Nie wszystkie programy taki klucz są w stanie obsłużyć,\n"
--#~ "a podpisy złożone za jego pomocą są duże i ich sprawdzenie zajmuje dużo czasu."
+-#~ "nie jest sugerowany. Nie wszystkie programy taki klucz są w stanie "
+-#~ "obsłużyć,\n"
+-#~ "a podpisy złożone za jego pomocą są duże i ich sprawdzenie zajmuje dużo "
+-#~ "czasu."
 -
 -#~ msgid "keygen.size"
 -#~ msgstr "Rozmiar klucza"
@@ -615,8 +650,7 @@
 -
 -#~ msgid "passphrase.repeat"
 -#~ msgstr ""
--#~ "Proszę powtórzyć podane wyrażenie przejściowe dla wyeliminowania "
--#~ "pomyłek."
+-#~ "Proszę powtórzyć podane wyrażenie przejściowe dla wyeliminowania pomyłek."
 -
 -#~ msgid "detached_signature.filename"
 -#~ msgstr "Nazwa pliku którego dotyczy ten podpis"

@@ -11,7 +11,7 @@ if [ -r "${HOME}/.gnupg/gpg-agent.conf" ]; then
     grep -qE "^pinentry-program.*pinentry-(qt|gtk)" "${HOME}/.gnupg/gpg-agent.conf" && X11=yes
 fi
 
-if grep -q "^use-agent" ${CFG} 2>/dev/null; then
+if grep -q "^[[:blank:]]*use-agent" ${CFG} 2>/dev/null; then
     if [ -f "${HOME}/.gnupg/GPG_AGENT_INFO" ] && pid="$(cut -d: -f2 $HOME/.gnupg/GPG_AGENT_INFO)" && [ -n "$pid" ] && kill -0 "$pid"  2>/dev/null; then
 	export GPG_AGENT_INFO="$(cat ${HOME}/.gnupg/GPG_AGENT_INFO)"
     else

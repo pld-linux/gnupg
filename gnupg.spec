@@ -175,6 +175,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/gnupg/gpgkeys_ldap
 %endif
 
-#%files plugin-keys_mailto
-#%defattr(644,root,root,755)
-#%attr(755,root,root) %{_libdir}/gnupg/gpgkeys_mailto
+%files plugin-keys_mailto
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/gnupg/gpgkeys_mailto

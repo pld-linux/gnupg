@@ -145,7 +145,8 @@ kluczy.
 Summary:        GnuPG extension - agent                                                
 Summary(pl):    Rozszerzenie GnuPG - agent                                              
 Group:          Applications 
-Requires:	%{name} = %{version}-%{release}
+#Requires:	%{name} = %{version}-%{release}
+Requires:	%{name}
 Requires:	pinentry
 Obsoletes:	newpg
 

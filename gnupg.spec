@@ -1,6 +1,6 @@
 Summary:	gpg - GNU Privacy Guard
 Name:		gnupg
-Version:	0.9.8
+Version:	0.9.9
 Release:	1
 Copyright:	GPL
 Group:		Utilities/File
@@ -33,6 +33,8 @@ make
 rm -rf $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT
 
+strip --strip-unneeded $RPM_BUILD_ROOT/%{_libdir}/gnupg/* || :
+
 gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* \
 	{AUTHORS,ChangeLog,NEWS,README,THANKS,TODO,doc/{DETAILS,FAQ,OpenPGP}}
 
@@ -46,5 +48,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc {AUTHORS,ChangeLog,NEWS,README,THANKS,TODO,doc/{DETAILS,FAQ,OpenPGP}}.gz
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
-%attr(755,root,root) %{_libdir}/gnupg
+%dir %{_libdir}/gnupg
+%attr(755,root,root) %{_libdir}/gnupg/*
 %{_datadir}/gnupg

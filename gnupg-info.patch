@@ -1,28 +1,16 @@
---- gnupg-1.2.1/doc/gpg.texi.orig	2002-10-25 11:48:34.000000000 +0200
-+++ gnupg-1.2.1/doc/gpg.texi	2003-04-21 15:05:12.000000000 +0200
-@@ -7,9 +7,9 @@
- @c patches, etc. to Steve Cheng <steve@ggi-project.org>.
+--- gnupg-1.9.2/doc/gnupg.texi.orig	2003-01-09 14:24:01.000000000 +0100
++++ gnupg-1.9.2/doc/gnupg.texi	2003-11-17 21:41:57.448180416 +0100
+@@ -69,10 +69,10 @@
+ @c %**end of header
  
- @setfilename gpg.info
--@dircategory GnuPG
+ @ifnottex
+-@dircategory GNU Utilities
 +@dircategory Miscellaneous:
  @direntry
--* gpg: (gpg).                         GnuPG encryption and signing tool.
-+* gpg: (gpg).				GnuPG encryption and signing tool
+-* gpg: (gnupg).            OpenPGP encryption and signing tool.
+-* gpgsm: (gnupg).          S/MIME encryption and signing tool.
++* gpg: (gnupg).				OpenPGP encryption and signing tool
++* gpgsm: (gnupg).			S/MIME encryption and signing tool
  @end direntry
+ This file documents the use and the internals of the GNU Privacy Guard.
  
- @node top
---- gnupg-1.2.1/doc/gpgv.texi.orig	2002-10-25 11:48:37.000000000 +0200
-+++ gnupg-1.2.1/doc/gpgv.texi	2003-04-21 15:05:29.000000000 +0200
-@@ -7,9 +7,9 @@
- @c patches, etc. to Steve Cheng <steve@ggi-project.org>.
- 
- @setfilename gpgv.info
--@dircategory GnuPG
-+@dircategory Miscellaneous:
- @direntry
--* gpgv: (gpgv).                       GnuPG signature verification tool.
-+* gpgv: (gpgv).				GnuPG signature verification tool
- @end direntry
- 
- @node top

@@ -165,9 +165,6 @@ Rozszerzenie GnuPG - agent.
 #%%patch1 -p1
 #%%patch2 -p1
 
-# Typo
-sed -i 's/osc_get_status/ocsc_get_status/' scd/apdu.c
-
 %build
 cp -f /usr/share/automake/config.sub scripts 
 %configure \

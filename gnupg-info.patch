@@ -1,16 +1,16 @@
---- gnupg-1.9.2/doc/gnupg.texi.orig	2003-01-09 14:24:01.000000000 +0100
-+++ gnupg-1.9.2/doc/gnupg.texi	2003-11-17 21:41:57.448180416 +0100
-@@ -69,10 +69,10 @@
- @c %**end of header
+--- gnupg-1.9.15/doc/gnupg.texi.orig	2005-01-04 15:37:07.000000000 +0100
++++ gnupg-1.9.15/doc/gnupg.texi	2005-04-02 18:55:47.767100920 +0200
+@@ -34,10 +34,10 @@
+ @end copying
  
- @ifnottex
+ 
 -@dircategory GNU Utilities
 +@dircategory Miscellaneous:
  @direntry
 -* gpg: (gnupg).            OpenPGP encryption and signing tool.
 -* gpgsm: (gnupg).          S/MIME encryption and signing tool.
-+* gpg: (gnupg).				OpenPGP encryption and signing tool
-+* gpgsm: (gnupg).			S/MIME encryption and signing tool
++* gpg: (gnupg).				OpenPGP encryption and signing tool.
++* gpgsm: (gnupg).			S/MIME encryption and signing tool.
  @end direntry
- This file documents the use and the internals of the GNU Privacy Guard.
+ 
  

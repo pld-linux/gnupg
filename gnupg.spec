@@ -1,6 +1,6 @@
 Summary:     gpg - GNU Privacy Guard
 Name:        gnupg
-Version:     0.4.1
+Version:     0.4.3
 Release:     1
 Source:      ftp://ftp.guug.de/pub/gcrypt/%{name}-%{version}.tar.gz
 URL:         http://www.d.shuttle.de/isil/crypt/gnupg.html

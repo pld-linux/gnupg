@@ -1,12 +1,13 @@
 Summary:	gpg - GNU Privacy Guard
 Name:		gnupg
 Version:	1.0.4
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/File
 Group(de):	Applikationen/Datei
 Group(pl):	Aplikacje/Pliki
 Source0:	ftp://ftp.gnupg.org/pub/gcrypt/gnupg/%{name}-%{version}.tar.gz
+Patch0:		ftp://ftp.gnupg.org/pub/gcrypt/gnupg/%{name}-%{version}.security-patch1.diff
 Icon:		gnupg.gif
 URL:		http://www.gnupg.org/
 BuildRequires:	gdbm-devel
@@ -28,6 +29,7 @@ Guard, odpowiednik programu Pretty Good Privacy na licencji GNU).
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 gettextize --force --copy

@@ -7,6 +7,8 @@ Group:		Utilities/File
 Source:		ftp://ftp.guug.de/pub/gcrypt/%{name}-%{version}.tar.gz
 Icon:		gnupg.gif
 URL:		http://www.d.shuttle.de/isil/gnupg/
+BuildPrereq:	gdbm-devel
+BuildPrereq:	zlib-devel
 Provides:	pgp
 BuildRoot:	/tmp/%{name}-%{version}-root
 
@@ -20,7 +22,7 @@ handle sensitive data ans therefore has no need to allocate secure memory.
 
 %build
 LDFLAGS="-s" CFLAGS="$RPM_OPT_FLAGS" \
-./configure \
+./configure %{_target} \
 	--prefix=/usr \
 	--disable-m-debug \
 	--disable-m-guard

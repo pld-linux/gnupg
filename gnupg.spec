@@ -1,11 +1,11 @@
 Summary:	gpg - GNU Privacy Guard
 Name:		gnupg
-Version:	0.9.10
+Version:	0.9.11
 Release:	1
 Copyright:	GPL
 Group:		Utilities/File
 Group(pl):	Narzêdzia/Pliki
-Source:		ftp://ftp.guug.de/pub/gcrypt/%{name}-%{version}.tar.gz
+Source:		ftp://ftp.guug.de/pub/gcrypt/gnupg/%{name}-%{version}.tar.gz
 Icon:		gnupg.gif
 URL:		http://www.d.shuttle.de/isil/gnupg/
 BuildRequires:	gdbm-devel

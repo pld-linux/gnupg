@@ -1,11 +1,12 @@
 Summary:	gpg - GNU Privacy Guard
 Name:		gnupg
-Version:	1.0.0h
+Version:	1.0.1
 Release:	1
-Copyright:	GPL
+License:	GPL
 Group:		Utilities/File
 Group(pl):	Narzêdzia/Pliki
-Source:		ftp://ftp://ftp.gnupg.org/pub/gcrypt/devel/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.gnupg.org/pub/gcrypt/gnupg/%{name}-%{version}.tar.gz
+Source1:	gpg.1
 Icon:		gnupg.gif
 URL:		http://www.gnupg.org/
 BuildRequires:	gdbm-devel
@@ -35,6 +36,8 @@ rm -rf $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT
 
 strip --strip-unneeded $RPM_BUILD_ROOT/%{_libdir}/gnupg/* || :
+
+install %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/man1/
 
 gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* \
 	{AUTHORS,ChangeLog,NEWS,README,THANKS,TODO,doc/{DETAILS,FAQ,OpenPGP}}

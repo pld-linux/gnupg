@@ -12,12 +12,12 @@ Summary(ru):	GNU Privacy Guard - Ó×ÏÂÏÄÎÁÑ ÚÁÍÅÎÁ PGP
 Summary(uk):	GNU Privacy Guard - ×¦ÌØÎÁ ÚÁÍ¦ÎÁ PGP
 Summary(zh_CN):	GPLµÄPGP¼ÓÃÜ³ÌÐò
 Name:		gnupg
-Version:	1.9.5
+Version:	1.9.6
 Release:	0.1
 License:	GPL
 Group:		Applications/File
-Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/%{name}-%{version}.tar.bz2
-# Source0-md5:	0fb5ca78dbb9569ac495d3049269fab3
+Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/%{name}-%{version}.tar.gz
+# Source0-md5:	69a8be8f0d236df96f948348f6fda162
 Patch0:		%{name}-info.patch
 #Patch1:		%{name}-pl.po-update.patch
 #Patch2:		%{name}-missing-nls.patch
@@ -27,7 +27,7 @@ BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel >= 0.12.1
 BuildRequires:	libassuan-devel >= 1:0.6.4
 BuildRequires:	libcap-devel
-BuildRequires:	libgcrypt-devel >= 1.1.92
+BuildRequires:	libgcrypt-devel >= 1.1.93
 BuildRequires:	libgpg-error-devel >= 0.6
 BuildRequires:	libksba-devel >= 0.9.4
 BuildRequires:	pcsc-lite-devel
@@ -145,7 +145,7 @@ kluczy.
 Summary:        GnuPG extension - agent                                                
 Summary(pl):    Rozszerzenie GnuPG - agent                                              
 Group:          Applications 
-#Requires:	%{name} = %{version}-%{release}
+# can be used with gnupg 1.2.x too
 Requires:	%{name}
 Requires:	pinentry
 Obsoletes:	newpg

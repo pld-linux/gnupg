@@ -8,8 +8,8 @@ Group(pl):	Narzêdzia/Pliki
 Source:		ftp://ftp.guug.de/pub/gcrypt/%{name}-%{version}.tar.gz
 Icon:		gnupg.gif
 URL:		http://www.d.shuttle.de/isil/gnupg/
-BuildPrereq:	gdbm-devel
-BuildPrereq:	zlib-devel
+BuildRequires:	gdbm-devel
+BuildRequires:	zlib-devel
 Provides:	pgp
 BuildRoot:	/tmp/%{name}-%{version}-root
 

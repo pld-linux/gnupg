@@ -1,8 +1,10 @@
 Summary:	GnuPG - GNU Privacy Guard - tool for secure communication and data storage
 Summary(pl):	GnuPG - GNU Privacy Guard - narzêdzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych
+Summary(es):	Criptografía con llaves públicas (asimétricas). GPL
 Summary(ja):	¥»¥­¥å¥¢¤Ê¥³¥ß¥å¥Ë¥±¡¼¥·¥ç¥ó¤È¥Ç¡¼¥¿ÊÝÂ¸¤Î¤¿¤á¤Î GNU ¥æ¡¼¥Æ¥£¥ê¥Æ¥£¡£
 Summary(pt_BR):	Criptografia com chaves públicas (assimétricas). GPL
-Summary(es):	Criptografía con llaves públicas (asimétricas). GPL
+Summary(ru):	GNU Privacy Guard - Ó×ÏÂÏÄÎÁÑ ÚÁÍÅÎÁ PGP
+Summary(uk):	GNU Privacy Guard - ×¦ÌØÎÁ ÚÁÍ¦ÎÁ PGP
 Name:		gnupg
 Version:	1.0.7
 Release:	1
@@ -13,40 +15,55 @@ Icon:		gnupg.gif
 URL:		http://www.gnupg.org/
 BuildRequires:	gdbm-devel
 BuildRequires:	libcap-devel
+BuildRequires:	openldap-devel 
 BuildRequires:	texinfo
 BuildRequires:	zlib-devel
 Provides:	pgp
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-GnuPG is GNU's tool for secure communication and data storage.
-It can be used to encrypt data and to create digital signatures.
-It includes an advanced key management facility and is compliant
-with the proposed OpenPGP Internet standard as described in RFC2440.
+GnuPG is GNU's tool for secure communication and data storage. It can
+be used to encrypt data and to create digital signatures. It includes
+an advanced key management facility and is compliant with the proposed
+OpenPGP Internet standard as described in RFC2440.
+
+%description -l es
+GnuPG es un sustituto completo y de libre distribución para PGP. Como
+no utiliza IDEA y RSA, su uso no está restringido. Está casi
+completamente de acuerdo con el borrador (draft) OpenPGP.
+
+%description -l ja
+GnuPG (GNU Privacy Guard)
+¤Ï¥Ç¡¼¥¿¤Î°Å¹æ²½¤È¥Ç¥£¥¸¥¿¥ë½ðÌ¾¤ÎºîÀ®¤Î¤¿¤á¤Î GNU
+¥æ¡¼¥Æ¥£¥ê¥Æ¥£¤Ç¤¹¡£GnuPG ¤Ï¹âÅÙ¤Ê¸°´ÉÍýÇ½ÎÏ¤ò»ý¤Á¡¢ RFC2440
+¤Çµ­½Ò¤µ¤ì¤Æ¤¤¤ë OpenPGP ¥¤¥ó¥¿¡¼¥Í¥Ã¥ÈÉ¸½à¤ÎÄó°Æ¤ËÅ¬¹ç¤·¤Æ¤¤¤Þ¤¹¡£
+GnuPG ¤ÏÆÃµö¥¢¥ë¥´¥ê¥º¥à¤Ï»ÈÍÑ¤·¤Æ¤¤¤Ê¤¤¤Î¤Ç¡¢PGP2
+¤Î¤¢¤é¤æ¤ë¥ô¥¡¡¼¥¸¥ç¥ó ¤È¸ß´¹À­¤¬¤¢¤ê¤Þ¤»¤ó¡£(PGP2.x ¤Ï
+À¤³¦Åª¤ÊÆÃµö¤Ç¤¢¤ë IDEA ¤È¡¢ 2000Ç¯ 9·î20Æü¤Þ¤Ç USA ¤Ç¤ÎÆÃµö¤Ç¤¢¤ë RSA
+¤Î¤ß¤òÍÑ¤¤¤Æ¤¤¤Þ¤¹)
 
 %description -l pl
 GnuPG jest narzêdziem do bezpiecznej komunikacji i bezpiecznego
-przechowywania danych. Mo¿e byæ u¿ywany do szyfrowania oraz podpisywania
-danych. Umo¿liwia zaawansowane zarz±dzanie kluczami i spe³nia normy
-zdefiniowane w standardzie OpenPGP, który jest opisany w RFC2440.
-
-%description -l ja
-GnuPG (GNU Privacy Guard) ¤Ï¥Ç¡¼¥¿¤Î°Å¹æ²½¤È¥Ç¥£¥¸¥¿¥ë½ðÌ¾¤ÎºîÀ®¤Î¤¿¤á¤Î
-GNU ¥æ¡¼¥Æ¥£¥ê¥Æ¥£¤Ç¤¹¡£GnuPG ¤Ï¹âÅÙ¤Ê¸°´ÉÍýÇ½ÎÏ¤ò»ý¤Á¡¢
-RFC2440 ¤Çµ­½Ò¤µ¤ì¤Æ¤¤¤ë OpenPGP ¥¤¥ó¥¿¡¼¥Í¥Ã¥ÈÉ¸½à¤ÎÄó°Æ¤ËÅ¬¹ç¤·¤Æ¤¤¤Þ¤¹¡£
-GnuPG ¤ÏÆÃµö¥¢¥ë¥´¥ê¥º¥à¤Ï»ÈÍÑ¤·¤Æ¤¤¤Ê¤¤¤Î¤Ç¡¢PGP2 ¤Î¤¢¤é¤æ¤ë¥ô¥¡¡¼¥¸¥ç¥ó
-¤È¸ß´¹À­¤¬¤¢¤ê¤Þ¤»¤ó¡£(PGP2.x ¤Ï À¤³¦Åª¤ÊÆÃµö¤Ç¤¢¤ë IDEA ¤È¡¢
-2000Ç¯ 9·î20Æü¤Þ¤Ç USA ¤Ç¤ÎÆÃµö¤Ç¤¢¤ë RSA ¤Î¤ß¤òÍÑ¤¤¤Æ¤¤¤Þ¤¹)
+przechowywania danych. Mo¿e byæ u¿ywany do szyfrowania oraz
+podpisywania danych. Umo¿liwia zaawansowane zarz±dzanie kluczami i
+spe³nia normy zdefiniowane w standardzie OpenPGP, który jest opisany w
+RFC2440.
 
 %description -l pt_BR
-O GnuPG é um substituto completo e de livre distribuição para o PGP. Como ele
-não usa IDEA e RSA seu uso é irrestrito. Está quase completamente de acordo com
-o rascunho (draft) OpenPGP.
+O GnuPG é um substituto completo e de livre distribuição para o PGP.
+Como ele não usa IDEA e RSA seu uso é irrestrito. Está quase
+completamente de acordo com o rascunho (draft) OpenPGP.
 
-%description -l es
-GnuPG es un sustituto completo y de libre distribución para PGP. Como no
-utiliza IDEA y RSA, su uso no está restringido. Está casi completamente de
-acuerdo con el borrador (draft) OpenPGP.
+%description -l ru
+GnuPG Ñ×ÌÑÅÔÓÑ ÐÏÌÎÏÊ É Ó×ÏÂÏÄÎÏÊ ÚÁÍÅÎÏÊ ÄÌÑ PGP. ôÁË ËÁË ÏÎ ÎÅ
+ÉÓÐÏÌØÚÕÅÔ ÎÉ IDEA, ÎÉ RSA, ÔÏ ÎÁ ÅÇÏ ÉÓÐÏÌØÚÏ×ÁÎÉÅ ÎÅ ÎÁËÌÁÄÙ×ÁÅÔÓÑ
+ÎÉËÁËÉÈ ÏÇÒÁÎÉÞÅÎÉÊ. GnuPG ÓÏÏÔ×ÅÔÓÔ×ÕÅÔ ÓÐÅÃÉÆÉËÁÃÉÉ OpenPGP
+(RFC2440).
+
+%description -l uk
+GnuPG ¤ ÐÏ×ÎÏÀ ÔÁ ×¦ÌØÎÏÀ ÚÁÍ¦ÎÏÀ PGP. ÷¦Î ÎÅ ×ÉËÏÒÉÓÔÏ×Õ¤ Î¦ IDEA,
+ÁÎ¦ RSA, ÔÁË ÝÏ ÎÁ ÊÏÇÏ ÚÁÓÔÏÓÕ×ÁÎÎÑ ÎÅ ÎÁËÌÁÄÁ¤ÔØÓÑ Î¦ÑËÉÈ ÏÂÍÅÖÅÎØ.
+GnuPG ×¦ÄÐÏ×¦ÄÁ¤ ÓÐÅÃÉÆ¦ËÁÃ¦§ OpenPGP (RFC2440).
 
 %prep
 %setup -q
@@ -54,6 +71,7 @@ acuerdo con el borrador (draft) OpenPGP.
 %build
 %configure \
 	--with-capabilities \
+	--enable-ldap \
 %ifarch sparc sparc64
 	--disable-m-guard \
 %else
@@ -65,6 +83,7 @@ acuerdo con el borrador (draft) OpenPGP.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
@@ -76,12 +95,6 @@ gzip -9nf AUTHORS ChangeLog NEWS README THANKS TODO \
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post
-[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
-
-%postun
-[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
-
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc *.gz doc/*.gz
@@ -91,6 +104,5 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/gnupg
 %attr(755,root,root) %{_libdir}/gnupg/*
 
-%{_infodir}/*
 %{_mandir}/man?/*
 %{_datadir}/gnupg

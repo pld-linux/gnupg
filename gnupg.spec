@@ -13,12 +13,12 @@ Summary(ru):	GNU Privacy Guard - свободная замена PGP
 Summary(uk):	GNU Privacy Guard - в╕льна зам╕на PGP
 Summary(zh_CN):	GPL╣дPGP╪сцэЁлпР
 Name:		gnupg
-Version:	1.9.7
-Release:	2
+Version:	1.9.8
+Release:	1
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/%{name}-%{version}.tar.gz
-# Source0-md5:	9bee7fe855b14cba433af5273963d4f5
+# Source0-md5:	30ca9f999a3eeb5b933c3a6b91afa707
 Source1:	%{name}-agent.sh
 Patch0:		%{name}-info.patch
 #Patch1:		%{name}-pl.po-update.patch
@@ -164,6 +164,9 @@ Rozszerzenie GnuPG - agent.
 #%%patch1 -p1
 #%%patch2 -p1
 
+# Typo
+sed -i 's/osc_get_status/ocsc_get_status/' scd/apdu.c
+
 %build
 cp /usr/share/automake/config.sub scripts 
 
@@ -209,11 +212,13 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog NEWS README THANKS TODO 
 %attr(755,root,root) %{_bindir}/gpg
 %attr(755,root,root) %{_bindir}/gpg2
-%attr(755,root,root) %{_bindir}/gpgv2
 %attr(755,root,root) %{_bindir}/gpgconf
+%attr(755,root,root) %{_bindir}/gpgsm
+%attr(755,root,root) %{_bindir}/gpgv2
 %attr(755,root,root) %{_bindir}/watchgnupg
 %attr(755,root,root) %{_sbindir}/addgnupghome
 %dir %{_libdir}/gnupg
+%attr(755,root,root) %{_libdir}/gnupg/pcsc-wrapper
 %dir %{_datadir}/gnupg
 %{_datadir}/gnupg/options.skel
 #%%{_mandir}/man?/*
@@ -222,7 +227,6 @@ rm -rf $RPM_BUILD_ROOT
 %files agent
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/gpg-agent
-%attr(755,root,root) %{_bindir}/gpgsm
 %attr(755,root,root) %{_bindir}/kbxutil
 %attr(755,root,root) %{_bindir}/sc-copykeys
 %attr(755,root,root) %{_bindir}/sc-investigate

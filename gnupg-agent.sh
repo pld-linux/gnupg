@@ -12,7 +12,7 @@ if [ -r "${HOME}/.gnupg/gpg-agent.conf" ]; then
 fi
 
 if grep -q "^use-agent" ${CFG} 2>/dev/null; then
-    if [ -f "${HOME}/.gnupg/GPG_AGENT_INFO" ] && kill -0 "$(cut -d: -f2 $HOME/.gnupg/GPG_AGENT_INFO)" 2>/dev/null; then
+    if [ -f "${HOME}/.gnupg/GPG_AGENT_INFO" ] && pid="$(cut -d: -f2 $HOME/.gnupg/GPG_AGENT_INFO)" && [ -n "$pid" ] && kill -0 "$pid"  2>/dev/null; then
 	export GPG_AGENT_INFO="$(cat ${HOME}/.gnupg/GPG_AGENT_INFO)"
     else
 	if [ -n "$DISPLAY" -a "$X11" = "yes" ] || [ -z "$DISPLAY" -a "$X11" = "no" ]; then

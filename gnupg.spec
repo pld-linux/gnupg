@@ -17,7 +17,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 GPG is the main program for the GNUPG system. gpgm is a maintenance tool
 which has some commands gpgm does not have; it is there because it does not
-handle sensitive data ans therefore has no need to allocate secure memory.
+handle sensitive data and therefore has no need to allocate secure memory.
+
+%description -l pl
+GPG jest g³ównym programem nale¿±cym do systemu GNUPG (GNU Privacy Guard,
+odpowiednik programu Pretty Good Privacy na licencji GNU).
+
 
 %prep
 %setup -q

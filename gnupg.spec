@@ -48,34 +48,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/*
 %attr(755,root,root) %{_libdir}/gnupg
 %{_datadir}/gnupg
-
-%changelog
-* Tue May 25 1999 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [0.9.7-1]
-- added using more rpm macros,
-- added --without-included-gettext to ./configure pararameters.
-
-* Fri May  7 1999 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [0.9.6-1]
-- naw package is FHS 2.0 compliant.
-
-* Fri Mar 19 1999 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [0.9.5-1]
-- removed man group from man pages,
-- added gzipping %doc,
-- added pl locale.
-
-* Mon Dec 21 1998 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [0.9.0-1]
-- added %{_datadir}/gnupg.
-
-* Sat Dec 12 1998 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [0.4.5-1]
-- added gzipping man pages,
-- added using LDFLAGS="-s" to ./configure enviroment,
-- s/rfcs/OpenPGP/ in %doc,
-- added pt* and ru .mo files.
-
-* Mon Sep 21 1998 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [0.4.0-1]
-- first release in rpm package.

@@ -1,0 +1,163 @@
+Index: g10/trustdb.c
+===================================================================
+RCS file: /cvs/gnupg/gnupg/g10/trustdb.c,v
+retrieving revision 1.89.2.1
+diff -u -r1.89.2.1 trustdb.c
+--- g10/trustdb.c	2 Oct 2002 21:56:03 -0000	1.89.2.1
++++ g10/trustdb.c	4 May 2003 01:12:38 -0000
+@@ -808,16 +808,27 @@
+   while (recno)
+     {
+       read_record (recno, &vrec, RECTYPE_VALID);
+-      if ( validity < (vrec.r.valid.validity & TRUST_MASK) )
+-        validity = (vrec.r.valid.validity & TRUST_MASK);
+-      if ( namehash && !memcmp (vrec.r.valid.namehash, namehash, 20) )
+-        break;
++      if(namehash)
++	{
++	  /* If namehash is given we return the trust for that user ID
++	     ONLY.  If the namehash is not found, then there is no
++	     validity at all (i.e. the user ID wasn't signed). */
++	  if(memcmp(vrec.r.valid.namehash,namehash,20)==0)
++	    {
++	      validity=(vrec.r.valid.validity & TRUST_MASK);
++	      break;
++	    }
++	}
++      else
++	{
++	  /* If no namehash is given, we take the maximum validity
++	     over all user IDs */
++	  if ( validity < (vrec.r.valid.validity & TRUST_MASK) )
++	    validity = (vrec.r.valid.validity & TRUST_MASK);
++	}
+       recno = vrec.r.valid.next;
+     }
+   
+-  if (recno) /* okay, use the user ID associated one */
+-    validity = (vrec.r.valid.validity & TRUST_MASK);
+-
+   if ( (trec.r.trust.ownertrust & TRUST_FLAG_DISABLED) )
+     validity |= TRUST_FLAG_DISABLED;
+ 
+Index: g10/pkclist.c
+===================================================================
+RCS file: /cvs/gnupg/gnupg/g10/pkclist.c,v
+retrieving revision 1.73.2.1
+diff -u -r1.73.2.1 pkclist.c
+--- g10/pkclist.c	17 Oct 2002 13:49:30 -0000	1.73.2.1
++++ g10/pkclist.c	4 May 2003 01:12:39 -0000
+@@ -524,17 +524,23 @@
+ 	return 0;
+ 
+     if( !opt.batch && !rc ) {
+-	char *p;
+ 	u32 keyid[2];
+-	size_t n;
+ 
+ 	keyid_from_pk( pk, keyid);
+ 	tty_printf( "%4u%c/%08lX %s \"",
+ 		  nbits_from_pk( pk ), pubkey_letter( pk->pubkey_algo ),
+ 		  (ulong)keyid[1], datestr_from_pk( pk ) );
+-	p = get_user_id( keyid, &n );
+-	tty_print_utf8_string( p, n ),
+-	m_free(p);
++	/* If the pk was chosen by a particular user ID, this is the
++	   one to ask about. */
++	if(pk->user_id)
++	  tty_print_utf8_string(pk->user_id->name,pk->user_id->len);
++	else
++	  {
++	    size_t n;
++	    char *p = get_user_id( keyid, &n );
++	    tty_print_utf8_string( p, n );
++	    m_free(p);
++	  }
+ 	tty_printf("\"\n");
+         print_fingerprint (pk, NULL, 2);
+ 	tty_printf("\n");
+@@ -887,8 +893,27 @@
+ 		}
+ 		else {
+ 		    int trustlevel;
++		    
++		    /* Fill in the namehash so we can get the validity
++		       for this particular UID.  If we start using it
++		       in more places than here, it might be good to
++		       fill this in for all PKs. */
++ 
++		    if(pk->user_id)
++		      {
++			pk->namehash=m_alloc(20);
++ 
++			if( pk->user_id->attrib_data )
++			  rmd160_hash_buffer (pk->namehash,
++					      pk->user_id->attrib_data,
++					      pk->user_id->attrib_len);
++			else
++			  rmd160_hash_buffer (pk->namehash,
++					      pk->user_id->name,
++					      pk->user_id->len );
++		      }
+ 
+-		    trustlevel = get_validity (pk, NULL);
++		    trustlevel = get_validity (pk, pk->namehash);
+ 		    if( (trustlevel & TRUST_FLAG_DISABLED) ) {
+ 			tty_printf(_("Public key is disabled.\n") );
+ 		    }
+@@ -901,8 +926,6 @@
+ 			}
+ 			else {
+ 			    PK_LIST r;
+-			    char *p;
+-			    size_t n;
+ 			    u32 keyid[2];
+ 
+ 			    keyid_from_pk( pk, keyid);
+@@ -911,9 +934,16 @@
+ 				       pubkey_letter( pk->pubkey_algo ),
+ 				       (ulong)keyid[1],
+ 				       datestr_from_pk( pk ) );
+-			    p = get_user_id( keyid, &n );
+-			    tty_print_utf8_string( p, n );
+-			    m_free(p);
++			    if(pk->user_id)
++			      tty_print_utf8_string(pk->user_id->name,
++						    pk->user_id->len);
++			    else
++			      {
++				size_t n;
++				char *p = get_user_id( keyid, &n );
++				tty_print_utf8_string( p, n );
++				m_free(p);
++			      }
+ 			    tty_printf("\"\n");
+ 
+ 			    r = m_alloc( sizeof *r );
+@@ -981,6 +1011,25 @@
+ 	    }
+ 	    else if( !(rc=check_pubkey_algo2(pk->pubkey_algo, use )) ) {
+ 		int trustlevel;
++
++		/* Fill in the namehash so we can get the validity
++		   for this particular UID.  If we start using it
++		   in more places than here, it might be good to
++		   fill this in for all PKs. */
++ 
++		if(pk->user_id)
++		  {
++		    pk->namehash=m_alloc(20);
++ 
++		    if( pk->user_id->attrib_data )
++		      rmd160_hash_buffer (pk->namehash,
++					  pk->user_id->attrib_data,
++					  pk->user_id->attrib_len);
++		    else
++		      rmd160_hash_buffer (pk->namehash,
++					  pk->user_id->name,
++					  pk->user_id->len );
++		  }
+ 
+ 		trustlevel = get_validity (pk, pk->namehash);
+ 		if( (trustlevel & TRUST_FLAG_DISABLED) ) {
+

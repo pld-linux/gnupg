@@ -12,7 +12,7 @@ URL:		http://www.gnupg.org/
 BuildRequires:	gdbm-devel
 BuildRequires:	zlib-devel
 Provides:	pgp
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 GPG is the main program for the GNUPG system. gpgm is a maintenance tool

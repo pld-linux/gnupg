@@ -13,11 +13,13 @@ Summary(uk):	GNU Privacy Guard - 爪特瘟 诹挺瘟 PGP
 Summary(zh_CN):	GPL的PGP加密程序
 Name:		gnupg
 Version:	1.2.2
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/GnuPG/gnupg/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-info.patch
+Patch1:		%{name}-pl.po-update.patch
+Patch2:		%{name}-missing-nls.patch
 Icon:		gnupg.gif
 URL:		http://www.gnupg.org/
 BuildRequires:	gdbm-devel
@@ -131,6 +133,8 @@ kluczy.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
+%patch2 -p1
 
 %build
 %configure \

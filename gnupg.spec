@@ -1,14 +1,14 @@
-Summary:     gpg - GNU Privacy Guard
-Name:        gnupg
-Version:     0.9.5
-Release:     1
-Copyright:   GPL
-Group:       Utilities/File
-Source:      ftp://ftp.guug.de/pub/gcrypt/%{name}-%{version}.tar.gz
-Icon:        gnupg.gif
-URL:         http://www.d.shuttle.de/isil/crypt/gnupg.html
-Provides:    pgp
-BuildRoot:   /tmp/%{name}-%{version}-root
+Summary:	gpg - GNU Privacy Guard
+Name:		gnupg
+Version:	0.9.5
+Release:	1
+Copyright:	GPL
+Group:		Utilities/File
+Source:		ftp://ftp.guug.de/pub/gcrypt/%{name}-%{version}.tar.gz
+Icon:		gnupg.gif
+URL:		http://www.d.shuttle.de/isil/gnupg/
+Provides:	pgp
+BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
 GPG is the main program for the GNUPG system. gpgm is a maintenance tool
@@ -44,7 +44,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc {AUTHORS,ChangeLog,NEWS,README,THANKS,TODO,doc/{DETAILS,FAQ,OpenPGP}}.gz
 %attr(755,root,root) /usr/bin/*
 /usr/man/man1/*
-%attr(755,root,root,755) /usr/lib/gnupg
+%attr(755,root,root) /usr/lib/gnupg
 /usr/share/gnupg
 
 %lang(de)    /usr/share/locale/de/LC_MESSAGES/gnupg.mo

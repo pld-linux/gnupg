@@ -8,8 +8,6 @@ Version:	1.0.6
 Release:	3
 License:	GPL
 Group:		Applications/File
-Group(de):	Applikationen/Datei
-Group(pl):	Aplikacje/Pliki
 Source0:	ftp://ftp.gnupg.org/pub/gcrypt/gnupg/%{name}-%{version}.tar.gz
 Patch0:		%{name}-locale.patch
 Patch1:		%{name}-am.patch

@@ -1,6 +1,6 @@
 Summary:	gpg - GNU Privacy Guard
 Name:		gnupg
-Version:	0.9.11
+Version:	1.0.0
 Release:	1
 Copyright:	GPL
 Group:		Utilities/File
@@ -23,7 +23,7 @@ handle sensitive data ans therefore has no need to allocate secure memory.
 
 %build
 gettextize --force --copy
-LDFLAGS="-s" export LDFLAGS
+LDFLAGS="-s"; export LDFLAGS
 %configure \
 	--without-included-gettext \
 	--disable-m-debug \

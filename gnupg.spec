@@ -1,11 +1,12 @@
 Summary:	gpg - GNU Privacy Guard
 Name:		gnupg
-Version:	0.9.6
+Version:	0.9.7
 Release:	1
 Copyright:	GPL
 Group:		Utilities/File
 Group(pl):	Narzêdzia/Pliki
 Source:		ftp://ftp.guug.de/pub/gcrypt/%{name}-%{version}.tar.gz
+Patch:		gnupg.patch
 Icon:		gnupg.gif
 URL:		http://www.d.shuttle.de/isil/gnupg/
 BuildPrereq:	gdbm-devel
@@ -20,30 +21,31 @@ handle sensitive data ans therefore has no need to allocate secure memory.
 
 %prep
 %setup -q
+%patch -p1
 
 %build
+gettextize --force --copy
 autoconf
-LDFLAGS="-s" CFLAGS="$RPM_OPT_FLAGS" \
-./configure %{_target} \
-	--prefix=/usr \
+%configure \
+	--prefix=%{_prefix} \
+	--without-included-gettext \
 	--disable-m-debug \
 	--disable-m-guard
 make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make install prefix=$RPM_BUILD_ROOT/usr
-
-rm -f $RPM_BUILD_ROOT%{_mandir}/man1/gpgm.1
-echo ".so gpg.1" >$RPM_BUILD_ROOT%{_mandir}/man1/gpgm.1
+make install DESTDIR=$RPM_BUILD_ROOT
 
 gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* \
 	{AUTHORS,ChangeLog,NEWS,README,THANKS,TODO,doc/{DETAILS,FAQ,OpenPGP}}
 
+%find_lang gnupg
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f gnupg.lang
 %defattr(644,root,root,755)
 %doc {AUTHORS,ChangeLog,NEWS,README,THANKS,TODO,doc/{DETAILS,FAQ,OpenPGP}}.gz
 %attr(755,root,root) %{_bindir}/*
@@ -51,15 +53,12 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/gnupg
 %{_datadir}/gnupg
 
-%lang(de)    %{_datadir}/locale/de/LC_MESSAGES/gnupg.mo
-%lang(es_ES) %{_datadir}/locale/es_ES/LC_MESSAGES/gnupg.mo
-%lang(fr)    %{_datadir}/locale/fr/LC_MESSAGES/gnupg.mo
-%lang(it)    %{_datadir}/locale/it/LC_MESSAGES/gnupg.mo
-%lang(pl)    %{_datadir}/locale/pl/LC_MESSAGES/gnupg.mo
-%lang(pt_BR) %{_datadir}/locale/pt_BR/LC_MESSAGES/gnupg.mo
-%lang(ru)    %{_datadir}/locale/ru/LC_MESSAGES/gnupg.mo
-
 %changelog
+* Tue May 25 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [0.9.7-1]
+- added using more rpm macros,
+- added --without-included-gettext to ./configure pararameters.
+
 * Fri May  7 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [0.9.6-1]
 - naw package is FHS 2.0 compliant.

@@ -35,6 +35,7 @@ BuildRequires:	libassuan-devel >= 0.6.0
 BuildRequires:	libksba-devel >= 0.4.6
 BuildRequires:	opensc-devel >= 0.8.0
 #BuildRequires:	libusb-devel >= unreleased yet
+BuildRequires:	pth-devel >= 2.0.0
 Provides:	pgp
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -142,6 +143,7 @@ Summary:        GnuPG extension - agent
 Summary(pl):    Rozszerzenie GnuPG - agent                                              
 Group:          Applications 
 Requires:	gnupg
+Requires:	pinentry
 Obsoletes:	newpg
 
 %description agent

@@ -1,6 +1,6 @@
 Summary:     gpg - GNU Privacy Guard
 Name:        gnupg
-Version:     0.4.3
+Version:     0.4.4
 Release:     1
 Source:      ftp://ftp.guug.de/pub/gcrypt/%{name}-%{version}.tar.gz
 URL:         http://www.d.shuttle.de/isil/crypt/gnupg.html
@@ -40,8 +40,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755, root, root) /usr/bin/*
 %attr(644, root,  man) /usr/man/man1/*
 %attr(755, root, root) /usr/lib/gnupg
-%lang(en) /usr/share/locale/en/LC_MESSAGES/gnupg.mo
 %lang(de) /usr/share/locale/de/LC_MESSAGES/gnupg.mo
+%lang(en) /usr/share/locale/en/LC_MESSAGES/gnupg.mo
+%lang(es) /usr/share/locale/es*/LC_MESSAGES/gnupg.mo
 %lang(it) /usr/share/locale/it/LC_MESSAGES/gnupg.mo
 %lang(fr) /usr/share/locale/fr/LC_MESSAGES/gnupg.mo
 

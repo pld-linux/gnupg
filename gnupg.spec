@@ -34,10 +34,10 @@ make
 rm -rf $RPM_BUILD_ROOT
 make install prefix=$RPM_BUILD_ROOT/usr
 
-rm -f $RPM_BUILD_ROOT/usr/share/man/man1/gpgm.1
-echo ".so gpg.1" >$RPM_BUILD_ROOT/usr/share/man/man1/gpgm.1
+rm -f $RPM_BUILD_ROOT%{_mandir}/man1/gpgm.1
+echo ".so gpg.1" >$RPM_BUILD_ROOT%{_mandir}/man1/gpgm.1
 
-gzip -9nf $RPM_BUILD_ROOT/usr/share/man/man1/* \
+gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* \
 	{AUTHORS,ChangeLog,NEWS,README,THANKS,TODO,doc/{DETAILS,FAQ,OpenPGP}}
 
 %clean
@@ -47,7 +47,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc {AUTHORS,ChangeLog,NEWS,README,THANKS,TODO,doc/{DETAILS,FAQ,OpenPGP}}.gz
 %attr(755,root,root) /usr/bin/*
-/usr/share/man/man1/*
+%{_mandir}/man1/*
 %attr(755,root,root) /usr/lib/gnupg
 /usr/share/gnupg
 

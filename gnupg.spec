@@ -60,12 +60,6 @@ gzip -9nf AUTHORS ChangeLog NEWS README THANKS TODO \
 
 %find_lang %{name}
 
-%post
-[ ! -x %{_sbindir}/fix-info-dir ] || %{_sbindir}/fix-info-dir -c %{_infodir} >/dev/null 2>&1
-
-%postun
-[ ! -x %{_sbindir}/fix-info-dir ] || %{_sbindir}/fix-info-dir -c %{_infodir} >/dev/null 2>&1
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -77,4 +71,3 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/gnupg
 %attr(755,root,root) %{_libdir}/gnupg/*
 %{_datadir}/gnupg
-%{_infodir}/*info*

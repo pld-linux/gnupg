@@ -1,6 +1,5 @@
-diff -urN gnupg-1.2.4.org/po/pl.po gnupg-1.2.4/po/pl.po
---- gnupg-1.2.4.org/po/pl.po	2003-12-25 12:32:06.454298481 +0100
-+++ gnupg-1.2.4/po/pl.po	2003-12-25 12:29:41.000000000 +0100
+--- gnupg-1.2.4/po/pl.po.orig	2003-12-23 20:58:19.000000000 +0100
++++ gnupg-1.2.4/po/pl.po	2003-12-25 16:19:14.396786888 +0100
 @@ -1,16 +1,15 @@
  # Gnu Privacy Guard.
  # Copyright (C) 1998, 1999, 2000, 2001, 2002 Free Software Foundation, Inc.
@@ -8,7 +7,7 @@ diff -urN gnupg-1.2.4.org/po/pl.po gnupg-1.2.4/po/pl.po
 -#
 -# To be included in GnuPG 1.2.2
 +# Janusz A. Urbanowicz <alex@bofh.net.pl>, 1999, 2000, 2001, 2002, 2003(?).
-+# small fixes by Jakub Bogusz <qboosh@pld-linux.org>, 2003.
++# some fixes and updates by Jakub Bogusz <qboosh@pld-linux.org>, 2003.
  #
  msgid ""
  msgstr ""
@@ -66,6 +65,15 @@ diff -urN gnupg-1.2.4.org/po/pl.po gnupg-1.2.4/po/pl.po
  "NORMALNEGO U¯YTKU I NIE ZAPEWNIAJ¡ BEZPIECZEÑSTWA!!\n"
  
  #: cipher/rndlinux.c:134
+@@ -398,7 +396,7 @@
+ #: cipher/primegen.c:310
+ #, c-format
+ msgid "can't generate a prime with less than %d bits\n"
+-msgstr ""
++msgstr "nie mo¿na wygenerowaæ liczby pierwszej o mniej ni¿ %d bitach\n"
+ 
+ #: g10/g10.c:313
+ msgid ""
 @@ -491,7 +489,7 @@
  #: g10/g10.c:339
  msgid "sign a key non-revocably"
@@ -131,6 +139,18 @@ diff -urN gnupg-1.2.4.org/po/pl.po gnupg-1.2.4/po/pl.po
  
  #: g10/g10.c:1627
  #, c-format
+@@ -988,9 +986,9 @@
+ msgstr "wybrany algorytm skrótów po¶wiadczeñ jest niepoprawny\n"
+ 
+ #: g10/g10.c:1944
+-#, fuzzy, c-format
++#, c-format
+ msgid "compress algorithm `%s' is read-only in this release\n"
+-msgstr "w tej wersji algorytm skrótu ,,%s'' jest tylko do odczytu\n"
++msgstr "w tej wersji algorytm kompresji ,,%s'' jest tylko do odczytu\n"
+ 
+ #: g10/g10.c:1948
+ #, c-format
 @@ -1020,7 +1018,7 @@
  #: g10/g10.c:1965
  msgid "invalid default-check-level; must be 0, 1, 2, or 3\n"
@@ -140,6 +160,18 @@ diff -urN gnupg-1.2.4.org/po/pl.po gnupg-1.2.4/po/pl.po
  
  #: g10/g10.c:1971
  msgid "invalid default preferences\n"
+@@ -1039,9 +1037,9 @@
+ msgstr "niew³a¶ciwe ustawienia algorytmów kompresji\n"
+ 
+ #: g10/g10.c:2017
+-#, fuzzy, c-format
++#, c-format
+ msgid "%s does not yet work with %s\n"
+-msgstr "%s nie ma sensu w po³±czeniu z %s!\n"
++msgstr "%s jeszcze nie dzia³a w po³±czeniu z %s\n"
+ 
+ #: g10/g10.c:2061
+ #, c-format
 @@ -1093,7 +1091,7 @@
  
  #: g10/g10.c:2253
@@ -542,7 +574,44 @@ diff -urN gnupg-1.2.4.org/po/pl.po gnupg-1.2.4/po/pl.po
  
  #: g10/keylist.c:1048
  msgid "Primary key fingerprint:"
-@@ -3653,7 +3653,7 @@
+@@ -3592,14 +3592,14 @@
+ #. There is no way to tell the difference here between a bad
+ #. passphrase and a cipher algorithm that we don't have.
+ #: g10/mainproc.c:263
+-#, fuzzy, c-format
++#, c-format
+ msgid "bad passphrase or unknown cipher algorithm (%d)\n"
+-msgstr "nieznany algorytm szyfruj±cy"
++msgstr "b³êdne has³o lub nieznany algorytm szyfruj±cy (%d)\n"
+ 
+ #: g10/mainproc.c:300
+-#, fuzzy, c-format
++#, c-format
+ msgid "%s encrypted session key\n"
+-msgstr "%d - dziwny rozmiar jak na zaszyfrowany klucz sesyjny\n"
++msgstr "klucz sesyjny zaszyfrowano za pomoc± %s\n"
+ 
+ #: g10/mainproc.c:302 g10/encr-data.c:66
+ #, c-format
+@@ -3636,14 +3636,13 @@
+ msgstr "b³±d odszyfrowywania kluczem publicznym: %s\n"
+ 
+ #: g10/mainproc.c:488
+-#, fuzzy, c-format
++#, c-format
+ msgid "encrypted with %lu passphrases\n"
+-msgstr "Powtórzone has³o\n"
++msgstr "zaszyfrowano z u¿yciem %lu hase³\n"
+ 
+ #: g10/mainproc.c:490
+-#, fuzzy
+ msgid "encrypted with 1 passphrase\n"
+-msgstr "Powtórzone has³o\n"
++msgstr "zaszyfrowano z u¿yciem 1 has³a\n"
+ 
+ #: g10/mainproc.c:506 g10/mainproc.c:525
+ #, c-format
+@@ -3653,7 +3652,7 @@
  #: g10/mainproc.c:513
  #, c-format
  msgid "IDEA cipher unavailable, optimistically attempting to use %s instead\n"
@@ -551,7 +620,7 @@ diff -urN gnupg-1.2.4.org/po/pl.po gnupg-1.2.4/po/pl.po
  
  #: g10/mainproc.c:543
  msgid "decryption okay\n"
-@@ -3701,10 +3701,10 @@
+@@ -3701,10 +3700,10 @@
  #. plaintext before signatures but no one-pass packets
  #: g10/mainproc.c:1326 g10/mainproc.c:1336
  msgid "can't handle these multiple signatures\n"
@@ -564,7 +633,7 @@ diff -urN gnupg-1.2.4.org/po/pl.po gnupg-1.2.4/po/pl.po
  msgid "Signature made %.*s using %s key ID %08lX\n"
  msgstr "Podpisano w %.*s kluczem %s o numerze %08lX.\n"
  
-@@ -3799,7 +3799,7 @@
+@@ -3799,7 +3798,7 @@
  #: g10/misc.c:192
  msgid "this cipher algorithm is deprecated; please use a more standard one!\n"
  msgstr ""
@@ -573,7 +642,27 @@ diff -urN gnupg-1.2.4.org/po/pl.po gnupg-1.2.4/po/pl.po
  
  #: g10/misc.c:300
  msgid "the IDEA cipher plugin is not present\n"
-@@ -4002,7 +4002,7 @@
+@@ -3826,9 +3825,8 @@
+ msgstr "w jej miejsce nale¿y u¿yæ ,,%s%s''\"\n"
+ 
+ #: g10/misc.c:550
+-#, fuzzy
+ msgid "Uncompressed"
+-msgstr "nie zosta³ przetworzony"
++msgstr "Bez kompresji"
+ 
+ #: g10/misc.c:628
+ #, c-format
+@@ -3842,7 +3840,7 @@
+ 
+ #: g10/parse-packet.c:690
+ msgid "WARNING: potentially insecure symmetrically encrypted session key\n"
+-msgstr ""
++msgstr "OSTRZE¯ENIE: potencjalnie niebezpiecznie symetrycznie szyfrowany klucz sesyjny\n"
+ 
+ #: g10/parse-packet.c:1096
+ #, c-format
+@@ -4002,7 +4000,7 @@
  #: g10/pubkey-enc.c:178
  #, c-format
  msgid "cipher algorithm %d%s is unknown or disabled\n"
@@ -582,7 +671,7 @@ diff -urN gnupg-1.2.4.org/po/pl.po gnupg-1.2.4/po/pl.po
  
  #: g10/pubkey-enc.c:216
  #, c-format
-@@ -4077,8 +4077,7 @@
+@@ -4077,8 +4075,7 @@
  
  #: g10/seckey-cert.c:291
  msgid "WARNING: Weak key detected - please change passphrase again.\n"
@@ -592,7 +681,7 @@ diff -urN gnupg-1.2.4.org/po/pl.po gnupg-1.2.4/po/pl.po
  
  #: g10/seckey-cert.c:329
  msgid "generating the deprecated 16-bit checksum for secret key protection\n"
-@@ -4095,7 +4094,7 @@
+@@ -4095,7 +4092,7 @@
  "key %08lX: this is a PGP generated ElGamal key which is NOT secure for "
  "signatures!\n"
  msgstr ""
@@ -601,7 +690,7 @@ diff -urN gnupg-1.2.4.org/po/pl.po gnupg-1.2.4/po/pl.po
  "              - podpisy nim sk³adane nie zapewniaj± bezpieczeñstwa!\n"
  
  #: g10/sig-check.c:224
-@@ -4135,7 +4134,7 @@
+@@ -4135,7 +4132,7 @@
  #, c-format
  msgid "assuming bad signature from key %08lX due to an unknown critical bit\n"
  msgstr ""
@@ -610,7 +699,22 @@ diff -urN gnupg-1.2.4.org/po/pl.po gnupg-1.2.4/po/pl.po
  "krytycznego\n"
  
  #: g10/sig-check.c:562
-@@ -4490,7 +4489,7 @@
+@@ -4441,12 +4438,12 @@
+ #: g10/trustdb.c:1200
+ #, c-format
+ msgid "signature from Elgamal signing key %08lX to %08lX skipped\n"
+-msgstr ""
++msgstr "podpis klucza podpisuj±cego Elgamal %08lX dla %08lX pominiêty\n"
+ 
+ #: g10/trustdb.c:1208
+ #, c-format
+ msgid "signature from %08lX to Elgamal signing key %08lX skipped\n"
+-msgstr ""
++msgstr "podpis %08lX dla klucza podpisuj±cego Elgamal %08lX pominiêty\n"
+ 
+ #: g10/trustdb.c:1605
+ #, c-format
+@@ -4490,7 +4487,7 @@
  #: g10/skclist.c:129 g10/skclist.c:185
  msgid "key is not flagged as insecure - can't use it with the faked RNG!\n"
  msgstr ""
@@ -619,7 +723,7 @@ diff -urN gnupg-1.2.4.org/po/pl.po gnupg-1.2.4/po/pl.po
  "generatora liczb losowych!\n"
  
  #: g10/skclist.c:157
-@@ -4568,7 +4567,7 @@
+@@ -4568,7 +4565,7 @@
  msgid ""
  "WARNING: message was encrypted with a weak key in the symmetric cipher.\n"
  msgstr ""
@@ -628,7 +732,7 @@ diff -urN gnupg-1.2.4.org/po/pl.po gnupg-1.2.4/po/pl.po
  
  #: g10/encr-data.c:98
  msgid "problem handling encrypted packet\n"
-@@ -4622,7 +4621,7 @@
+@@ -4622,7 +4619,7 @@
  
  #: g10/delkey.c:208
  msgid "use option \"--delete-secret-keys\" to delete it first.\n"
@@ -637,7 +741,7 @@ diff -urN gnupg-1.2.4.org/po/pl.po gnupg-1.2.4/po/pl.po
  
  #: g10/helptext.c:47
  msgid ""
-@@ -4630,7 +4629,7 @@
+@@ -4630,7 +4627,7 @@
  "to any 3rd party.  We need it to implement the web-of-trust; it has nothing\n"
  "to do with the (implicitly created) web-of-certificates."
  msgstr ""
@@ -646,7 +750,7 @@ diff -urN gnupg-1.2.4.org/po/pl.po gnupg-1.2.4/po/pl.po
  "eksportowane poza ten system. Potrzebne s± one do zbudowania sieci\n"
  "zaufania, i nie ma to nic wspólnego z tworzon± automatycznie sieci±\n"
  "certyfikatów."
-@@ -4697,7 +4696,7 @@
+@@ -4697,7 +4694,7 @@
  "oraz do szyfrowania i podpisywania. Algorytm pozostaje bez zmian ale pewne\n"
  "parametry musz± byæ odpowiednio dobrane aby stworzyæ klucz którym mo¿na\n"
  "sk³adaæ bezpieczne podpisy. Ten program obs³uguje oba typy ale inne\n"
@@ -655,7 +759,7 @@ diff -urN gnupg-1.2.4.org/po/pl.po gnupg-1.2.4/po/pl.po
  "\n"
  "G³ówny klucz musi byæ kluczem podpisuj±cym, jest to powodem dla\n"
  "którego w tym menu nie ma mo¿no¶ci wyboru klucza ElGamala do\n"
-@@ -4733,7 +4732,7 @@
+@@ -4733,7 +4730,7 @@
  #: g10/helptext.c:109 g10/helptext.c:114 g10/helptext.c:126 g10/helptext.c:158
  #: g10/helptext.c:186 g10/helptext.c:191 g10/helptext.c:196
  msgid "Answer \"yes\" or \"no\""
@@ -664,7 +768,7 @@ diff -urN gnupg-1.2.4.org/po/pl.po gnupg-1.2.4/po/pl.po
  
  #: g10/helptext.c:119
  msgid ""
-@@ -4828,16 +4827,16 @@
+@@ -4828,16 +4825,16 @@
  "dog³êbnie\n"
  "    to¿samo¶æ u¿ytkownika zosta³a przez Ciebie potwierdzona.\n"
  "\n"
@@ -684,7 +788,7 @@ diff -urN gnupg-1.2.4.org/po/pl.po gnupg-1.2.4/po/pl.po
  "    klucza, sprawdzenie to¿samo¶ci z okazanego oficjalnego dokumentu ze\n"
  "    zdjêciem (np paszportu) i weryfikacja poprawno¶ci adresu poczty\n"
  "    elektronicznej przez wymianê poczty z tym adresem.\n"
-@@ -4872,7 +4871,7 @@
+@@ -4872,7 +4869,7 @@
  "trust connection to the key or another key certified by this key."
  msgstr ""
  "To jest poprawny podpis na tym kluczu; normalnie nie nale¿y go usuwaæ\n"
@@ -693,7 +797,7 @@ diff -urN gnupg-1.2.4.org/po/pl.po gnupg-1.2.4/po/pl.po
  "którym go z³o¿ono lub do innego klucza nim po¶wiadczonego."
  
  #: g10/helptext.c:219
-@@ -4892,7 +4891,7 @@
+@@ -4892,7 +4889,7 @@
  msgid ""
  "The signature is not valid.  It does make sense to remove it from\n"
  "your keyring."
@@ -702,7 +806,7 @@ diff -urN gnupg-1.2.4.org/po/pl.po gnupg-1.2.4/po/pl.po
  
  #: g10/helptext.c:229
  msgid ""
-@@ -4916,7 +4915,7 @@
+@@ -4916,7 +4913,7 @@
  msgstr ""
  "Przestawienie wszystkich (lub tylko wybranych) identyfikatorów na aktualne\n"
  "ustawienia. Data na odpowiednich podpisach zostane przesuniêta do przodu o\n"
@@ -711,7 +815,7 @@ diff -urN gnupg-1.2.4.org/po/pl.po gnupg-1.2.4/po/pl.po
  
  #: g10/helptext.c:244
  msgid "Please enter the passhrase; this is a secret sentence \n"
-@@ -4924,7 +4923,7 @@
+@@ -4924,7 +4921,7 @@
  
  #: g10/helptext.c:250
  msgid "Please repeat the last passphrase, so you are sure what you typed in."
@@ -720,7 +824,7 @@ diff -urN gnupg-1.2.4.org/po/pl.po gnupg-1.2.4/po/pl.po
  
  #: g10/helptext.c:254
  msgid "Give the name of the file to which the signature applies"
-@@ -4965,7 +4964,7 @@
+@@ -4965,7 +4962,7 @@
  "  \"Klucz nie jest ju¿ u¿ywany\"\n"
  "      Klucz zosta³ wycofany z u¿ycia.\n"
  "  \"Identyfikator u¿ytkownika przesta³ byæ poprawny\"\n"
@@ -729,7 +833,7 @@ diff -urN gnupg-1.2.4.org/po/pl.po gnupg-1.2.4/po/pl.po
  "      poprawny.\n"
  
  #: g10/helptext.c:286
-@@ -4975,7 +4974,7 @@
+@@ -4975,7 +4972,7 @@
  "An empty line ends the text.\n"
  msgstr ""
  "Je¶li chcesz, mo¿esz podaæ opis powodu wystawienia certyfikatu\n"
@@ -738,7 +842,7 @@ diff -urN gnupg-1.2.4.org/po/pl.po gnupg-1.2.4/po/pl.po
  "Pusta linia koñczy wprowadzanie tekstu.\n"
  
  #: g10/helptext.c:301
-@@ -5164,11 +5163,11 @@
+@@ -5164,11 +5161,11 @@
  
  #: g10/revoke.c:293
  msgid "(This is a sensitive revocation key)\n"
@@ -752,7 +856,7 @@ diff -urN gnupg-1.2.4.org/po/pl.po gnupg-1.2.4/po/pl.po
  
  #: g10/revoke.c:310 g10/revoke.c:534
  msgid "ASCII armored output forced.\n"
-@@ -5201,7 +5200,7 @@
+@@ -5201,7 +5198,7 @@
  
  #: g10/revoke.c:496
  msgid "public key does not match secret key!\n"
@@ -761,7 +865,7 @@ diff -urN gnupg-1.2.4.org/po/pl.po gnupg-1.2.4/po/pl.po
  
  #: g10/revoke.c:519
  msgid "unknown protection algorithm\n"
-@@ -5273,7 +5272,7 @@
+@@ -5273,7 +5270,7 @@
  "# (Use \"gpg --import-ownertrust\" to restore them)\n"
  msgstr ""
  "# Lista przypisanych warto¶ci zaufania, stworzona %s\n"
@@ -770,7 +874,7 @@ diff -urN gnupg-1.2.4.org/po/pl.po gnupg-1.2.4/po/pl.po
  
  #: g10/tdbdump.c:140
  #, c-format
-@@ -5294,23 +5293,19 @@
+@@ -5294,683 +5291,15 @@
  
  #: g10/tdbdump.c:168
  msgid "error: no ownertrust value\n"
@@ -788,18 +892,31 @@ diff -urN gnupg-1.2.4.org/po/pl.po gnupg-1.2.4/po/pl.po
  #, c-format
  msgid "read error: %s\n"
  msgstr "b³±d odczytu: %s\n"
- 
+-
 -#, fuzzy
 -#~ msgid "quit|quit"
 -#~ msgstr "wyj¶cie"
 -
- #~ msgid "   (%d) ElGamal (sign and encrypt)\n"
- #~ msgstr ""
- #~ "   (%d) Klucz dla algorytmu ElGamala (do szyfrowania i podpisywania)\n"
-@@ -5331,646 +5326,3 @@
- 
- #~ msgid "invalid symkey algorithm detected (%d)\n"
- #~ msgstr "odnaleziono odwo³anie do niepoprawnego szyfru (%d)\n"
+-#~ msgid "   (%d) ElGamal (sign and encrypt)\n"
+-#~ msgstr ""
+-#~ "   (%d) Klucz dla algorytmu ElGamala (do szyfrowania i podpisywania)\n"
+-
+-#~ msgid ""
+-#~ "The use of this algorithm is only supported by GnuPG.  You will not be\n"
+-#~ "able to use this key to communicate with PGP users.  This algorithm is "
+-#~ "also\n"
+-#~ "very slow, and may not be as secure as the other choices.\n"
+-#~ msgstr ""
+-#~ "Ten algorytm szyfruj±cy jest u¿ywany tylko przez GnuPG. Tego klucza nie "
+-#~ "bêdzie\n"
+-#~ "mo¿na u¿yæ do ³±czno¶ci z u¿ytkownikami PGP. Wybrany algorytm jest tak¿e\n"
+-#~ "bardzo powolny, oraz mo¿e nie byæ tak bezpieczny jak pozosta³e dostêpne.\n"
+-
+-#~ msgid "Create anyway? "
+-#~ msgstr "Stworzyæ klucz pomimo to? "
+-
+-#~ msgid "invalid symkey algorithm detected (%d)\n"
+-#~ msgstr "odnaleziono odwo³anie do niepoprawnego szyfru (%d)\n"
 -
 -#~ msgid "this keyserver is not fully HKP compatible\n"
 -#~ msgstr "serwer kluczy nie jest w pe³ni zgodny z HKP\n"

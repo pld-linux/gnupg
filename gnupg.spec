@@ -13,12 +13,12 @@ Summary(ru):	GNU Privacy Guard - Ó×ÏÂÏÄÎÁÑ ÚÁÍÅÎÁ PGP
 Summary(uk):	GNU Privacy Guard - ×¦ÌØÎÁ ÚÁÍ¦ÎÁ PGP
 Summary(zh_CN):	GPLµÄPGP¼ÓÃÜ³ÌÐò
 Name:		gnupg
-Version:	1.9.13
+Version:	1.9.14
 Release:	1
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/%{name}-%{version}.tar.gz
-# Source0-md5:	f9c1aac160e7cfbdbc195934950c3a2a
+# Source0-md5:	72b56586392c7be6668df4ef8ea7c879
 Source1:	%{name}-agent.sh
 Patch0:		%{name}-info.patch
 #Patch1:		%{name}-pl.po-update.patch
@@ -27,7 +27,7 @@ Icon:		gnupg.gif
 URL:		http://www.gnupg.org/
 BuildRequires:	automake
 BuildRequires:	gettext-devel >= 0.12.1
-BuildRequires:	libassuan-devel >= 1:0.6.6
+BuildRequires:	libassuan-devel >= 1:0.6.9
 BuildRequires:	libcap-devel
 BuildRequires:	libgcrypt-devel >= 1.2.0
 BuildRequires:	libgpg-error-devel >= 0.7
@@ -208,12 +208,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog NEWS README THANKS TODO 
 %attr(755,root,root) %{_bindir}/gpg
 %attr(755,root,root) %{_bindir}/gpg2
-%attr(755,root,root) %{_bindir}/gpgconf
-%attr(755,root,root) %{_bindir}/gpgsm
-%attr(755,root,root) %{_bindir}/gpgsm-gencert.sh
 %attr(755,root,root) %{_bindir}/gpgv2
-%attr(755,root,root) %{_bindir}/watchgnupg
-%attr(755,root,root) %{_sbindir}/addgnupghome
 %dir %{_libdir}/gnupg
 %dir %{_datadir}/gnupg
 %{_datadir}/gnupg/gpg-conf.skel
@@ -222,11 +217,17 @@ rm -rf $RPM_BUILD_ROOT
 
 %files agent
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/gpgconf
+%attr(755,root,root) %{_bindir}/gpgsm
+%attr(755,root,root) %{_bindir}/gpgsm-gencert.sh
 %attr(755,root,root) %{_bindir}/gpg-agent
 %attr(755,root,root) %{_bindir}/kbxutil
 %attr(755,root,root) %{_bindir}/sc-copykeys
 %attr(755,root,root) %{_bindir}/scdaemon
+%attr(755,root,root) %{_bindir}/watchgnupg
+%attr(755,root,root) %{_sbindir}/addgnupghome
 %attr(755,root,root) %{_libdir}/gnupg/gpg-protect-tool
+%attr(755,root,root) %{_libdir}/gnupg/gpg-preset-passphrase
 %attr(755,root,root) %{_libdir}/gnupg/pcsc-wrapper
 %attr(755,root,root) /etc/profile.d/%{name}-agent.sh
 %attr(755,root,root) /etc/X11/xinit/xinitrc.d/%{name}-agent.sh

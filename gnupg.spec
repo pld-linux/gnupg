@@ -1,6 +1,3 @@
-# TODO:
-# - separate gpg-agent program (maybe used with gnupg 1.2.x)
-# - write dirmngr.spec
 # 
 # Conditional builds:
 # _without_ldap		- without LDAP plugin
@@ -16,7 +13,7 @@ Summary(uk):	GNU Privacy Guard - ×¦ÌØÎÁ ÚÁÍ¦ÎÁ PGP
 Summary(zh_CN):	GPLµÄPGP¼ÓÃÜ³ÌÐò
 Name:		gnupg
 Version:	1.9.1
-Release:	0.1
+Release:	0.2
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/%{name}-%{version}.tar.gz
@@ -39,7 +36,6 @@ BuildRequires:	libksba-devel >= 0.4.6
 BuildRequires:	opensc-devel >= 0.8.0
 #BuildRequires:	libusb-devel >= unreleased yet
 Provides:	pgp
-Obsoletes:	newpg
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -141,6 +137,19 @@ GnuPG plugin for allow talk to a email keyserver.
 Wtyczka GnuPG pozwalaj±ca komunikowaæ siê z e-mailowym serwerem
 kluczy.
 
+%package agent
+Summary:        GnuPG extension - agent                                                
+Summary(pl):    Rozszerzenie GnuPG - agent                                              
+Group:          Applications 
+Requires:	gnupg
+Obsoletes:	newpg
+
+%description agent
+GnuPG extension - agent.
+
+%description agent -l pl
+Rozszerzenie GnuPG - agent.
+
 %prep
 %setup -q
 #%%patch0 -p1
@@ -188,16 +197,24 @@ rm -rf $RPM_BUILD_ROOT
 #-f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README THANKS TODO 
-
-%attr(755,root,root) %{_bindir}/*
-
+%attr(755,root,root) %{_bindir}/gpg
+%attr(755,root,root) %{_bindir}/gpg2
+%attr(755,root,root) %{_bindir}/gpgv2
 %dir %{_libdir}/gnupg
-%attr(755,root,root) %{_libdir}/gnupg/gpg-protect-tool
-
-#%%{_mandir}/man?/*
-%{_infodir}/*info*
 %dir %{_datadir}/gnupg
 %{_datadir}/gnupg/options.skel
+#%%{_mandir}/man?/*
+%{_infodir}/*info*
+
+%files agent
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/gpg-agent
+%attr(755,root,root) %{_bindir}/gpgsm
+%attr(755,root,root) %{_bindir}/kbxutil
+%attr(755,root,root) %{_bindir}/sc-copykeys
+%attr(755,root,root) %{_bindir}/sc-investigate
+%attr(755,root,root) %{_bindir}/scdaemon
+%attr(755,root,root) %{_libdir}/gnupg/gpg-protect-tool
 
 %if 0
 %files plugin-keys_ldap

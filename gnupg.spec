@@ -1,6 +1,7 @@
 # 
 # Conditional builds:
 %bcond_without	ldap	# without LDAP plugin
+%bcond_without	pth	# without pth-based based version of gnupg
 #
 Summary:	GnuPG - GNU Privacy Guard - tool for secure communication and data storage
 Summary(cs):	GNU nástroj pro ¹ifrovanou komunikaci a bezpeèné ukládání dat
@@ -13,7 +14,7 @@ Summary(uk):	GNU Privacy Guard - ×¦ÌØÎÁ ÚÁÍ¦ÎÁ PGP
 Summary(zh_CN):	GPLµÄPGP¼ÓÃÜ³ÌÐò
 Name:		gnupg
 Version:	1.9.7
-Release:	1
+Release:	1.1
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/%{name}-%{version}.tar.gz
@@ -35,7 +36,7 @@ BuildRequires:	pcsc-lite-devel
 #BuildRequires:	libusb-devel >= unreleased yet
 %{?with_ldap:BuildRequires:	openldap-devel}
 BuildRequires:	opensc-devel >= 0.8.0
-BuildRequires:	pth-devel >= 2.0.0
+%{?with_pth:BuildRequires:	pth-devel >= 2.0.0}
 BuildRequires:	texinfo
 BuildRequires:	zlib-devel
 Provides:	pgp
@@ -169,6 +170,7 @@ cp /usr/share/automake/config.sub scripts
 %configure \
 	--with-capabilities \
 	%{!?with_ldap:--disable-ldap} \
+	%{!?with_pth:--disable-threads} \
 %ifarch sparc sparc64
 	--disable-m-guard \
 %else

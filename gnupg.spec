@@ -5,9 +5,9 @@ Release:	1
 Copyright:	GPL
 Group:		Utilities/File
 Group(pl):	Narzêdzia/Pliki
-Source:		ftp://ftp.guug.de/pub/gcrypt/devel/%{name}-%{version}.tar.gz
+Source:		ftp://ftp://ftp.gnupg.org/pub/gcrypt/devel/%{name}-%{version}.tar.gz
 Icon:		gnupg.gif
-URL:		http://www.d.shuttle.de/isil/gnupg/
+URL:		http://www.gnupg.org/
 BuildRequires:	gdbm-devel
 BuildRequires:	zlib-devel
 Provides:	pgp

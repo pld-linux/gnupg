@@ -7,7 +7,7 @@ Summary(ru):	GNU Privacy Guard - свободная замена PGP
 Summary(uk):	GNU Privacy Guard - в╕льна зам╕на PGP
 Name:		gnupg
 Version:	1.0.7
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/pub/gcrypt/gnupg/%{name}-%{version}.tar.gz
@@ -87,9 +87,6 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf AUTHORS ChangeLog NEWS README THANKS TODO \
-	  doc/{DETAILS,FAQ,OpenPGP}
-
 %find_lang %{name}
 
 %clean
@@ -97,7 +94,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc *.gz doc/*.gz
+%doc AUTHORS ChangeLog NEWS README THANKS TODO doc/{DETAILS,FAQ,OpenPGP}
 
 %attr(755,root,root) %{_bindir}/*
 
@@ -105,4 +102,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/gnupg/*
 
 %{_mandir}/man?/*
-%{_datadir}/gnupg
+%dir %{_datadir}/gnupg
+%{_datadir}/gnupg/options.skel

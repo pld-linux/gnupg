@@ -25,7 +25,7 @@ Icon:		gnupg.gif
 URL:		http://www.gnupg.org/
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel >= 0.11.5
-BuildRequires:	libassuan-devel >= 0.6.1
+BuildRequires:	libassuan-devel >= 1:0.6.1
 BuildRequires:	libcap-devel
 BuildRequires:	libgcrypt-devel >= 1.1.90
 BuildRequires:	libgpg-error-devel >= 0.6

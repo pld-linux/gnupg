@@ -12,8 +12,9 @@ Source0:	ftp://ftp.gnupg.org/pub/gcrypt/gnupg/%{name}-%{version}.tar.gz
 Icon:		gnupg.gif
 URL:		http://www.gnupg.org/
 BuildRequires:	gdbm-devel
-BuildRequires:	zlib-devel
 BuildRequires:	libcap-devel
+BuildRequires:	texinfo
+BuildRequires:	zlib-devel
 Provides:	pgp
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -75,6 +76,12 @@ gzip -9nf AUTHORS ChangeLog NEWS README THANKS TODO \
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+
+%postun
+[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc *.gz doc/*.gz
@@ -84,5 +91,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/gnupg
 %attr(755,root,root) %{_libdir}/gnupg/*
 
+%{_infodir}/*
 %{_mandir}/man?/*
 %{_datadir}/gnupg

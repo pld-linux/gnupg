@@ -12,12 +12,12 @@ Summary(ru):	GNU Privacy Guard - Ó×ÏÂÏÄÎÁÑ ÚÁÍÅÎÁ PGP
 Summary(uk):	GNU Privacy Guard - ×¦ÌØÎÁ ÚÁÍ¦ÎÁ PGP
 Summary(zh_CN):	GPLµÄPGP¼ÓÃÜ³ÌÐò
 Name:		gnupg
-Version:	1.2.4
-Release:	4
+Version:	1.2.5
+Release:	1
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/GnuPG/gnupg/%{name}-%{version}.tar.bz2
-# Source0-md5:	16d0b575812060328f8e677b7f0047cc
+# Source0-md5:	e4991e46fde52b216410ef0f485b4217
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pl.po-update.patch
 Patch2:		%{name}-missing-nls.patch
@@ -111,7 +111,7 @@ GnuPG ×¦ÄÐÏ×¦ÄÁ¤ ÓÐÅÃÉÆ¦ËÁÃ¦§ OpenPGP (RFC2440).
 Summary:	GnuPG plugin for allow talk to a LDAP keyserver
 Summary(pl):	Wtyczka GnuPG pozwalaj±ca komunikowaæ siê z serwerem kluczy LDAP
 Group:		Applications/File
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description plugin-keys_ldap
 GnuPG plugin for allow talk to a LDAP keyserver.
@@ -123,7 +123,7 @@ Wtyczka GnuPG pozwalaj±ca komunikowaæ siê z serwerem kluczy LDAP.
 Summary:	GnuPG plugin for allow talk to a email keyserver
 Summary(pl):	Wtyczka GnuPG pozwalaj±ca komunikowaæ siê z e-mailowym serwerem kluczy
 Group:		Applications/File
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description plugin-keys_mailto
 GnuPG plugin for allow talk to a email keyserver.
@@ -139,7 +139,7 @@ kluczy.
 %patch2 -p1
 
 %build
-cp /usr/share/automake/config.sub scripts
+cp -f /usr/share/automake/config.sub scripts
 %configure \
 	--with-capabilities \
 	%{?with_ldap:--enable-ldap} \
@@ -158,8 +158,10 @@ cp /usr/share/automake/config.sub scripts
 %install
 rm -rf $RPM_BUILD_ROOT
 
+# absolute top_builddir is workaround for desync configure+po/Makefile
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT \
+	top_builddir=`pwd`
 
 %find_lang %{name}
 

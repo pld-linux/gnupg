@@ -1,6 +1,6 @@
 Summary:     gpg - GNU Privacy Guard
 Name:        gnupg
-Version:     0.4.4
+Version:     0.4.5
 Release:     1
 Source:      ftp://ftp.guug.de/pub/gcrypt/%{name}-%{version}.tar.gz
 URL:         http://www.d.shuttle.de/isil/crypt/gnupg.html
@@ -19,6 +19,7 @@ handle sensitive data ans therefore has no need to allocate secure memory.
 %setup -q
 
 %build
+LDFLAGS="-s" \
 ./configure \
 	--prefix=/usr \
 	--disable-m-debug \
@@ -29,24 +30,36 @@ make CFLAGS="$RPM_OPT_FLAGS -Wall"
 rm -rf $RPM_BUILD_ROOT
 make install prefix=$RPM_BUILD_ROOT/usr
 
-strip $RPM_BUILD_ROOT/usr/bin/*
+#strip $RPM_BUILD_ROOT/usr/bin/*
+
+rm -f $RPM_BUILD_ROOT/usr/man/man1/gpgm.1
+echo ".so gpg.1" >$RPM_BUILD_ROOT/usr/man/man1/gpgm.1
+gzip -9nf $RPM_BUILD_ROOT/usr/man/man1/*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644, root, root, 755)
-%doc AUTHORS ChangeLog NEWS README THANKS TODO doc/{DETAILS,FAQ,rfcs}
+%doc AUTHORS ChangeLog NEWS README THANKS TODO doc/{DETAILS,FAQ,OpenPGP}
 %attr(755, root, root) /usr/bin/*
 %attr(644, root,  man) /usr/man/man1/*
 %attr(755, root, root) /usr/lib/gnupg
 %lang(de) /usr/share/locale/de/LC_MESSAGES/gnupg.mo
-%lang(en) /usr/share/locale/en/LC_MESSAGES/gnupg.mo
 %lang(es) /usr/share/locale/es*/LC_MESSAGES/gnupg.mo
-%lang(it) /usr/share/locale/it/LC_MESSAGES/gnupg.mo
 %lang(fr) /usr/share/locale/fr/LC_MESSAGES/gnupg.mo
+%lang(it) /usr/share/locale/it/LC_MESSAGES/gnupg.mo
+%lang(pt) /usr/share/locale/pt*/LC_MESSAGES/gnupg.mo
+%lang(ru) /usr/share/locale/ru/LC_MESSAGES/gnupg.mo
 
 %changelog
+* Sat Dec 12 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [0.4.5-1]
+- added gzipping man pages,
+- added using LDFLAGS="-s" to ./configure enviroment,
+- s/rfcs/OpenPGP/ in %doc,
+- added pt* and ru .mo files.
+
 * Mon Sep 21 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [0.4.0-1]
 - first release in rpm package.

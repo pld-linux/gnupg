@@ -24,6 +24,7 @@ Patch2:		%{name}-missing-nls.patch
 Icon:		gnupg.gif
 URL:		http://www.gnupg.org/
 BuildRequires:	automake
+BuildRequires:	bzip2-devel
 BuildRequires:	gettext-devel
 BuildRequires:	libcap-devel
 %{?with_ldap:BuildRequires:	openldap-devel}

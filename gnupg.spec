@@ -48,7 +48,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc {AUTHORS,ChangeLog,NEWS,README,THANKS,TODO,doc/{DETAILS,FAQ,OpenPGP}}.gz
 %attr(755,root,root) /usr/bin/*
 %{_mandir}/man1/*
-%attr(755,root,root) /usr/lib/gnupg
+%attr(755,root,root) %{_libdir}/gnupg
 /usr/share/gnupg
 
 %lang(de)    /usr/share/locale/de/LC_MESSAGES/gnupg.mo

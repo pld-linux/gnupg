@@ -12,12 +12,12 @@ Summary(ru):	GNU Privacy Guard - свободная замена PGP
 Summary(uk):	GNU Privacy Guard - в╕льна зам╕на PGP
 Summary(zh_CN):	GPL╣дPGP╪сцэЁлпР
 Name:		gnupg
-Version:	1.4.0
+Version:	1.4.1
 Release:	1
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/GnuPG/gnupg/%{name}-%{version}.tar.bz2
-# Source0-md5:	8c303606aaf73b7756b9fe6f3d8b58c2
+# Source0-md5:	fdfc5553d0904cd65011e47a42a9532c
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pl.po-update.patch
 Icon:		gnupg.gif
@@ -182,14 +182,17 @@ cp -f /usr/share/automake/config.sub scripts
 	--with-capabilities \
 	%{?with_ldap:--enable-ldap} \
 	%{!?with_ldap:--disable-ldap} \
+	--disable-m-debug \
 %ifarch sparc sparc64
 	--disable-m-guard \
 %else
 	--enable-m-guard \
 %endif
+	--enable-mailto \
 	--without-included-gettext \
-	--disable-m-debug \
 	--with-mailprog=/usr/sbin/sendmail
+
+#	--with-libcurl  -- experimental (curl for http/https/ftp/ftps), disables gpgkeys_http
 
 %{__make}
 
@@ -219,7 +222,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libexecdir}/gnupg
 
 %{_mandir}/man?/*
-%{_infodir}/*info*
+%{_infodir}/*.info*
 %dir %{_datadir}/gnupg
 %{_datadir}/gnupg/options.skel
 

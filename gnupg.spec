@@ -1,22 +1,24 @@
 #
 # Conditional builds:
-#  _without_ldap
+# _without_ldap		- without LDAP plugin
+#
 Summary:	GnuPG - GNU Privacy Guard - tool for secure communication and data storage
 Summary(cs):	GNU nástroj pro ¹ifrovanou komunikaci a bezpeèné ukládání dat
 Summary(es):	Criptografía con llaves públicas (asimétricas). GPL
 Summary(ja):	¥»¥­¥å¥¢¤Ê¥³¥ß¥å¥Ë¥±¡¼¥·¥ç¥ó¤È¥Ç¡¼¥¿ÊÝÂ¸¤Î¤¿¤á¤Î GNU ¥æ¡¼¥Æ¥£¥ê¥Æ¥£¡£
-Summary(pl):	GnuPG - GNU Privacy Guard - narzêdzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych
+Summary(pl):	GnuPG - narzêdzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych
 Summary(pt_BR):	Criptografia com chaves públicas (assimétricas). GPL
 Summary(ru):	GNU Privacy Guard - Ó×ÏÂÏÄÎÁÑ ÚÁÍÅÎÁ PGP
 Summary(uk):	GNU Privacy Guard - ×¦ÌØÎÁ ÚÁÍ¦ÎÁ PGP
 Summary(zh_CN):	GPLµÄPGP¼ÓÃÜ³ÌÐò
 Name:		gnupg
 Version:	1.2.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/GnuPG/gnupg/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-pl.po-update.patch
+Patch1:		%{name}-info.patch
 Icon:		gnupg.gif
 URL:		http://www.gnupg.org/
 BuildRequires:	gdbm-devel
@@ -80,11 +82,11 @@ GnuPG ¤ÏÆÃµö¥¢¥ë¥´¥ê¥º¥à¤Ï»ÈÍÑ¤·¤Æ¤¤¤Ê¤¤¤Î¤Ç¡¢PGP2
 ¤Î¤ß¤òÍÑ¤¤¤Æ¤¤¤Þ¤¹)
 
 %description -l pl
-GnuPG jest narzêdziem do bezpiecznej komunikacji i bezpiecznego
-przechowywania danych. Mo¿e byæ u¿ywany do szyfrowania oraz
-podpisywania danych. Umo¿liwia zaawansowane zarz±dzanie kluczami i
-spe³nia normy zdefiniowane w standardzie OpenPGP, który jest opisany w
-RFC2440.
+GnuPG (GNU Privacy Guard) jest narzêdziem do bezpiecznej komunikacji i
+bezpiecznego przechowywania danych. Mo¿e byæ u¿ywany do szyfrowania
+oraz podpisywania danych. Umo¿liwia zaawansowane zarz±dzanie kluczami
+i spe³nia normy zdefiniowane w standardzie OpenPGP, który jest opisany
+w RFC2440.
 
 %description -l pt_BR
 O GnuPG é um substituto completo e de livre distribuição para o PGP.
@@ -130,6 +132,7 @@ kluczy.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %configure \
@@ -157,6 +160,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post
+[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir %{_infodir} >/dev/null 2>&1
+
+%postun
+[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir %{_infodir} >/dev/null 2>&1
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)

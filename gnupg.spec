@@ -25,6 +25,7 @@ Patch0:		%{name}-info.patch
 #Patch2:		%{name}-missing-nls.patch
 Icon:		gnupg.gif
 URL:		http://www.gnupg.org/
+BuildRequires:	automake
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel >= 0.12.1
 BuildRequires:	libassuan-devel >= 1:0.6.4
@@ -168,8 +169,7 @@ Rozszerzenie GnuPG - agent.
 sed -i 's/osc_get_status/ocsc_get_status/' scd/apdu.c
 
 %build
-cp /usr/share/automake/config.sub scripts 
-
+cp -f /usr/share/automake/config.sub scripts 
 %configure \
 	--with-capabilities \
 	%{!?with_ldap:--disable-ldap} \
@@ -187,14 +187,14 @@ cp /usr/share/automake/config.sub scripts
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_sysconfdir}/{profile.d,X11/xinit/xinitrc.d}
+install -d $RPM_BUILD_ROOT/etc/{profile.d,X11/xinit/xinitrc.d}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 ln -sf gpg2 $RPM_BUILD_ROOT%{_bindir}/gpg
-install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/profile.d/%{name}-agent.sh
-ln -s %{_sysconfdir}/profile.d/%{name}-agent.sh $RPM_BUILD_ROOT%{_sysconfdir}/X11/xinit/xinitrc.d/%{name}-agent.sh 
+install %{SOURCE1} $RPM_BUILD_ROOT/etc/profile.d/%{name}-agent.sh
+ln -s /etc/profile.d/%{name}-agent.sh $RPM_BUILD_ROOT/etc/X11/xinit/xinitrc.d/%{name}-agent.sh 
 
 %find_lang %{name}2
 
@@ -218,7 +218,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/watchgnupg
 %attr(755,root,root) %{_sbindir}/addgnupghome
 %dir %{_libdir}/gnupg
-%attr(755,root,root) %{_libdir}/gnupg/pcsc-wrapper
 %dir %{_datadir}/gnupg
 %{_datadir}/gnupg/options.skel
 #%%{_mandir}/man?/*
@@ -232,8 +231,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/sc-investigate
 %attr(755,root,root) %{_bindir}/scdaemon
 %attr(755,root,root) %{_libdir}/gnupg/gpg-protect-tool
-%attr(755,root,root) %{_sysconfdir}/profile.d/%{name}-agent.sh
-%attr(755,root,root) %{_sysconfdir}/X11/xinit/xinitrc.d/%{name}-agent.sh
+%attr(755,root,root) %{_libdir}/gnupg/pcsc-wrapper
+%attr(755,root,root) /etc/profile.d/%{name}-agent.sh
+%attr(755,root,root) /etc/X11/xinit/xinitrc.d/%{name}-agent.sh
 
 %if 0
 %files plugin-keys_ldap

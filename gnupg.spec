@@ -26,7 +26,6 @@ Patch0:		%{name}-info.patch
 Icon:		gnupg.gif
 URL:		http://www.gnupg.org/
 BuildRequires:	automake
-BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel >= 0.12.1
 BuildRequires:	libassuan-devel >= 1:0.6.6
 BuildRequires:	libcap-devel

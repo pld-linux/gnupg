@@ -1,6 +1,6 @@
 Summary:	gpg - GNU Privacy Guard
 Name:		gnupg
-Version:	1.0.3
+Version:	1.0.4
 Release:	1
 License:	GPL
 Group:		Applications/File
@@ -41,10 +41,8 @@ gettextize --force --copy
 rm -rf $RPM_BUILD_ROOT
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-strip --strip-unneeded $RPM_BUILD_ROOT/%{_libdir}/gnupg/* || :
-
-gzip -9nf {AUTHORS,ChangeLog,NEWS,README,THANKS,TODO,doc/{DETAILS,FAQ,OpenPGP}} \
-	$RPM_BUILD_ROOT%{_mandir}/man1/*
+gzip -9nf AUTHORS ChangeLog NEWS README THANKS TODO \
+	doc/{DETAILS,FAQ,OpenPGP}
 
 %find_lang %{name}
 
@@ -53,7 +51,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc {AUTHORS,ChangeLog,NEWS,README,THANKS,TODO,doc/{DETAILS,FAQ,OpenPGP}}.gz
+%doc *.gz doc/*.gz
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
 %dir %{_libdir}/gnupg

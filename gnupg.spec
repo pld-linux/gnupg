@@ -1,6 +1,6 @@
 # 
 # Conditional builds:
-# _without_ldap		- without LDAP plugin
+%bcond_without	ldap	# without LDAP plugin
 #
 Summary:	GnuPG - GNU Privacy Guard - tool for secure communication and data storage
 Summary(cs):	GNU nástroj pro ¹ifrovanou komunikaci a bezpeèné ukládání dat
@@ -12,30 +12,30 @@ Summary(ru):	GNU Privacy Guard - Ó×ÏÂÏÄÎÁÑ ÚÁÍÅÎÁ PGP
 Summary(uk):	GNU Privacy Guard - ×¦ÌØÎÁ ÚÁÍ¦ÎÁ PGP
 Summary(zh_CN):	GPLµÄPGP¼ÓÃÜ³ÌÐò
 Name:		gnupg
-Version:	1.9.1
-Release:	0.2
+Version:	1.9.2
+Release:	0.1
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/%{name}-%{version}.tar.gz
-# Source0-md5:	0a361ef22441a5e6922206bcb059aaca
-#Patch0:		%{name}-info.patch
+# Source0-md5:	e3847abca686ebe737fe78e8f62d1fdd
+Patch0:		%{name}-info.patch
 #Patch1:		%{name}-pl.po-update.patch
 #Patch2:		%{name}-missing-nls.patch
 Icon:		gnupg.gif
 URL:		http://www.gnupg.org/
 BuildRequires:	gdbm-devel
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-devel >= 0.11.5
+BuildRequires:	libassuan-devel >= 0.6.1
 BuildRequires:	libcap-devel
-%{?!_without_ldap:BuildRequires:	openldap-devel}
+BuildRequires:	libgcrypt-devel >= 1.1.90
+BuildRequires:	libgpg-error-devel >= 0.6
+BuildRequires:	libksba-devel >= 0.9.0
+#BuildRequires:	libusb-devel >= unreleased yet
+%{?with_ldap:BuildRequires:	openldap-devel}
+BuildRequires:	opensc-devel >= 0.8.0
+BuildRequires:	pth-devel >= 2.0.0
 BuildRequires:	texinfo
 BuildRequires:	zlib-devel
-BuildRequires:	libgpg-error-devel >= 0.4
-BuildRequires:	libgcrypt-devel >= 1.1.43
-BuildRequires:	libassuan-devel >= 0.6.0
-BuildRequires:	libksba-devel >= 0.4.6
-BuildRequires:	opensc-devel >= 0.8.0
-#BuildRequires:	libusb-devel >= unreleased yet
-BuildRequires:	pth-devel >= 2.0.0
 Provides:	pgp
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -154,15 +154,14 @@ Rozszerzenie GnuPG - agent.
 
 %prep
 %setup -q
-#%%patch0 -p1
+%patch0 -p1
 #%%patch1 -p1
 #%%patch2 -p1
 
 %build
 %configure \
 	--with-capabilities \
-	%{?!_without_ldap:--enable-ldap} \
-	%{?_without_ldap:--disable-ldap} \
+	%{!?with_ldap:--disable-ldap} \
 %ifarch sparc sparc64
 	--disable-m-guard \
 %else
@@ -170,7 +169,7 @@ Rozszerzenie GnuPG - agent.
 %endif
 	--without-included-gettext \
 	--disable-m-debug \
-	--with-mailprog=/usr/sbin/sendmail
+	--with-mailprog=/usr/lib/sendmail
 
 %{__make}
 
@@ -180,9 +179,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-cd $RPM_BUILD_ROOT%{_bindir}
-ln -s gpg2 gpg
-cd -
+ln -sf gpg2 $RPM_BUILD_ROOT%{_bindir}/gpg
 
 #%%find_lang %{name}
 

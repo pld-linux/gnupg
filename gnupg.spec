@@ -35,7 +35,7 @@ LDFLAGS="-s"; export LDFLAGS
 	--without-included-gettext \
 	--disable-m-debug \
 	--disable-m-guard
-make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT

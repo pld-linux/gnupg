@@ -45,7 +45,11 @@ autoconf
 automake -a -c --no-force
 %configure \
 	--with-capabilities \
+%ifarch sparc sparc64
+	--disable-m-guard \
+%else
 	--enable-m-guard \
+%endif
 	--without-included-gettext \
 	--disable-m-debug
 %{__make}

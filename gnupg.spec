@@ -12,12 +12,12 @@ Summary(ru):	GNU Privacy Guard - Ó×ÏÂÏÄÎÁÑ ÚÁÍÅÎÁ PGP
 Summary(uk):	GNU Privacy Guard - ×¦ÌØÎÁ ÚÁÍ¦ÎÁ PGP
 Summary(zh_CN):	GPLµÄPGP¼ÓÃÜ³ÌĞò
 Name:		gnupg
-Version:	1.9.6
-Release:	0.2
+Version:	1.9.7
+Release:	1
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/%{name}-%{version}.tar.gz
-# Source0-md5:	69a8be8f0d236df96f948348f6fda162
+# Source0-md5:	9bee7fe855b14cba433af5273963d4f5
 Source1:	%{name}-agent.sh
 Patch0:		%{name}-info.patch
 #Patch1:		%{name}-pl.po-update.patch
@@ -30,7 +30,7 @@ BuildRequires:	libassuan-devel >= 1:0.6.4
 BuildRequires:	libcap-devel
 BuildRequires:	libgcrypt-devel >= 1.1.93
 BuildRequires:	libgpg-error-devel >= 0.6
-BuildRequires:	libksba-devel >= 0.9.4
+BuildRequires:	libksba-devel >= 0.9.5
 BuildRequires:	pcsc-lite-devel
 #BuildRequires:	libusb-devel >= unreleased yet
 %{?with_ldap:BuildRequires:	openldap-devel}

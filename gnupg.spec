@@ -12,12 +12,12 @@ Summary(ru):	GNU Privacy Guard - Ó×ÏÂÏÄÎÁÑ ÚÁÍÅÎÁ PGP
 Summary(uk):	GNU Privacy Guard - ×¦ÌØÎÁ ÚÁÍ¦ÎÁ PGP
 Summary(zh_CN):	GPLµÄPGP¼ÓÃÜ³ÌÐò
 Name:		gnupg
-Version:	1.9.4
+Version:	1.9.5
 Release:	0.1
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/%{name}-%{version}.tar.bz2
-# Source0-md5:	fcfdcf31b2a031f97be18585a3f51b25
+# Source0-md5:	0fb5ca78dbb9569ac495d3049269fab3
 Patch0:		%{name}-info.patch
 #Patch1:		%{name}-pl.po-update.patch
 #Patch2:		%{name}-missing-nls.patch
@@ -25,11 +25,11 @@ Icon:		gnupg.gif
 URL:		http://www.gnupg.org/
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel >= 0.12.1
-BuildRequires:	libassuan-devel >= 1:0.6.3
+BuildRequires:	libassuan-devel >= 1:0.6.4
 BuildRequires:	libcap-devel
-BuildRequires:	libgcrypt-devel >= 1.1.91
+BuildRequires:	libgcrypt-devel >= 1.1.92
 BuildRequires:	libgpg-error-devel >= 0.6
-BuildRequires:	libksba-devel >= 0.9.3
+BuildRequires:	libksba-devel >= 0.9.4
 BuildRequires:	pcsc-lite-devel
 #BuildRequires:	libusb-devel >= unreleased yet
 %{?with_ldap:BuildRequires:	openldap-devel}
@@ -39,6 +39,8 @@ BuildRequires:	texinfo
 BuildRequires:	zlib-devel
 Provides:	pgp
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		_libexecdir	%{_libdir}/gnupg
 
 %description
 GnuPG is GNU's tool for secure communication and data storage. It can
@@ -118,7 +120,7 @@ GnuPG ×¦ÄÐÏ×¦ÄÁ¤ ÓÐÅÃÉÆ¦ËÁÃ¦§ OpenPGP (RFC2440).
 Summary:	GnuPG plugin for allow talk to a LDAP keyserver
 Summary(pl):	Wtyczka GnuPG pozwalaj±ca komunikowaæ siê z serwerem kluczy LDAP
 Group:		Applications/File
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description plugin-keys_ldap
 GnuPG plugin for allow talk to a LDAP keyserver.
@@ -130,7 +132,7 @@ Wtyczka GnuPG pozwalaj±ca komunikowaæ siê z serwerem kluczy LDAP.
 Summary:	GnuPG plugin for allow talk to a email keyserver
 Summary(pl):	Wtyczka GnuPG pozwalaj±ca komunikowaæ siê z e-mailowym serwerem kluczy
 Group:		Applications/File
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description plugin-keys_mailto
 GnuPG plugin for allow talk to a email keyserver.
@@ -143,7 +145,7 @@ kluczy.
 Summary:        GnuPG extension - agent                                                
 Summary(pl):    Rozszerzenie GnuPG - agent                                              
 Group:          Applications 
-Requires:	gnupg
+Requires:	%{name} = %{version}-%{release}
 Requires:	pinentry
 Obsoletes:	newpg
 
@@ -201,6 +203,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/gpg2
 %attr(755,root,root) %{_bindir}/gpgv2
 %attr(755,root,root) %{_bindir}/gpgconf
+%attr(755,root,root) %{_bindir}/watchgnupg
 %attr(755,root,root) %{_sbindir}/addgnupghome
 %dir %{_libdir}/gnupg
 %dir %{_datadir}/gnupg

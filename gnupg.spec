@@ -6,7 +6,6 @@ Copyright:	GPL
 Group:		Utilities/File
 Group(pl):	Narzêdzia/Pliki
 Source:		ftp://ftp.guug.de/pub/gcrypt/%{name}-%{version}.tar.gz
-Patch:		gnupg.patch
 Icon:		gnupg.gif
 URL:		http://www.d.shuttle.de/isil/gnupg/
 BuildPrereq:	gdbm-devel
@@ -21,13 +20,10 @@ handle sensitive data ans therefore has no need to allocate secure memory.
 
 %prep
 %setup -q
-%patch -p1
 
 %build
 gettextize --force --copy
-autoconf
 %configure \
-	--prefix=%{_prefix} \
 	--without-included-gettext \
 	--disable-m-debug \
 	--disable-m-guard

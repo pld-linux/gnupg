@@ -18,6 +18,7 @@ if grep -q "^use-agent" ${CFG} 2>/dev/null; then
 	if [ -n "$DISPLAY" -a "$X11" = "yes" ] || [ -z "$DISPLAY" -a "$X11" = "no" ]; then
 	    eval "$(gpg-agent --daemon)"
 	    echo $GPG_AGENT_INFO > ~/.gnupg/GPG_AGENT_INFO
+	    export GPG_AGENT_INFO
 	fi
     fi
 fi

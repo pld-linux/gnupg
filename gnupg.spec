@@ -1,6 +1,6 @@
 Summary:	gpg - GNU Privacy Guard
 Name:		gnupg
-Version:	1.0.2
+Version:	1.0.3
 Release:	1
 License:	GPL
 Group:		Utilities/File

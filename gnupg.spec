@@ -62,7 +62,7 @@ rm -rf $RPM_BUILD_ROOT
 %changelog
 * Fri May  7 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [0.9.6-1]
-- naw package is FHS 2.0 compliat.
+- naw package is FHS 2.0 compliant.
 
 * Fri Mar 19 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [0.9.5-1]

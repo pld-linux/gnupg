@@ -1,3 +1,6 @@
+#
+# Conditional builds:
+#  _without_ldap
 Summary:	GnuPG - GNU Privacy Guard - tool for secure communication and data storage
 Summary(cs):	GNU nástroj pro ¹ifrovanou komunikaci a bezpeèné ukládání dat
 Summary(es):	Criptografía con llaves públicas (asimétricas). GPL
@@ -19,7 +22,7 @@ URL:		http://www.gnupg.org/
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel
 BuildRequires:	libcap-devel
-BuildRequires:	openldap-devel
+%{?!_without_ldap:BuildRequires:	openldap-devel}
 BuildRequires:	texinfo
 BuildRequires:	zlib-devel
 Provides:	pgp
@@ -131,7 +134,8 @@ kluczy.
 %build
 %configure \
 	--with-capabilities \
-	--enable-ldap \
+	%{?!_without_ldap:--enable-ldap} \
+	%{?_without_ldap:--disable-ldap} \
 %ifarch sparc sparc64
 	--disable-m-guard \
 %else
@@ -161,12 +165,15 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/gnupg
 
 %{_mandir}/man?/*
+%{_infodir}/*info*
 %dir %{_datadir}/gnupg
 %{_datadir}/gnupg/options.skel
 
+%if %{?!_without_ldap:1}0
 %files plugin-keys_ldap
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/gnupg/gpgkeys_ldap
+%endif
 
 #%files plugin-keys_mailto
 #%defattr(644,root,root,755)

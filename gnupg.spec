@@ -193,7 +193,7 @@ ln -sf gpg2 $RPM_BUILD_ROOT%{_bindir}/gpg
 install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/profile.d/%{name}-agent.sh
 ln -s %{_sysconfdir}/profile.d/%{name}-agent.sh $RPM_BUILD_ROOT%{_sysconfdir}/X11/xinit/xinitrc.d/%{name}-agent.sh 
 
-#%%find_lang %{name}
+%find_lang %{name}2
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -204,8 +204,7 @@ rm -rf $RPM_BUILD_ROOT
 %postun
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir %{_infodir} >/dev/null 2>&1
 
-%files
-#-f %{name}.lang
+%files -f %{name}2.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README THANKS TODO 
 %attr(755,root,root) %{_bindir}/gpg

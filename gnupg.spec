@@ -1,17 +1,17 @@
 Summary:     gpg - GNU Privacy Guard
 Name:        gnupg
-Version:     0.9.0
+Version:     0.9.5
 Release:     1
-Source:      ftp://ftp.guug.de/pub/gcrypt/%{name}-%{version}.tar.gz
-URL:         http://www.d.shuttle.de/isil/crypt/gnupg.html
-Icon:        keyhole.gif
 Copyright:   GPL
-Provides:    pgp
 Group:       Utilities/File
+Source:      ftp://ftp.guug.de/pub/gcrypt/%{name}-%{version}.tar.gz
+Icon:        gnupg.gif
+URL:         http://www.d.shuttle.de/isil/crypt/gnupg.html
+Provides:    pgp
 BuildRoot:   /tmp/%{name}-%{version}-root
 
 %description
-gpg is the main program for the GNUPG system. gpgm is a maintenance tool
+GPG is the main program for the GNUPG system. gpgm is a maintenance tool
 which has some commands gpgm does not have; it is there because it does not
 handle sensitive data ans therefore has no need to allocate secure memory.
 
@@ -19,41 +19,49 @@ handle sensitive data ans therefore has no need to allocate secure memory.
 %setup -q
 
 %build
-LDFLAGS="-s" \
+LDFLAGS="-s" CFLAGS="$RPM_OPT_FLAGS" \
 ./configure \
 	--prefix=/usr \
 	--disable-m-debug \
 	--disable-m-guard
-make CFLAGS="$RPM_OPT_FLAGS -Wall"
+make
 
 %install
 rm -rf $RPM_BUILD_ROOT
 make install prefix=$RPM_BUILD_ROOT/usr
 
-#strip $RPM_BUILD_ROOT/usr/bin/*
-
 rm -f $RPM_BUILD_ROOT/usr/man/man1/gpgm.1
 echo ".so gpg.1" >$RPM_BUILD_ROOT/usr/man/man1/gpgm.1
-gzip -9nf $RPM_BUILD_ROOT/usr/man/man1/*
+
+gzip -9nf $RPM_BUILD_ROOT/usr/man/man1/* \
+	{AUTHORS,ChangeLog,NEWS,README,THANKS,TODO,doc/{DETAILS,FAQ,OpenPGP}}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644, root, root, 755)
-%doc AUTHORS ChangeLog NEWS README THANKS TODO doc/{DETAILS,FAQ,OpenPGP}
-%attr(755, root, root) /usr/bin/*
-%attr(644, root,  man) /usr/man/man1/*
-%attr(755, root, root) /usr/lib/gnupg
+%doc {AUTHORS,ChangeLog,NEWS,README,THANKS,TODO,doc/{DETAILS,FAQ,OpenPGP}}.gz
+%attr(755,root,root) /usr/bin/*
+/usr/man/man1/*
+%attr(755,root,root,755) /usr/lib/gnupg
 /usr/share/gnupg
-%lang(de) /usr/share/locale/de/LC_MESSAGES/gnupg.mo
-%lang(es) /usr/share/locale/es*/LC_MESSAGES/gnupg.mo
-%lang(fr) /usr/share/locale/fr/LC_MESSAGES/gnupg.mo
-%lang(it) /usr/share/locale/it/LC_MESSAGES/gnupg.mo
-%lang(pt) /usr/share/locale/pt*/LC_MESSAGES/gnupg.mo
-%lang(ru) /usr/share/locale/ru/LC_MESSAGES/gnupg.mo
+
+%lang(de)    /usr/share/locale/de/LC_MESSAGES/gnupg.mo
+%lang(es_ES) /usr/share/locale/es_ES/LC_MESSAGES/gnupg.mo
+%lang(fr)    /usr/share/locale/fr/LC_MESSAGES/gnupg.mo
+%lang(it)    /usr/share/locale/it/LC_MESSAGES/gnupg.mo
+%lang(pl)    /usr/share/locale/pl/LC_MESSAGES/gnupg.mo
+%lang(pt_BR) /usr/share/locale/pt_BR/LC_MESSAGES/gnupg.mo
+%lang(ru)    /usr/share/locale/ru/LC_MESSAGES/gnupg.mo
 
 %changelog
+* Fri Mar 19 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [0.9.5-1]
+- removed man group from man pages,
+- added gzipping %doc,
+- added pl locale.
+
 * Mon Dec 21 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [0.9.0-1]
 - added /usr/share/gnupg.

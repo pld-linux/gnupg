@@ -13,7 +13,7 @@ Summary(ru):	GNU Privacy Guard - свободная замена PGP
 Summary(uk):	GNU Privacy Guard - в╕льна зам╕на PGP
 Summary(zh_CN):	GPL╣дPGP╪сцэЁлпР
 Name:		gnupg
-Version:	1.9.14
+Version:	1.9.15
 Release:	1
 License:	GPL
 Group:		Applications/File

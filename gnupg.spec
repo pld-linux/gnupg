@@ -13,12 +13,12 @@ Summary(ru):	GNU Privacy Guard - свободная замена PGP
 Summary(uk):	GNU Privacy Guard - в╕льна зам╕на PGP
 Summary(zh_CN):	GPL╣дPGP╪сцэЁлпР
 Name:		gnupg
-Version:	1.9.10
+Version:	1.9.11
 Release:	1
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/%{name}-%{version}.tar.gz
-# Source0-md5:	d923cfe0921898fbeb66374a0e32ddc6
+# Source0-md5:	33134af66b983c29984eeab8681a9f10
 Source1:	%{name}-agent.sh
 Patch0:		%{name}-info.patch
 #Patch1:		%{name}-pl.po-update.patch
@@ -215,7 +215,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_sbindir}/addgnupghome
 %dir %{_libdir}/gnupg
 %dir %{_datadir}/gnupg
-%{_datadir}/gnupg/options.skel
+%{_datadir}/gnupg/gpg-conf.skel
 #%%{_mandir}/man?/*
 %{_infodir}/*info*
 

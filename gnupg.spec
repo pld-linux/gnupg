@@ -1,4 +1,7 @@
-#
+# TODO:
+# - separate gpg-agent program (maybe used with gnupg 1.2.x)
+# - write dirmngr.spec
+# 
 # Conditional builds:
 # _without_ldap		- without LDAP plugin
 #
@@ -12,15 +15,15 @@ Summary(ru):	GNU Privacy Guard - Ó×ÏÂÏÄÎÁÑ ÚÁÍÅÎÁ PGP
 Summary(uk):	GNU Privacy Guard - ×¦ÌØÎÁ ÚÁÍ¦ÎÁ PGP
 Summary(zh_CN):	GPLµÄPGP¼ÓÃÜ³ÌÐò
 Name:		gnupg
-Version:	1.2.3
+Version:	1.9.1
 Release:	0.1
 License:	GPL
 Group:		Applications/File
-Source0:	ftp://ftp.gnupg.org/GnuPG/gnupg/%{name}-%{version}.tar.bz2
-# Source0-md5:	cdca1282d7901f9ddb52f9725b001af2
-Patch0:		%{name}-info.patch
-Patch1:		%{name}-pl.po-update.patch
-Patch2:		%{name}-missing-nls.patch
+Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/%{name}-%{version}.tar.gz
+# Source0-md5:	0a361ef22441a5e6922206bcb059aaca
+#Patch0:		%{name}-info.patch
+#Patch1:		%{name}-pl.po-update.patch
+#Patch2:		%{name}-missing-nls.patch
 Icon:		gnupg.gif
 URL:		http://www.gnupg.org/
 BuildRequires:	gdbm-devel
@@ -29,7 +32,14 @@ BuildRequires:	libcap-devel
 %{?!_without_ldap:BuildRequires:	openldap-devel}
 BuildRequires:	texinfo
 BuildRequires:	zlib-devel
+BuildRequires:	libgpg-error-devel >= 0.4
+BuildRequires:	libgcrypt-devel >= 1.1.43
+BuildRequires:	libassuan-devel >= 0.6.0
+BuildRequires:	libksba-devel >= 0.4.6
+BuildRequires:	opensc-devel >= 0.8.0
+#BuildRequires:	libusb-devel >= unreleased yet
 Provides:	pgp
+Obsoletes:	newpg
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -133,9 +143,9 @@ kluczy.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
-%patch2 -p1
+#%%patch0 -p1
+#%%patch1 -p1
+#%%patch2 -p1
 
 %build
 %configure \
@@ -159,7 +169,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%find_lang %{name}
+#%%find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -170,25 +180,27 @@ rm -rf $RPM_BUILD_ROOT
 %postun
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir %{_infodir} >/dev/null 2>&1
 
-%files -f %{name}.lang
+%files
+#-f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README THANKS TODO doc/{DETAILS,FAQ,OpenPGP}
+%doc AUTHORS ChangeLog NEWS README THANKS TODO 
 
 %attr(755,root,root) %{_bindir}/*
 
 %dir %{_libdir}/gnupg
+%attr(755,root,root) %{_libdir}/gnupg/gpg-protect-tool
 
-%{_mandir}/man?/*
+#%%{_mandir}/man?/*
 %{_infodir}/*info*
 %dir %{_datadir}/gnupg
 %{_datadir}/gnupg/options.skel
 
-%if %{?!_without_ldap:1}0
+%if 0
 %files plugin-keys_ldap
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/gnupg/gpgkeys_ldap
-%endif
 
 %files plugin-keys_mailto
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/gnupg/gpgkeys_mailto
+%endif

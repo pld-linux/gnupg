@@ -13,12 +13,12 @@ Summary(ru):	GNU Privacy Guard - свободная замена PGP
 Summary(uk):	GNU Privacy Guard - в╕льна зам╕на PGP
 Summary(zh_CN):	GPL╣дPGP╪сцэЁлпР
 Name:		gnupg
-Version:	1.9.11
+Version:	1.9.12
 Release:	1
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/%{name}-%{version}.tar.gz
-# Source0-md5:	33134af66b983c29984eeab8681a9f10
+# Source0-md5:	e3449f448c32827d61eaec63fc84d7ce
 Source1:	%{name}-agent.sh
 Patch0:		%{name}-info.patch
 #Patch1:		%{name}-pl.po-update.patch
@@ -210,6 +210,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/gpg2
 %attr(755,root,root) %{_bindir}/gpgconf
 %attr(755,root,root) %{_bindir}/gpgsm
+%attr(755,root,root) %{_bindir}/gpgsm-gencert.sh
 %attr(755,root,root) %{_bindir}/gpgv2
 %attr(755,root,root) %{_bindir}/watchgnupg
 %attr(755,root,root) %{_sbindir}/addgnupghome
@@ -224,7 +225,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/gpg-agent
 %attr(755,root,root) %{_bindir}/kbxutil
 %attr(755,root,root) %{_bindir}/sc-copykeys
-%attr(755,root,root) %{_bindir}/sc-investigate
 %attr(755,root,root) %{_bindir}/scdaemon
 %attr(755,root,root) %{_libdir}/gnupg/gpg-protect-tool
 %attr(755,root,root) %{_libdir}/gnupg/pcsc-wrapper

@@ -7,11 +7,12 @@ Summary(ru):	GNU Privacy Guard - свободная замена PGP
 Summary(uk):	GNU Privacy Guard - в╕льна зам╕на PGP
 Name:		gnupg
 Version:	1.0.7
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/pub/gcrypt/gnupg/%{name}-%{version}.tar.gz
 Icon:		gnupg.gif
+Patch0:		%{name}-shm.patch
 URL:		http://www.gnupg.org/
 BuildRequires:	gdbm-devel
 BuildRequires:	libcap-devel
@@ -67,6 +68,7 @@ GnuPG в╕дпов╕да╓ специф╕кац╕╖ OpenPGP (RFC2440).
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %configure \

@@ -9,10 +9,11 @@ Summary(uk):	GNU Privacy Guard - в╕льна зам╕на PGP
 Summary(zh_CN):	GPL╣дPGP╪сцэЁлпР
 Name:		gnupg
 Version:	1.2.0
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/GnuPG/gnupg/%{name}-%{version}.tar.bz2
+Patch0:		%{name}-pl.po-UTF-8.patch
 Icon:		gnupg.gif
 URL:		http://www.gnupg.org/
 BuildRequires:	gdbm-devel
@@ -97,8 +98,25 @@ GnuPG ╓ повною та в╕льною зам╕ною PGP. В╕н не використову╓ н╕ IDEA,
 ан╕ RSA, так що на його застосування не наклада╓ться н╕яких обмежень.
 GnuPG в╕дпов╕да╓ специф╕кац╕╖ OpenPGP (RFC2440).
 
+%package plugin-keys_ldap
+Summary:	GnuPG plugin for allow talk to a LDAP keyserver
+Group:		Applications/File
+Requires:	%{name} = %{version}
+
+%description plugin-keys_ldap
+GnuPG plugin for allow talk to a LDAP keyserver.
+
+%package plugin-keys_mailto
+Summary:	GnuPG plugin for allow talk to a email keyserver
+Group:		Applications/File
+Requires:	%{name} = %{version}
+
+%description plugin-keys_mailto
+GnuPG plugin for allow talk to a email keyserver.
+
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %configure \
@@ -131,8 +149,15 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 
 %dir %{_libdir}/gnupg
-%attr(755,root,root) %{_libdir}/gnupg/*
 
 %{_mandir}/man?/*
 %dir %{_datadir}/gnupg
 %{_datadir}/gnupg/options.skel
+
+%files plugin-keys_ldap
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/gnupg/gpgkeys_ldap
+
+#%files plugin-keys_mailto
+#%defattr(644,root,root,755)
+#%attr(755,root,root) %{_libdir}/gnupg/gpgkeys_mailto

@@ -10,7 +10,7 @@ Version:	1.2.0
 Release:	1
 License:	GPL
 Group:		Applications/File
-Source0:	ftp://ftp.gnupg.org/GnuPG/gnupg/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.gnupg.org/GnuPG/gnupg/%{name}-%{version}.tar.bz2
 Icon:		gnupg.gif
 URL:		http://www.gnupg.org/
 BuildRequires:	gdbm-devel

@@ -13,12 +13,12 @@ Summary(ru):	GNU Privacy Guard - Ó×ÏÂÏÄÎÁÑ ÚÁÍÅÎÁ PGP
 Summary(uk):	GNU Privacy Guard - ×¦ÌØÎÁ ÚÁÍ¦ÎÁ PGP
 Summary(zh_CN):	GPLµÄPGP¼ÓÃÜ³ÌĞò
 Name:		gnupg
-Version:	1.9.8
+Version:	1.9.9
 Release:	1
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/%{name}-%{version}.tar.gz
-# Source0-md5:	30ca9f999a3eeb5b933c3a6b91afa707
+# Source0-md5:	341ad5902e65afc63e56626832faa2c1
 Source1:	%{name}-agent.sh
 Patch0:		%{name}-info.patch
 #Patch1:		%{name}-pl.po-update.patch
@@ -28,11 +28,11 @@ URL:		http://www.gnupg.org/
 BuildRequires:	automake
 BuildRequires:	gdbm-devel
 BuildRequires:	gettext-devel >= 0.12.1
-BuildRequires:	libassuan-devel >= 1:0.6.4
+BuildRequires:	libassuan-devel >= 1:0.6.6
 BuildRequires:	libcap-devel
-BuildRequires:	libgcrypt-devel >= 1.1.93
-BuildRequires:	libgpg-error-devel >= 0.6
-BuildRequires:	libksba-devel >= 0.9.5
+BuildRequires:	libgcrypt-devel >= 1.2.0
+BuildRequires:	libgpg-error-devel >= 0.7
+BuildRequires:	libksba-devel >= 0.9.7
 BuildRequires:	pcsc-lite-devel
 #BuildRequires:	libusb-devel >= unreleased yet
 %{?with_ldap:BuildRequires:	openldap-devel}

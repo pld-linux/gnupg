@@ -1,0 +1,11 @@
+--- gnupg-1.0.5/po/es_ES.po~	Mon Apr 30 11:12:35 2001
++++ gnupg-1.0.5/po/es_ES.po	Mon Apr 30 11:14:55 2001
+@@ -1961,7 +1961,7 @@
+ #: g10/import.c:815
+ #, c-format
+ msgid "key %08lX: invalid subkey binding\n"
+-msgstr "clave %08lX.%lu: unión de subclave no válida\n"
++msgstr "clave %08lX: unión de subclave no válida\n"
+ 
+ #: g10/import.c:842
+ #, c-format

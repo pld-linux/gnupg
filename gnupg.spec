@@ -3,10 +3,10 @@ Name:		gnupg
 Version:	1.0.3
 Release:	1
 License:	GPL
-Group:		Utilities/File
-Group(pl):	Narzêdzia/Pliki
+Group:		Applications/File
+Group(de):	Applikationen/Datei
+Group(pl):	Aplikacje/Pliki
 Source0:	ftp://ftp.gnupg.org/pub/gcrypt/gnupg/%{name}-%{version}.tar.gz
-Source1:	gpg.1
 Icon:		gnupg.gif
 URL:		http://www.gnupg.org/
 BuildRequires:	gdbm-devel
@@ -31,7 +31,6 @@ Guard, odpowiednik programu Pretty Good Privacy na licencji GNU).
 
 %build
 gettextize --force --copy
-LDFLAGS="-s"; export LDFLAGS
 %configure \
 	--without-included-gettext \
 	--disable-m-debug \
@@ -44,10 +43,8 @@ rm -rf $RPM_BUILD_ROOT
 
 strip --strip-unneeded $RPM_BUILD_ROOT/%{_libdir}/gnupg/* || :
 
-install %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/man1/
-
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* \
-	{AUTHORS,ChangeLog,NEWS,README,THANKS,TODO,doc/{DETAILS,FAQ,OpenPGP}}
+gzip -9nf {AUTHORS,ChangeLog,NEWS,README,THANKS,TODO,doc/{DETAILS,FAQ,OpenPGP}} \
+	$RPM_BUILD_ROOT%{_mandir}/man1/*
 
 %find_lang %{name}
 

@@ -5,7 +5,7 @@ Summary(pt_BR):	Criptografia com chaves públicas (assimétricas). GPL
 Summary(es):	Criptografía con llaves públicas (asimétricas). GPL
 Name:		gnupg
 Version:	1.0.6
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications/File
 Group(de):	Applikationen/Datei
@@ -18,11 +18,11 @@ Icon:		gnupg.gif
 URL:		http://www.gnupg.org/
 BuildRequires:	gdbm-devel
 BuildRequires:	zlib-devel
-BuildRequires:	gettext-devel
+#BuildRequires:	gettext-devel
 BuildRequires:	libcap-devel
-BuildRequires:	libtool
-BuildRequires:	automake
-BuildRequires:	autoconf
+#BuildRequires:	libtool
+#BuildRequires:	automake
+#BuildRequires:	autoconf
 Provides:	pgp
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -61,11 +61,11 @@ acuerdo con el borrador (draft) OpenPGP.
 %patch2 -p1
 
 %build
-rm scripts/missing
-gettextize --force --copy
-aclocal 
+#rm scripts/missing
+#gettextize --force --copy
+#aclocal 
 #autoconf
-automake -a -c --no-force
+#automake -a -c --no-force
 %configure2_13 \
 	--with-capabilities \
 %ifarch sparc sparc64

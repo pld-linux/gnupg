@@ -12,24 +12,24 @@ Summary(ru):	GNU Privacy Guard - Ó×ÏÂÏÄÎÁÑ ÚÁÍÅÎÁ PGP
 Summary(uk):	GNU Privacy Guard - ×¦ÌØÎÁ ÚÁÍ¦ÎÁ PGP
 Summary(zh_CN):	GPLµÄPGP¼ÓÃÜ³ÌÐò
 Name:		gnupg
-Version:	1.9.3
+Version:	1.9.4
 Release:	0.1
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/gcrypt/alpha/gnupg/%{name}-%{version}.tar.bz2
-# Source0-md5:	27816403b68ee4fc85ea22cac2354024
+# Source0-md5:	fcfdcf31b2a031f97be18585a3f51b25
 Patch0:		%{name}-info.patch
 #Patch1:		%{name}-pl.po-update.patch
 #Patch2:		%{name}-missing-nls.patch
 Icon:		gnupg.gif
 URL:		http://www.gnupg.org/
 BuildRequires:	gdbm-devel
-BuildRequires:	gettext-devel >= 0.11.5
-BuildRequires:	libassuan-devel >= 1:0.6.2
+BuildRequires:	gettext-devel >= 0.12.1
+BuildRequires:	libassuan-devel >= 1:0.6.3
 BuildRequires:	libcap-devel
 BuildRequires:	libgcrypt-devel >= 1.1.91
 BuildRequires:	libgpg-error-devel >= 0.6
-BuildRequires:	libksba-devel >= 0.9.1
+BuildRequires:	libksba-devel >= 0.9.3
 #BuildRequires:	libusb-devel >= unreleased yet
 %{?with_ldap:BuildRequires:	openldap-devel}
 BuildRequires:	opensc-devel >= 0.8.0
@@ -199,6 +199,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/gpg
 %attr(755,root,root) %{_bindir}/gpg2
 %attr(755,root,root) %{_bindir}/gpgv2
+%attr(755,root,root) %{_bindir}/gpgconf
+%attr(755,root,root) %{_sbindir}/addgnupghome
 %dir %{_libdir}/gnupg
 %dir %{_datadir}/gnupg
 %{_datadir}/gnupg/options.skel

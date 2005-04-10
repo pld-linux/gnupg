@@ -124,7 +124,7 @@ Wtyczka GnuPG pozwalaj±ca komunikowaæ siê z serwerem kluczy FINGER.
 Summary:	GnuPG plugin for allow talk to a HKP keyserver
 Summary(pl):	Wtyczka GnuPG pozwalaj±ca komunikowaæ siê z serwerem kluczy HKP
 Group:		Applications/File
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name} >= %{version}-%{release}
 
 %description plugin-keys_hkp
 GnuPG plugin for allow talk to a HKP keyserver.

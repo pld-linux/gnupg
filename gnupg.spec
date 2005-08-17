@@ -12,12 +12,12 @@ Summary(ru):	GNU Privacy Guard - свободная замена PGP
 Summary(uk):	GNU Privacy Guard - в╕льна зам╕на PGP
 Summary(zh_CN):	GPL╣дPGP╪сцэЁлпР
 Name:		gnupg
-Version:	1.4.1
+Version:	1.4.2
 Release:	1
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/GnuPG/gnupg/%{name}-%{version}.tar.bz2
-# Source0-md5:	fdfc5553d0904cd65011e47a42a9532c
+# Source0-md5:	c7afd50c7d01fcfada229326b3958404
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pl.po-update.patch
 Icon:		gnupg.gif

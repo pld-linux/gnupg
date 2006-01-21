@@ -20,7 +20,6 @@ Source0:	ftp://ftp.gnupg.org/GnuPG/gnupg/%{name}-%{version}.tar.bz2
 # Source0-md5:	c7afd50c7d01fcfada229326b3958404
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pl.po-update.patch
-Icon:		gnupg.gif
 URL:		http://www.gnupg.org/
 BuildRequires:	automake
 BuildRequires:	bzip2-devel

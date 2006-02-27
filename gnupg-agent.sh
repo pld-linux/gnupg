@@ -22,3 +22,6 @@ if grep -q "^[[:blank:]]*use-agent" ${CFG} 2>/dev/null; then
 	fi
     fi
 fi
+unset X11
+unset CFG
+unset pid

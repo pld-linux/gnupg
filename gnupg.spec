@@ -12,17 +12,19 @@ Summary(ru):	GNU Privacy Guard - Ó×ÏÂÏÄÎÁÑ ÚÁÍÅÎÁ PGP
 Summary(uk):	GNU Privacy Guard - ×¦ÌØÎÁ ÚÁÍ¦ÎÁ PGP
 Summary(zh_CN):	GPLµÄPGP¼ÓÃÜ³ÌĞò
 Name:		gnupg
-Version:	1.4.2.2
+Version:	1.4.3
 Release:	1
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/GnuPG/gnupg/%{name}-%{version}.tar.bz2
-# Source0-md5:	c34736eb7cb687f9e5b6d4df48aaf7c8
+# Source0-md5:	d237d8fe1c4afa379f56dbda0e0b40e4
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pl.po-update.patch
+Patch2:		%{name}-fix.patch
 URL:		http://www.gnupg.org/
 BuildRequires:	automake
 BuildRequires:	bzip2-devel
+BuildRequires:	curl-devel
 BuildRequires:	gettext-devel
 BuildRequires:	libcap-devel
 BuildRequires:	libusb-devel
@@ -107,6 +109,20 @@ GnuPG ¤ ĞÏ×ÎÏÀ ÔÁ ×¦ÌØÎÏÀ ÚÁÍ¦ÎÏÀ PGP. ÷¦Î ÎÅ ×ÉËÏÒÉÓÔÏ×Õ¤ Î¦ IDEA,
 ÁÎ¦ RSA, ÔÁË İÏ ÎÁ ÊÏÇÏ ÚÁÓÔÏÓÕ×ÁÎÎÑ ÎÅ ÎÁËÌÁÄÁ¤ÔØÓÑ Î¦ÑËÉÈ ÏÂÍÅÖÅÎØ.
 GnuPG ×¦ÄĞÏ×¦ÄÁ¤ ÓĞÅÃÉÆ¦ËÁÃ¦§ OpenPGP (RFC2440).
 
+%package plugin-keys_curl
+Summary:	GnuPG plugin for allow talk to a HTTP/FTP keyserver
+Summary(pl):	Wtyczka GnuPG pozwalaj±ca komunikowaæ siê z serwerem kluczy HTTP/FTP
+Group:		Applications/File
+Requires:	%{name} = %{version}-%{release}
+Obsoletes:	gnupg-plugin-keys_http
+
+%description plugin-keys_curl
+GnuPG plugin for allow talk to a HTTP(S)/FTP(S) keyserver.
+
+%description plugin-keys_curl -l pl
+Wtyczka GnuPG pozwalaj±ca komunikowaæ siê z serwerem kluczy
+HTTP(S)/FTP(S).
+
 %package plugin-keys_finger
 Summary:	GnuPG plugin for allow talk to a FINGER keyserver
 Summary(pl):	Wtyczka GnuPG pozwalaj±ca komunikowaæ siê z serwerem kluczy FINGER
@@ -130,18 +146,6 @@ GnuPG plugin for allow talk to a HKP keyserver.
 
 %description plugin-keys_hkp -l pl
 Wtyczka GnuPG pozwalaj±ca komunikowaæ siê z serwerem kluczy HKP.
-
-%package plugin-keys_http
-Summary:	GnuPG plugin for allow talk to a HTTP keyserver
-Summary(pl):	Wtyczka GnuPG pozwalaj±ca komunikowaæ siê z serwerem kluczy HTTP
-Group:		Applications/File
-Requires:	%{name} = %{version}-%{release}
-
-%description plugin-keys_http
-GnuPG plugin for allow talk to a HTTP keyserver.
-
-%description plugin-keys_http -l pl
-Wtyczka GnuPG pozwalaj±ca komunikowaæ siê z serwerem kluczy HTTP.
 
 %package plugin-keys_ldap
 Summary:	GnuPG plugin for allow talk to a LDAP keyserver
@@ -172,6 +176,7 @@ kluczy.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 rm -f po/stamp-po
 
@@ -182,16 +187,10 @@ cp -f /usr/share/automake/config.sub scripts
 	%{?with_ldap:--enable-ldap} \
 	%{!?with_ldap:--disable-ldap} \
 	--disable-m-debug \
-%ifarch sparc sparc64
 	--disable-m-guard \
-%else
-	--enable-m-guard \
-%endif
 	--enable-mailto \
 	--without-included-gettext \
 	--with-mailprog=/usr/sbin/sendmail
-
-#	--with-libcurl  -- experimental (curl for http/https/ftp/ftps), disables gpgkeys_http
 
 %{__make}
 
@@ -215,15 +214,12 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README THANKS TODO doc/{DETAILS,FAQ,OpenPGP}
-
 %attr(755,root,root) %{_bindir}/*
-
 %dir %{_libexecdir}/gnupg
-
-%{_mandir}/man?/*
-%{_infodir}/*.info*
 %dir %{_datadir}/gnupg
 %{_datadir}/gnupg/options.skel
+%{_mandir}/man?/*
+%{_infodir}/*.info*
 
 %files plugin-keys_finger
 %defattr(644,root,root,755)
@@ -233,9 +229,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libexecdir}/gnupg/gpgkeys_hkp
 
-%files plugin-keys_http
+%files plugin-keys_curl
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libexecdir}/gnupg/gpgkeys_http
+%attr(755,root,root) %{_libexecdir}/gnupg/gpgkeys_curl
 
 %if %{with ldap}
 %files plugin-keys_ldap

@@ -13,7 +13,7 @@ Summary(uk):	GNU Privacy Guard - 爪特瘟 诹挺瘟 PGP
 Summary(zh_CN):	GPL的PGP加密程序
 Name:		gnupg
 Version:	1.4.5
-Release:	3
+Release:	4
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/GnuPG/gnupg/%{name}-%{version}.tar.bz2
@@ -21,6 +21,7 @@ Source0:	ftp://ftp.gnupg.org/GnuPG/gnupg/%{name}-%{version}.tar.bz2
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pl.po-update.patch
 Patch2:		%{name}-fix.patch
+Patch3:		%{name}-CVE-2006-6169.patch
 URL:		http://www.gnupg.org/
 BuildRequires:	automake
 BuildRequires:	bzip2-devel
@@ -177,6 +178,7 @@ kluczy.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 rm -f po/stamp-po
 

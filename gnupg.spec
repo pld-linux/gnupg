@@ -12,16 +12,15 @@ Summary(ru):	GNU Privacy Guard - свободная замена PGP
 Summary(uk):	GNU Privacy Guard - в╕льна зам╕на PGP
 Summary(zh_CN):	GPL╣дPGP╪сцэЁлпР
 Name:		gnupg
-Version:	1.4.5
-Release:	4
+Version:	1.4.6
+Release:	1
 License:	GPL
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/GnuPG/gnupg/%{name}-%{version}.tar.bz2
-# Source0-md5:	811525965b4c0987e6418a7729a6444d
+# Source0-md5:	ec8dc6df1bd83c1d7e1a1ea10653f9f4
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pl.po-update.patch
 Patch2:		%{name}-fix.patch
-Patch3:		%{name}-CVE-2006-6169.patch
 URL:		http://www.gnupg.org/
 BuildRequires:	automake
 BuildRequires:	bzip2-devel
@@ -178,7 +177,6 @@ kluczy.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
-%patch3 -p1
 
 rm -f po/stamp-po
 

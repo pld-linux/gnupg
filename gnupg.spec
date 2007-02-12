@@ -3,14 +3,14 @@
 %bcond_without	ldap	# without LDAP plugin
 #
 Summary:	GnuPG - GNU Privacy Guard - tool for secure communication and data storage
-Summary(cs):	GNU nástroj pro ¹ifrovanou komunikaci a bezpeèné ukládání dat
-Summary(es):	Criptografía con llaves públicas (asimétricas). GPL
-Summary(ja):	¥»¥­¥å¥¢¤Ê¥³¥ß¥å¥Ë¥±¡¼¥·¥ç¥ó¤È¥Ç¡¼¥¿ÊİÂ¸¤Î¤¿¤á¤Î GNU ¥æ¡¼¥Æ¥£¥ê¥Æ¥£¡£
-Summary(pl):	GnuPG - narzêdzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych
-Summary(pt_BR):	Criptografia com chaves públicas (assimétricas). GPL
-Summary(ru):	GNU Privacy Guard - Ó×ÏÂÏÄÎÁÑ ÚÁÍÅÎÁ PGP
-Summary(uk):	GNU Privacy Guard - ×¦ÌØÎÁ ÚÁÍ¦ÎÁ PGP
-Summary(zh_CN):	GPLµÄPGP¼ÓÃÜ³ÌĞò
+Summary(cs.UTF-8):   GNU nÃ¡stroj pro Å¡ifrovanou komunikaci a bezpeÄnÃ© uklÃ¡dÃ¡nÃ­ dat
+Summary(es.UTF-8):   CriptografÃ­a con llaves pÃºblicas (asimÃ©tricas). GPL
+Summary(ja.UTF-8):   ã‚»ã‚­ãƒ¥ã‚¢ãªã‚³ãƒŸãƒ¥ãƒ‹ã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã¨ãƒ‡ãƒ¼ã‚¿ä¿å­˜ã®ãŸã‚ã® GNU ãƒ¦ãƒ¼ãƒ†ã‚£ãƒªãƒ†ã‚£ã€‚
+Summary(pl.UTF-8):   GnuPG - narzÄ™dzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych
+Summary(pt_BR.UTF-8):   Criptografia com chaves pÃºblicas (assimÃ©tricas). GPL
+Summary(ru.UTF-8):   GNU Privacy Guard - ÑĞ²Ğ¾Ğ±Ğ¾Ğ´Ğ½Ğ°Ñ Ğ·Ğ°Ğ¼ĞµĞ½Ğ° PGP
+Summary(uk.UTF-8):   GNU Privacy Guard - Ğ²Ñ–Ğ»ÑŒĞ½Ğ° Ğ·Ğ°Ğ¼Ñ–Ğ½Ğ° PGP
+Summary(zh_CN.UTF-8):   GPLçš„PGPåŠ å¯†ç¨‹åº
 Name:		gnupg
 Version:	1.4.6
 Release:	1
@@ -41,77 +41,77 @@ be used to encrypt data and to create digital signatures. It includes
 an advanced key management facility and is compliant with the proposed
 OpenPGP Internet standard as described in RFC2440.
 
-%description -l cs
-GnuPG je GNU nástroj pro bezpeènou komunikaci a ukládání dat. Mù¾e bıt
-pou¾it na ¹ifrování dat a vytváøení digitálních podpisù. Obsahuje
-funkce pro pokroèilou správu klíèù a vyhovuje navrhovanému OpenPGP
-Internet standardu podle RFC2440. Byl vytvoøen jako kompletní náhrada
-za PGP. Proto¾e neobsahuje ¹ifrovací algoritmy IDEA nebo RSA, mù¾e bıt
-pou¾íván bez omezení. Proto¾e GnuPG nepou¾ívá ¾ádnı patentovanı
-algoritmus, nemù¾e bıt úplnì kompatibilní s PGP verze 2. PGP 2.x
-pou¾ívá algoritmy IDEA (patentováno celosvìtovì) a RSA (patentováno ve
-Spojenıch státech do 20. záøí 2000). Tyto algoritmy lze zavést do
-GnuPG pomocí externích modulù.
+%description -l cs.UTF-8
+GnuPG je GNU nÃ¡stroj pro bezpeÄnou komunikaci a uklÃ¡dÃ¡nÃ­ dat. MÅ¯Å¾e bÃ½t
+pouÅ¾it na Å¡ifrovÃ¡nÃ­ dat a vytvÃ¡Å™enÃ­ digitÃ¡lnÃ­ch podpisÅ¯. Obsahuje
+funkce pro pokroÄilou sprÃ¡vu klÃ­ÄÅ¯ a vyhovuje navrhovanÃ©mu OpenPGP
+Internet standardu podle RFC2440. Byl vytvoÅ™en jako kompletnÃ­ nÃ¡hrada
+za PGP. ProtoÅ¾e neobsahuje Å¡ifrovacÃ­ algoritmy IDEA nebo RSA, mÅ¯Å¾e bÃ½t
+pouÅ¾Ã­vÃ¡n bez omezenÃ­. ProtoÅ¾e GnuPG nepouÅ¾Ã­vÃ¡ Å¾Ã¡dnÃ½ patentovanÃ½
+algoritmus, nemÅ¯Å¾e bÃ½t ÃºplnÄ› kompatibilnÃ­ s PGP verze 2. PGP 2.x
+pouÅ¾Ã­vÃ¡ algoritmy IDEA (patentovÃ¡no celosvÄ›tovÄ›) a RSA (patentovÃ¡no ve
+SpojenÃ½ch stÃ¡tech do 20. zÃ¡Å™Ã­ 2000). Tyto algoritmy lze zavÃ©st do
+GnuPG pomocÃ­ externÃ­ch modulÅ¯.
 
-%description -l es
-GnuPG es un sustituto completo y de libre distribución para PGP. Como
-no utiliza IDEA y RSA, su uso no está restringido. Está casi
+%description -l es.UTF-8
+GnuPG es un sustituto completo y de libre distribuciÃ³n para PGP. Como
+no utiliza IDEA y RSA, su uso no estÃ¡ restringido. EstÃ¡ casi
 completamente de acuerdo con el borrador (draft) OpenPGP.
 
-%description -l fr
-GnuPG est un utilitaire GNU destiné à chiffrer des données et à créer
-des signatures électroniques. Il a des capacités avancées de gestion
-de clés et il est conforme à la norme proposée OpenPGP décrite dans la
-RFC2440. Comme GnuPG n'utilise pas d'algorithme breveté, il n'est
+%description -l fr.UTF-8
+GnuPG est un utilitaire GNU destinÃ© Ã  chiffrer des donnÃ©es et Ã  crÃ©er
+des signatures Ã©lectroniques. Il a des capacitÃ©s avancÃ©es de gestion
+de clÃ©s et il est conforme Ã  la norme proposÃ©e OpenPGP dÃ©crite dans la
+RFC2440. Comme GnuPG n'utilise pas d'algorithme brevetÃ©, il n'est
 compatible avec aucune version de PGP2 (PGP2.x ne sait utiliser que
-l'IDEA breveté dans le monde entier et RSA, breveté aux États-Unis
+l'IDEA brevetÃ© dans le monde entier et RSA, brevetÃ© aux Ã‰tats-Unis
 jusqu'au 20 septembre 2000).
 
-%description -l it
-GnuPG (GNU Privacy Guard) è una utility GNU per la cifratura di dati e
+%description -l it.UTF-8
+GnuPG (GNU Privacy Guard) Ã¨ una utility GNU per la cifratura di dati e
 la creazione di firme digitali. Possiede una gestione avanzata delle
-chiavi ed è conforme allo standard Internet OpenPGP, descritto nella
-RFC 2440. Non utilizzando algoritmi brevettati, non è compatibile con
+chiavi ed Ã¨ conforme allo standard Internet OpenPGP, descritto nella
+RFC 2440. Non utilizzando algoritmi brevettati, non Ã¨ compatibile con
 PGP2 (PGP2.x usa solo IDEA, coperto da brevetto mondiale, ed RSA,
 brevettato negli USA con scadenza 20/09/2000). Questi algoritmi sono
 utilizzabili da GnuPG tramite moduli esterni.
 
-%description -l ja
+%description -l ja.UTF-8
 GnuPG (GNU Privacy Guard)
-¤Ï¥Ç¡¼¥¿¤Î°Å¹æ²½¤È¥Ç¥£¥¸¥¿¥ë½ğÌ¾¤ÎºîÀ®¤Î¤¿¤á¤Î GNU
-¥æ¡¼¥Æ¥£¥ê¥Æ¥£¤Ç¤¹¡£GnuPG ¤Ï¹âÅÙ¤Ê¸°´ÉÍıÇ½ÎÏ¤ò»ı¤Á¡¢ RFC2440
-¤Çµ­½Ò¤µ¤ì¤Æ¤¤¤ë OpenPGP ¥¤¥ó¥¿¡¼¥Í¥Ã¥ÈÉ¸½à¤ÎÄó°Æ¤ËÅ¬¹ç¤·¤Æ¤¤¤Ş¤¹¡£
-GnuPG ¤ÏÆÃµö¥¢¥ë¥´¥ê¥º¥à¤Ï»ÈÍÑ¤·¤Æ¤¤¤Ê¤¤¤Î¤Ç¡¢PGP2
-¤Î¤¢¤é¤æ¤ë¥ô¥¡¡¼¥¸¥ç¥ó ¤È¸ß´¹À­¤¬¤¢¤ê¤Ş¤»¤ó¡£(PGP2.x ¤Ï
-À¤³¦Åª¤ÊÆÃµö¤Ç¤¢¤ë IDEA ¤È¡¢ 2000Ç¯ 9·î20Æü¤Ş¤Ç USA ¤Ç¤ÎÆÃµö¤Ç¤¢¤ë RSA
-¤Î¤ß¤òÍÑ¤¤¤Æ¤¤¤Ş¤¹)
+ã¯ãƒ‡ãƒ¼ã‚¿ã®æš—å·åŒ–ã¨ãƒ‡ã‚£ã‚¸ã‚¿ãƒ«ç½²åã®ä½œæˆã®ãŸã‚ã® GNU
+ãƒ¦ãƒ¼ãƒ†ã‚£ãƒªãƒ†ã‚£ã§ã™ã€‚GnuPG ã¯é«˜åº¦ãªéµç®¡ç†èƒ½åŠ›ã‚’æŒã¡ã€ RFC2440
+ã§è¨˜è¿°ã•ã‚Œã¦ã„ã‚‹ OpenPGP ã‚¤ãƒ³ã‚¿ãƒ¼ãƒãƒƒãƒˆæ¨™æº–ã®ææ¡ˆã«é©åˆã—ã¦ã„ã¾ã™ã€‚
+GnuPG ã¯ç‰¹è¨±ã‚¢ãƒ«ã‚´ãƒªã‚ºãƒ ã¯ä½¿ç”¨ã—ã¦ã„ãªã„ã®ã§ã€PGP2
+ã®ã‚ã‚‰ã‚†ã‚‹ãƒ´ã‚¡ãƒ¼ã‚¸ãƒ§ãƒ³ ã¨äº’æ›æ€§ãŒã‚ã‚Šã¾ã›ã‚“ã€‚(PGP2.x ã¯
+ä¸–ç•Œçš„ãªç‰¹è¨±ã§ã‚ã‚‹ IDEA ã¨ã€ 2000å¹´ 9æœˆ20æ—¥ã¾ã§ USA ã§ã®ç‰¹è¨±ã§ã‚ã‚‹ RSA
+ã®ã¿ã‚’ç”¨ã„ã¦ã„ã¾ã™)
 
-%description -l pl
-GnuPG (GNU Privacy Guard) jest narzêdziem do bezpiecznej komunikacji i
-bezpiecznego przechowywania danych. Mo¿e byæ u¿ywany do szyfrowania
-oraz podpisywania danych. Umo¿liwia zaawansowane zarz±dzanie kluczami
-i spe³nia normy zdefiniowane w standardzie OpenPGP, który jest opisany
+%description -l pl.UTF-8
+GnuPG (GNU Privacy Guard) jest narzÄ™dziem do bezpiecznej komunikacji i
+bezpiecznego przechowywania danych. MoÅ¼e byÄ‡ uÅ¼ywany do szyfrowania
+oraz podpisywania danych. UmoÅ¼liwia zaawansowane zarzÄ…dzanie kluczami
+i speÅ‚nia normy zdefiniowane w standardzie OpenPGP, ktÃ³ry jest opisany
 w RFC2440.
 
-%description -l pt_BR
-O GnuPG é um substituto completo e de livre distribuição para o PGP.
-Como ele não usa IDEA e RSA seu uso é irrestrito. Está quase
+%description -l pt_BR.UTF-8
+O GnuPG Ã© um substituto completo e de livre distribuiÃ§Ã£o para o PGP.
+Como ele nÃ£o usa IDEA e RSA seu uso Ã© irrestrito. EstÃ¡ quase
 completamente de acordo com o rascunho (draft) OpenPGP.
 
-%description -l ru
-GnuPG Ñ×ÌÑÅÔÓÑ ĞÏÌÎÏÊ É Ó×ÏÂÏÄÎÏÊ ÚÁÍÅÎÏÊ ÄÌÑ PGP. ôÁË ËÁË ÏÎ ÎÅ
-ÉÓĞÏÌØÚÕÅÔ ÎÉ IDEA, ÎÉ RSA, ÔÏ ÎÁ ÅÇÏ ÉÓĞÏÌØÚÏ×ÁÎÉÅ ÎÅ ÎÁËÌÁÄÙ×ÁÅÔÓÑ
-ÎÉËÁËÉÈ ÏÇÒÁÎÉŞÅÎÉÊ. GnuPG ÓÏÏÔ×ÅÔÓÔ×ÕÅÔ ÓĞÅÃÉÆÉËÁÃÉÉ OpenPGP
+%description -l ru.UTF-8
+GnuPG ÑĞ²Ğ»ÑĞµÑ‚ÑÑ Ğ¿Ğ¾Ğ»Ğ½Ğ¾Ğ¹ Ğ¸ ÑĞ²Ğ¾Ğ±Ğ¾Ğ´Ğ½Ğ¾Ğ¹ Ğ·Ğ°Ğ¼ĞµĞ½Ğ¾Ğ¹ Ğ´Ğ»Ñ PGP. Ğ¢Ğ°Ğº ĞºĞ°Ğº Ğ¾Ğ½ Ğ½Ğµ
+Ğ¸ÑĞ¿Ğ¾Ğ»ÑŒĞ·ÑƒĞµÑ‚ Ğ½Ğ¸ IDEA, Ğ½Ğ¸ RSA, Ñ‚Ğ¾ Ğ½Ğ° ĞµĞ³Ğ¾ Ğ¸ÑĞ¿Ğ¾Ğ»ÑŒĞ·Ğ¾Ğ²Ğ°Ğ½Ğ¸Ğµ Ğ½Ğµ Ğ½Ğ°ĞºĞ»Ğ°Ğ´Ñ‹Ğ²Ğ°ĞµÑ‚ÑÑ
+Ğ½Ğ¸ĞºĞ°ĞºĞ¸Ñ… Ğ¾Ğ³Ñ€Ğ°Ğ½Ğ¸Ñ‡ĞµĞ½Ğ¸Ğ¹. GnuPG ÑĞ¾Ğ¾Ñ‚Ğ²ĞµÑ‚ÑÑ‚Ğ²ÑƒĞµÑ‚ ÑĞ¿ĞµÑ†Ğ¸Ñ„Ğ¸ĞºĞ°Ñ†Ğ¸Ğ¸ OpenPGP
 (RFC2440).
 
-%description -l uk
-GnuPG ¤ ĞÏ×ÎÏÀ ÔÁ ×¦ÌØÎÏÀ ÚÁÍ¦ÎÏÀ PGP. ÷¦Î ÎÅ ×ÉËÏÒÉÓÔÏ×Õ¤ Î¦ IDEA,
-ÁÎ¦ RSA, ÔÁË İÏ ÎÁ ÊÏÇÏ ÚÁÓÔÏÓÕ×ÁÎÎÑ ÎÅ ÎÁËÌÁÄÁ¤ÔØÓÑ Î¦ÑËÉÈ ÏÂÍÅÖÅÎØ.
-GnuPG ×¦ÄĞÏ×¦ÄÁ¤ ÓĞÅÃÉÆ¦ËÁÃ¦§ OpenPGP (RFC2440).
+%description -l uk.UTF-8
+GnuPG Ñ” Ğ¿Ğ¾Ğ²Ğ½Ğ¾Ñ Ñ‚Ğ° Ğ²Ñ–Ğ»ÑŒĞ½Ğ¾Ñ Ğ·Ğ°Ğ¼Ñ–Ğ½Ğ¾Ñ PGP. Ğ’Ñ–Ğ½ Ğ½Ğµ Ğ²Ğ¸ĞºĞ¾Ñ€Ğ¸ÑÑ‚Ğ¾Ğ²ÑƒÑ” Ğ½Ñ– IDEA,
+Ğ°Ğ½Ñ– RSA, Ñ‚Ğ°Ğº Ñ‰Ğ¾ Ğ½Ğ° Ğ¹Ğ¾Ğ³Ğ¾ Ğ·Ğ°ÑÑ‚Ğ¾ÑÑƒĞ²Ğ°Ğ½Ğ½Ñ Ğ½Ğµ Ğ½Ğ°ĞºĞ»Ğ°Ğ´Ğ°Ñ”Ñ‚ÑŒÑÑ Ğ½Ñ–ÑĞºĞ¸Ñ… Ğ¾Ğ±Ğ¼ĞµĞ¶ĞµĞ½ÑŒ.
+GnuPG Ğ²Ñ–Ğ´Ğ¿Ğ¾Ğ²Ñ–Ğ´Ğ°Ñ” ÑĞ¿ĞµÑ†Ğ¸Ñ„Ñ–ĞºĞ°Ñ†Ñ–Ñ— OpenPGP (RFC2440).
 
 %package plugin-keys_curl
 Summary:	GnuPG plugin for allow talk to a HTTP/FTP keyserver
-Summary(pl):	Wtyczka GnuPG pozwalaj±ca komunikowaæ siê z serwerem kluczy HTTP/FTP
+Summary(pl.UTF-8):   Wtyczka GnuPG pozwalajÄ…ca komunikowaÄ‡ siÄ™ z serwerem kluczy HTTP/FTP
 Group:		Applications/File
 Requires:	%{name} = %{version}-%{release}
 Obsoletes:	gnupg-plugin-keys_http
@@ -119,57 +119,57 @@ Obsoletes:	gnupg-plugin-keys_http
 %description plugin-keys_curl
 GnuPG plugin for allow talk to a HTTP(S)/FTP(S) keyserver.
 
-%description plugin-keys_curl -l pl
-Wtyczka GnuPG pozwalaj±ca komunikowaæ siê z serwerem kluczy
+%description plugin-keys_curl -l pl.UTF-8
+Wtyczka GnuPG pozwalajÄ…ca komunikowaÄ‡ siÄ™ z serwerem kluczy
 HTTP(S)/FTP(S).
 
 %package plugin-keys_finger
 Summary:	GnuPG plugin for allow talk to a FINGER keyserver
-Summary(pl):	Wtyczka GnuPG pozwalaj±ca komunikowaæ siê z serwerem kluczy FINGER
+Summary(pl.UTF-8):   Wtyczka GnuPG pozwalajÄ…ca komunikowaÄ‡ siÄ™ z serwerem kluczy FINGER
 Group:		Applications/File
 Requires:	%{name} = %{version}-%{release}
 
 %description plugin-keys_finger
 GnuPG plugin for allow talk to a FINGER keyserver.
 
-%description plugin-keys_finger -l pl
-Wtyczka GnuPG pozwalaj±ca komunikowaæ siê z serwerem kluczy FINGER.
+%description plugin-keys_finger -l pl.UTF-8
+Wtyczka GnuPG pozwalajÄ…ca komunikowaÄ‡ siÄ™ z serwerem kluczy FINGER.
 
 %package plugin-keys_hkp
 Summary:	GnuPG plugin for allow talk to a HKP keyserver
-Summary(pl):	Wtyczka GnuPG pozwalaj±ca komunikowaæ siê z serwerem kluczy HKP
+Summary(pl.UTF-8):   Wtyczka GnuPG pozwalajÄ…ca komunikowaÄ‡ siÄ™ z serwerem kluczy HKP
 Group:		Applications/File
 Requires:	%{name} = %{version}-%{release}
 
 %description plugin-keys_hkp
 GnuPG plugin for allow talk to a HKP keyserver.
 
-%description plugin-keys_hkp -l pl
-Wtyczka GnuPG pozwalaj±ca komunikowaæ siê z serwerem kluczy HKP.
+%description plugin-keys_hkp -l pl.UTF-8
+Wtyczka GnuPG pozwalajÄ…ca komunikowaÄ‡ siÄ™ z serwerem kluczy HKP.
 
 %package plugin-keys_ldap
 Summary:	GnuPG plugin for allow talk to a LDAP keyserver
-Summary(pl):	Wtyczka GnuPG pozwalaj±ca komunikowaæ siê z serwerem kluczy LDAP
+Summary(pl.UTF-8):   Wtyczka GnuPG pozwalajÄ…ca komunikowaÄ‡ siÄ™ z serwerem kluczy LDAP
 Group:		Applications/File
 Requires:	%{name} = %{version}-%{release}
 
 %description plugin-keys_ldap
 GnuPG plugin for allow talk to a LDAP keyserver.
 
-%description plugin-keys_ldap -l pl
-Wtyczka GnuPG pozwalaj±ca komunikowaæ siê z serwerem kluczy LDAP.
+%description plugin-keys_ldap -l pl.UTF-8
+Wtyczka GnuPG pozwalajÄ…ca komunikowaÄ‡ siÄ™ z serwerem kluczy LDAP.
 
 %package plugin-keys_mailto
 Summary:	GnuPG plugin for allow talk to a email keyserver
-Summary(pl):	Wtyczka GnuPG pozwalaj±ca komunikowaæ siê z e-mailowym serwerem kluczy
+Summary(pl.UTF-8):   Wtyczka GnuPG pozwalajÄ…ca komunikowaÄ‡ siÄ™ z e-mailowym serwerem kluczy
 Group:		Applications/File
 Requires:	%{name} = %{version}-%{release}
 
 %description plugin-keys_mailto
 GnuPG plugin for allow talk to a email keyserver.
 
-%description plugin-keys_mailto -l pl
-Wtyczka GnuPG pozwalaj±ca komunikowaæ siê z e-mailowym serwerem
+%description plugin-keys_mailto -l pl.UTF-8
+Wtyczka GnuPG pozwalajÄ…ca komunikowaÄ‡ siÄ™ z e-mailowym serwerem
 kluczy.
 
 %prep

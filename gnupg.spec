@@ -3,14 +3,14 @@
 %bcond_without	ldap	# without LDAP plugin
 #
 Summary:	GnuPG - GNU Privacy Guard - tool for secure communication and data storage
-Summary(cs.UTF-8):   GNU nástroj pro šifrovanou komunikaci a bezpečné ukládání dat
-Summary(es.UTF-8):   Criptografía con llaves públicas (asimétricas). GPL
-Summary(ja.UTF-8):   セキュアなコミュニケーションとデータ保存のための GNU ユーティリティ。
-Summary(pl.UTF-8):   GnuPG - narzędzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych
-Summary(pt_BR.UTF-8):   Criptografia com chaves públicas (assimétricas). GPL
-Summary(ru.UTF-8):   GNU Privacy Guard - свободная замена PGP
-Summary(uk.UTF-8):   GNU Privacy Guard - вільна заміна PGP
-Summary(zh_CN.UTF-8):   GPL的PGP加密程序
+Summary(cs.UTF-8):	GNU nástroj pro šifrovanou komunikaci a bezpečné ukládání dat
+Summary(es.UTF-8):	Criptografía con llaves públicas (asimétricas). GPL
+Summary(ja.UTF-8):	セキュアなコミュニケーションとデータ保存のための GNU ユーティリティ。
+Summary(pl.UTF-8):	GnuPG - narzędzie do bezpiecznej komunikacji i bezpiecznego przechowywania danych
+Summary(pt_BR.UTF-8):	Criptografia com chaves públicas (assimétricas). GPL
+Summary(ru.UTF-8):	GNU Privacy Guard - свободная замена PGP
+Summary(uk.UTF-8):	GNU Privacy Guard - вільна заміна PGP
+Summary(zh_CN.UTF-8):	GPL的PGP加密程序
 Name:		gnupg
 Version:	1.4.6
 Release:	1
@@ -111,7 +111,7 @@ GnuPG відповідає специфікації OpenPGP (RFC2440).
 
 %package plugin-keys_curl
 Summary:	GnuPG plugin for allow talk to a HTTP/FTP keyserver
-Summary(pl.UTF-8):   Wtyczka GnuPG pozwalająca komunikować się z serwerem kluczy HTTP/FTP
+Summary(pl.UTF-8):	Wtyczka GnuPG pozwalająca komunikować się z serwerem kluczy HTTP/FTP
 Group:		Applications/File
 Requires:	%{name} = %{version}-%{release}
 Obsoletes:	gnupg-plugin-keys_http
@@ -125,7 +125,7 @@ HTTP(S)/FTP(S).
 
 %package plugin-keys_finger
 Summary:	GnuPG plugin for allow talk to a FINGER keyserver
-Summary(pl.UTF-8):   Wtyczka GnuPG pozwalająca komunikować się z serwerem kluczy FINGER
+Summary(pl.UTF-8):	Wtyczka GnuPG pozwalająca komunikować się z serwerem kluczy FINGER
 Group:		Applications/File
 Requires:	%{name} = %{version}-%{release}
 
@@ -137,7 +137,7 @@ Wtyczka GnuPG pozwalająca komunikować się z serwerem kluczy FINGER.
 
 %package plugin-keys_hkp
 Summary:	GnuPG plugin for allow talk to a HKP keyserver
-Summary(pl.UTF-8):   Wtyczka GnuPG pozwalająca komunikować się z serwerem kluczy HKP
+Summary(pl.UTF-8):	Wtyczka GnuPG pozwalająca komunikować się z serwerem kluczy HKP
 Group:		Applications/File
 Requires:	%{name} = %{version}-%{release}
 
@@ -149,7 +149,7 @@ Wtyczka GnuPG pozwalająca komunikować się z serwerem kluczy HKP.
 
 %package plugin-keys_ldap
 Summary:	GnuPG plugin for allow talk to a LDAP keyserver
-Summary(pl.UTF-8):   Wtyczka GnuPG pozwalająca komunikować się z serwerem kluczy LDAP
+Summary(pl.UTF-8):	Wtyczka GnuPG pozwalająca komunikować się z serwerem kluczy LDAP
 Group:		Applications/File
 Requires:	%{name} = %{version}-%{release}
 
@@ -161,7 +161,7 @@ Wtyczka GnuPG pozwalająca komunikować się z serwerem kluczy LDAP.
 
 %package plugin-keys_mailto
 Summary:	GnuPG plugin for allow talk to a email keyserver
-Summary(pl.UTF-8):   Wtyczka GnuPG pozwalająca komunikować się z e-mailowym serwerem kluczy
+Summary(pl.UTF-8):	Wtyczka GnuPG pozwalająca komunikować się z e-mailowym serwerem kluczy
 Group:		Applications/File
 Requires:	%{name} = %{version}-%{release}
 

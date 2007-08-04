@@ -9,6 +9,7 @@ fi
 X11=no
 if [ -r "${HOME}/.gnupg/gpg-agent.conf" ]; then
     grep -qE "^[[:blank:]]*pinentry-program[[:blank:]]*.*pinentry-(qt|gtk)" "${HOME}/.gnupg/gpg-agent.conf" && X11=yes
+    grep -qE "^[[:blank:]]*pinentry-program[[:blank:]]*.*seahorse-agent" "${HOME}/.gnupg/gpg-agent.conf" && X11=yes
 fi
 
 if grep -q "^[[:blank:]]*use-agent" ${CFG} 2>/dev/null; then

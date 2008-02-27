@@ -29,7 +29,7 @@ BuildRequires:	curl-devel
 BuildRequires:	gettext-devel
 BuildRequires:	libcap-devel
 BuildRequires:	libusb-devel
-%{?with_ldap:BuildRequires:	openldap-devel >= 2.4.6}
+%{?with_ldap:BuildRequires:	openldap-devel >= 2.3.0}
 BuildRequires:	readline-devel
 BuildRequires:	texinfo
 BuildRequires:	zlib-devel

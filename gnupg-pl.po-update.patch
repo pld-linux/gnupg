@@ -1,5 +1,5 @@
---- gnupg-1.4.8/po/pl.po.orig	2007-12-14 11:58:43.000000000 +0100
-+++ gnupg-1.4.8/po/pl.po	2008-01-05 14:47:49.781500028 +0100
+--- gnupg-1.4.9/po/pl.po.orig	2008-03-25 09:53:10.000000000 +0100
++++ gnupg-1.4.9/po/pl.po	2008-05-29 22:36:03.465768141 +0200
 @@ -1,35 +1,24 @@
  # Gnu Privacy Guard.
  # Copyright (C) 1998, 1999, 2000, 2001, 2002 Free Software Foundation, Inc.
@@ -11,13 +11,14 @@
  #
  msgid ""
  msgstr ""
- "Project-Id-Version: gnupg-1.4.8\n"
+-"Project-Id-Version: gnupg-1.4.8\n"
++"Project-Id-Version: gnupg-1.4.9\n"
  "Report-Msgid-Bugs-To: gnupg-i18n@gnupg.org\n"
- "POT-Creation-Date: 2007-12-14 11:58+0100\n"
+ "POT-Creation-Date: 2008-03-25 09:52+0100\n"
 -"PO-Revision-Date: 2007-12-12 18:41+0100\n"
 -"Last-Translator: Janusz A. Urbanowicz <alex@bofh.net.pl>\n"
 -"Language-Team: Polish <pl@li.org>\n"
-+"PO-Revision-Date: 2008-01-05 10:30+0100\n"
++"PO-Revision-Date: 2008-05-29 22:30+0200\n"
 +"Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
 +"Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
  "MIME-Version: 1.0\n"
@@ -150,74 +151,74 @@
  msgid "premature eof (in trailer)\n"
 @@ -453,7 +442,7 @@
  
- #: g10/card-util.c:519
+ #: g10/card-util.c:524
  msgid "Error: The \"<\" character may not be used.\n"
 -msgstr "B³±d: nie mo¿na u¿ywæ znaku ,,<''.\n"
 +msgstr "B³±d: nie mo¿na u¿yæ znaku ,,<''.\n"
  
- #: g10/card-util.c:521
+ #: g10/card-util.c:526
  msgid "Error: Double spaces are not allowed.\n"
 @@ -474,12 +463,12 @@
  
- #: g10/card-util.c:579
+ #: g10/card-util.c:584
  msgid "URL to retrieve public key: "
 -msgstr "URL ¼ród³a klucza publicznego:"
 +msgstr "URL ¼ród³a klucza publicznego: "
  
- #: g10/card-util.c:587
+ #: g10/card-util.c:592
  #, c-format
  msgid "Error: URL too long (limit is %d characters).\n"
 -msgstr "Blad: URL zbyt d³ugi (maksymalnie %d znaków).\n"
 +msgstr "B³±d: URL zbyt d³ugi (maksymalnie %d znaków).\n"
  
- #: g10/card-util.c:685 g10/card-util.c:754 g10/import.c:279
+ #: g10/card-util.c:690 g10/card-util.c:759 g10/import.c:279
  #, c-format
 @@ -510,7 +499,7 @@
  
- #: g10/card-util.c:800
+ #: g10/card-util.c:805
  msgid "Error: invalid length of preference string.\n"
 -msgstr "B³±d: niepoprawna d³ugo¶æ tekstu ustawieñ,\n"
 +msgstr "B³±d: niepoprawna d³ugo¶æ tekstu ustawieñ.\n"
  
- #: g10/card-util.c:809
+ #: g10/card-util.c:814
  msgid "Error: invalid characters in preference string.\n"
 @@ -518,11 +507,11 @@
  
- #: g10/card-util.c:830
+ #: g10/card-util.c:835
  msgid "Sex ((M)ale, (F)emale or space): "
 -msgstr "Plec: M - mê¿czyzna, F - kobieta, lub spacja: "
 +msgstr "P³eæ: M - mê¿czyzna, F - kobieta lub spacja: "
  
- #: g10/card-util.c:844
+ #: g10/card-util.c:849
  msgid "Error: invalid response.\n"
 -msgstr "B³±d: niepopawna odpowied¼.\n"
 +msgstr "B³±d: niepoprawna odpowied¼.\n"
  
- #: g10/card-util.c:865
+ #: g10/card-util.c:870
  msgid "CA fingerprint: "
 @@ -575,9 +564,7 @@
  
- #: g10/card-util.c:1123 g10/card-util.c:1204
+ #: g10/card-util.c:1128 g10/card-util.c:1209
  msgid "   (1) Signature key\n"
 -msgstr ""
 -"   (1) Klucz do podpisywania\n"
 -"\n"
 +msgstr "   (1) Klucz do podpisywania\n"
  
- #: g10/card-util.c:1124 g10/card-util.c:1206
+ #: g10/card-util.c:1129 g10/card-util.c:1211
  msgid "   (2) Encryption key\n"
 @@ -585,7 +572,7 @@
  
- #: g10/card-util.c:1125 g10/card-util.c:1208
+ #: g10/card-util.c:1130 g10/card-util.c:1213
  msgid "   (3) Authentication key\n"
 -msgstr "   (3) Klucz do autoryzacji\n"
 +msgstr "   (3) Klucz do uwierzytelniania\n"
  
- #: g10/card-util.c:1141 g10/card-util.c:1224 g10/keyedit.c:938
+ #: g10/card-util.c:1146 g10/card-util.c:1229 g10/keyedit.c:938
  #: g10/keygen.c:1404 g10/keygen.c:1432 g10/keygen.c:1506 g10/revoke.c:683
 @@ -686,7 +673,7 @@
  
- #: g10/card-util.c:1600 g10/keyedit.c:2240
+ #: g10/card-util.c:1605 g10/keyedit.c:2240
  msgid "Invalid command  (try \"help\")\n"
 -msgstr "Niepoprawna komenda  (spróbuj \"help\")\n"
 +msgstr "Niepoprawna komenda  (spróbuj ,,help'')\n"
@@ -372,63 +373,63 @@
  msgid "show user-supplied notations during signature listings"
 @@ -1439,7 +1430,7 @@
  
- #: g10/gpg.c:2580 g10/gpg.c:2769 g10/keyedit.c:4076
+ #: g10/gpg.c:2601 g10/gpg.c:2790 g10/keyedit.c:4076
  msgid "could not parse keyserver URL\n"
 -msgstr "niezrozuma³y URI serwera kluczy\n"
 +msgstr "niezrozumia³y URI serwera kluczy\n"
  
- #: g10/gpg.c:2592
+ #: g10/gpg.c:2613
  #, c-format
 @@ -1695,7 +1686,7 @@
- #: g10/gpg.c:3361
+ #: g10/gpg.c:3383
  #, c-format
  msgid "symmetric encryption of `%s' failed: %s\n"
 -msgstr "b³±d odszyfrowywania: ,,%s'': %s\n"
 +msgstr "b³±d szyfrowania symetrycznego ,,%s'': %s\n"
  
- #: g10/gpg.c:3371
+ #: g10/gpg.c:3393
  msgid "--encrypt [filename]"
 @@ -1712,7 +1703,7 @@
- #: g10/gpg.c:3389
+ #: g10/gpg.c:3411
  #, c-format
  msgid "you cannot use --symmetric --encrypt while in %s mode\n"
 -msgstr "w trybie %s nie mo¿esz u¿yæ --symmetric --encrypt\n"
 +msgstr "w trybie %s nie mo¿na u¿yæ --symmetric --encrypt\n"
  
- #: g10/gpg.c:3407
+ #: g10/gpg.c:3429
  msgid "--sign [filename]"
 @@ -1728,12 +1719,12 @@
  
- #: g10/gpg.c:3437
+ #: g10/gpg.c:3459
  msgid "you cannot use --symmetric --sign --encrypt with --s2k-mode 0\n"
 -msgstr "w trybie --s2k-mode 0 nie mo¿esz u¿yæ --symmetric --sign --encrypt\n"
 +msgstr "w trybie --s2k-mode 0 nie mo¿na u¿yæ --symmetric --sign --encrypt\n"
  
- #: g10/gpg.c:3440
+ #: g10/gpg.c:3462
  #, c-format
  msgid "you cannot use --symmetric --sign --encrypt while in %s mode\n"
 -msgstr "w trybie %s nie mo¿esz u¿yæ --symmetric --sign --encrypt\n"
 +msgstr "w trybie %s nie mo¿na u¿yæ --symmetric --sign --encrypt\n"
  
- #: g10/gpg.c:3460
+ #: g10/gpg.c:3482
  msgid "--sign --symmetric [filename]"
 @@ -1741,7 +1732,7 @@
  
- #: g10/gpg.c:3469
+ #: g10/gpg.c:3491
  msgid "--clearsign [filename]"
 -msgstr "--clearsign [plik]\""
 +msgstr "--clearsign [plik]"
  
- #: g10/gpg.c:3494
+ #: g10/gpg.c:3516
  msgid "--decrypt [filename]"
 @@ -1801,7 +1792,7 @@
- #: g10/gpg.c:3811
+ #: g10/gpg.c:3833
  #, c-format
  msgid "invalid hash algorithm `%s'\n"
 -msgstr "niew³a¶ciwy algorytm skrótu ,%s'\n"
 +msgstr "niew³a¶ciwy algorytm skrótu ,,%s''\n"
  
- #: g10/gpg.c:3934
+ #: g10/gpg.c:3956
  msgid "[filename]"
 @@ -1860,7 +1851,7 @@
  
@@ -613,7 +614,7 @@
 +msgstr "zapis do ,,%s''\n"
  
  #: g10/import.c:805 g10/import.c:900 g10/import.c:1157 g10/import.c:1300
- #: g10/import.c:2375 g10/import.c:2397
+ #: g10/import.c:2392 g10/import.c:2414
  #, c-format
  msgid "error writing keyring `%s': %s\n"
 -msgstr "b³±d zapisu zbioru kluczy '%s': %s\n"
@@ -631,7 +632,7 @@
  #: g10/import.c:1134
  msgid "importing secret keys not allowed\n"
 @@ -2507,7 +2498,7 @@
- #: g10/import.c:1151 g10/import.c:2390
+ #: g10/import.c:1151 g10/import.c:2407
  #, c-format
  msgid "no default secret keyring: %s\n"
 -msgstr "brak domy¶lego zbioru kluczy tajnych: %s\n"
@@ -672,15 +673,15 @@
 +"OSTRZE¯ENIE: klucz %s móg³ zostaæ uniewa¿niony:\n"
  "             zapytanie o uniewa¿niaj±cy klucz %s w serwerze kluczy\n"
  
- #: g10/import.c:1813
+ #: g10/import.c:1830
 @@ -2658,7 +2649,7 @@
  
- #: g10/import.c:2295
+ #: g10/import.c:2312
  msgid "NOTE: a key's S/N does not match the card's one\n"
 -msgstr "numer seryjny klucza nie pasuje do numeru karty\n"
 +msgstr "UWAGA: numer seryjny klucza nie pasuje do numeru karty\n"
  
- #: g10/import.c:2303
+ #: g10/import.c:2320
  msgid "NOTE: primary key is online and stored on card\n"
 @@ -2760,7 +2751,7 @@
  "A depth greater than 1 allows the key you are signing to make\n"
@@ -1032,7 +1033,7 @@
  
  #: g10/keyserver.c:80
  msgid "honor the PKA record set on a key when retrieving keys"
-@@ -4358,12 +4349,12 @@
+@@ -4358,12 +4349,13 @@
  
  #: g10/keyserver.c:730
  msgid "Enter number(s), N)ext, or Q)uit > "
@@ -1043,11 +1044,12 @@
  #, c-format
  msgid "invalid keyserver protocol (us %d!=handler %d)\n"
 -msgstr "niepoprawny protokó³ dostêpu do serwera kluczy (us %d!=handler %d)\n"
-+msgstr "niepoprawny protokó³ dostêpu do serwera kluczy (nasz %d != %d modu³u)\n"
++msgstr ""
++"niepoprawny protokó³ dostêpu do serwera kluczy (nasz %d != %d modu³u)\n"
  
  #: g10/keyserver.c:912
  #, c-format
-@@ -4412,7 +4403,7 @@
+@@ -4412,7 +4404,7 @@
  #: g10/keyserver.c:1385
  #, c-format
  msgid "searching for \"%s\" from %s\n"
@@ -1056,7 +1058,7 @@
  
  #: g10/keyserver.c:1392 g10/keyserver.c:1488
  msgid "no keyserver action!\n"
-@@ -4436,7 +4427,7 @@
+@@ -4436,7 +4428,7 @@
  #: g10/keyserver.c:1517
  msgid "external keyserver calls are not supported in this build\n"
  msgstr ""
@@ -1065,7 +1067,7 @@
  "serwerami\n"
  
  #: g10/keyserver.c:1529
-@@ -4470,12 +4461,12 @@
+@@ -4470,12 +4462,12 @@
  #: g10/keyserver.c:1588 g10/keyserver.c:1622
  #, c-format
  msgid "\"%s\" not a key ID: skipping\n"
@@ -1080,7 +1082,7 @@
  
  #: g10/keyserver.c:1903
  #, c-format
-@@ -4534,7 +4525,7 @@
+@@ -4534,7 +4526,7 @@
  #: g10/mainproc.c:490
  #, c-format
  msgid "encrypted with %s key, ID %s\n"
@@ -1089,7 +1091,7 @@
  
  #: g10/mainproc.c:504
  #, c-format
-@@ -4558,7 +4549,7 @@
+@@ -4558,7 +4550,7 @@
  #: g10/mainproc.c:559
  #, c-format
  msgid "IDEA cipher unavailable, optimistically attempting to use %s instead\n"
@@ -1098,7 +1100,7 @@
  
  #: g10/mainproc.c:591
  msgid "decryption okay\n"
-@@ -4605,7 +4596,7 @@
+@@ -4605,7 +4597,7 @@
  
  #: g10/mainproc.c:1550
  msgid "can't handle this ambiguous signature data\n"
@@ -1107,7 +1109,7 @@
  
  #: g10/mainproc.c:1561
  #, c-format
-@@ -4615,7 +4606,7 @@
+@@ -4615,7 +4607,7 @@
  #: g10/mainproc.c:1562
  #, c-format
  msgid "               using %s key %s\n"
@@ -1116,7 +1118,7 @@
  
  #: g10/mainproc.c:1566
  #, c-format
-@@ -4648,7 +4639,7 @@
+@@ -4648,7 +4640,7 @@
  #: g10/mainproc.c:1808
  #, c-format
  msgid "                aka \"%s\""
@@ -1125,7 +1127,7 @@
  
  #: g10/mainproc.c:1906
  #, c-format
-@@ -4713,7 +4704,7 @@
+@@ -4713,7 +4705,7 @@
  #: g10/misc.c:140 g10/misc.c:168 g10/misc.c:240
  #, c-format
  msgid "fstat of `%s' failed in %s: %s\n"
@@ -1134,18 +1136,19 @@
  
  #: g10/misc.c:205
  #, c-format
-@@ -4726,9 +4717,8 @@
+@@ -4726,9 +4718,9 @@
  msgstr "OSTRZE¯ENIE: u¿ywany jest eksperymentalny algorytm asymetryczny %s\n"
  
  #: g10/misc.c:320
 -#, fuzzy
  msgid "WARNING: Elgamal sign+encrypt keys are deprecated\n"
 -msgstr "OSTRZE¯ENIE: algorytm skrótu %s jest przestarza³y\n"
-+msgstr "OSTRZE¯ENIE: klucze Elgamala do podpisywania i szyfrowania s± przestarza³e\n"
++msgstr ""
++"OSTRZE¯ENIE: klucze Elgamala do podpisywania i szyfrowania s± przestarza³e\n"
  
  #: g10/misc.c:333
  #, c-format
-@@ -4757,7 +4747,7 @@
+@@ -4757,7 +4749,7 @@
  #: g10/misc.c:693
  #, c-format
  msgid "%s:%d: deprecated option \"%s\"\n"
@@ -1154,16 +1157,17 @@
  
  #: g10/misc.c:697
  #, c-format
-@@ -4772,7 +4762,7 @@
+@@ -4772,7 +4764,8 @@
  #: g10/misc.c:706
  #, c-format
  msgid "WARNING: \"%s\" is a deprecated command - do not use it\n"
 -msgstr "OSTRZE¯ENIE: ,,%s'' jest przestarza³± opcj± -- nie nale¿y jej u¿ywaæ\n"
-+msgstr "OSTRZE¯ENIE: ,,%s'' jest przestarza³± komend± -- nie nale¿y jej u¿ywaæ\n"
++msgstr ""
++"OSTRZE¯ENIE: ,,%s'' jest przestarza³± komend± -- nie nale¿y jej u¿ywaæ\n"
  
  #: g10/misc.c:719
  msgid "Uncompressed"
-@@ -4780,7 +4770,7 @@
+@@ -4780,7 +4773,7 @@
  
  #: g10/misc.c:744
  msgid "uncompressed|none"
@@ -1172,7 +1176,7 @@
  
  #: g10/misc.c:871
  #, c-format
-@@ -4890,7 +4880,7 @@
+@@ -4890,7 +4883,7 @@
  "%u-bit %s key, ID %s, created %s%s\n"
  msgstr ""
  "Musisz podaæ has³o aby odbezpieczyæ klucz tajny u¿ytkownika:\n"
@@ -1181,7 +1185,7 @@
  "Klucz o d³ugo¶ci %u bitów, typ %s, numer %s, stworzony %s%s\n"
  
  #: g10/passphrase.c:569
-@@ -4919,7 +4909,7 @@
+@@ -4919,7 +4912,7 @@
  "You need a passphrase to unlock the secret key for\n"
  "user: \"%s\"\n"
  msgstr ""
@@ -1190,7 +1194,7 @@
  "u¿ytkownika ,,%s''\n"
  
  #: g10/passphrase.c:899
-@@ -5131,7 +5121,7 @@
+@@ -5131,7 +5124,7 @@
  
  #: g10/pkclist.c:523
  msgid "         This could mean that the signature is forged.\n"
@@ -1199,7 +1203,7 @@
  
  #: g10/pkclist.c:529
  msgid "WARNING: This subkey has been revoked by its owner!\n"
-@@ -5205,7 +5195,7 @@
+@@ -5205,7 +5198,7 @@
  
  #: g10/pkclist.c:886
  msgid "You did not specify a user ID. (you may use \"-r\")\n"
@@ -1208,7 +1212,7 @@
  
  #: g10/pkclist.c:910
  msgid "Current recipients:\n"
-@@ -5296,7 +5286,7 @@
+@@ -5296,7 +5289,7 @@
  #: g10/pubkey-enc.c:242
  #, c-format
  msgid "cipher algorithm %d%s is unknown or disabled\n"
@@ -1217,7 +1221,7 @@
  
  #: g10/pubkey-enc.c:280
  #, c-format
-@@ -5329,7 +5319,7 @@
+@@ -5329,7 +5322,7 @@
  
  #: g10/revoke.c:310
  msgid "(This is a sensitive revocation key)\n"
@@ -1226,7 +1230,7 @@
  
  #: g10/revoke.c:314
  msgid "Create a designated revocation certificate for this key? (y/N) "
-@@ -5365,7 +5355,7 @@
+@@ -5365,7 +5358,7 @@
  
  #: g10/revoke.c:509
  msgid "public key does not match secret key!\n"
@@ -1235,7 +1239,7 @@
  
  #: g10/revoke.c:516
  msgid "Create a revocation certificate for this key? (y/N) "
-@@ -5445,7 +5435,7 @@
+@@ -5445,7 +5438,7 @@
  #: g10/seckey-cert.c:70
  #, c-format
  msgid "protection digest %d is not supported\n"
@@ -1244,7 +1248,7 @@
  
  #: g10/seckey-cert.c:264
  msgid "Invalid passphrase; please try again"
-@@ -5458,8 +5448,7 @@
+@@ -5458,8 +5451,7 @@
  
  #: g10/seckey-cert.c:326
  msgid "WARNING: Weak key detected - please change passphrase again.\n"
@@ -1254,7 +1258,7 @@
  
  #: g10/seckey-cert.c:364
  msgid "generating the deprecated 16-bit checksum for secret key protection\n"
-@@ -5523,7 +5512,7 @@
+@@ -5523,7 +5515,7 @@
  "key %s was created %lu second in the future (time warp or clock problem)\n"
  msgstr ""
  "klucz %s zosta³ stworzony %lu sekundê w przysz³o¶ci (zaburzenia\n"
@@ -1263,7 +1267,7 @@
  
  #: g10/sig-check.c:193
  #, c-format
-@@ -5531,7 +5520,7 @@
+@@ -5531,7 +5523,7 @@
  "key %s was created %lu seconds in the future (time warp or clock problem)\n"
  msgstr ""
  "klucz %s zosta³ stworzony %lu sekund w przysz³o¶ci (zaburzenia\n"
@@ -1272,7 +1276,7 @@
  
  #: g10/sig-check.c:203
  #, c-format
-@@ -5587,7 +5576,7 @@
+@@ -5587,7 +5579,7 @@
  #: g10/sign.c:321
  #, c-format
  msgid "%s/%s signature from: \"%s\"\n"
@@ -1281,7 +1285,7 @@
  
  #: g10/sign.c:756
  msgid "you can only detach-sign with PGP 2.x style keys while in --pgp2 mode\n"
-@@ -5665,7 +5654,7 @@
+@@ -5665,7 +5657,7 @@
  
  #: g10/tdbdump.c:166
  msgid "colon missing"
@@ -1290,7 +1294,7 @@
  
  #: g10/tdbdump.c:172
  msgid "invalid fingerprint"
-@@ -5876,7 +5865,7 @@
+@@ -5876,7 +5868,7 @@
  
  #: g10/trustdb.c:503
  msgid "10 translator see trustdb.c:uid_trust_string_fixed"
@@ -1299,7 +1303,7 @@
  
  #: g10/trustdb.c:505
  msgid "[ revoked]"
-@@ -6067,7 +6056,7 @@
+@@ -6067,7 +6059,7 @@
  
  #: util/errors.c:68
  msgid "no such user id"
@@ -1308,7 +1312,7 @@
  
  #: util/errors.c:69
  msgid "secret key not available"
-@@ -6099,7 +6088,7 @@
+@@ -6099,7 +6091,7 @@
  
  #: util/errors.c:76
  msgid "file open error"
@@ -1317,7 +1321,7 @@
  
  #: util/errors.c:77
  msgid "file create error"
-@@ -6159,7 +6148,7 @@
+@@ -6159,7 +6151,7 @@
  
  #: util/errors.c:91
  msgid "unexpected data"
@@ -1326,7 +1330,7 @@
  
  #: util/errors.c:92
  msgid "timestamp conflict"
-@@ -6303,1442 +6292,3 @@
+@@ -6303,1442 +6295,3 @@
  #: util/secmem.c:356
  msgid "(you may have used the wrong program for this task)\n"
  msgstr "(prawdopodobnie u¿ywany program jest niew³a¶ciwy dlatego zadania)\n"

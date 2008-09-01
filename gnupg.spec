@@ -13,7 +13,7 @@ Summary(uk.UTF-8):	GNU Privacy Guard - вільна заміна PGP
 Summary(zh_CN.UTF-8):	GPL的PGP加密程序
 Name:		gnupg
 Version:	1.4.9
-Release:	1
+Release:	2
 License:	GPL v3+
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/GnuPG/gnupg/%{name}-%{version}.tar.bz2
@@ -22,6 +22,8 @@ Patch0:		%{name}-info.patch
 Patch1:		%{name}-pl.po-update.patch
 Patch2:		%{name}-fix.patch
 Patch3:		%{name}-sparc64.patch
+# this patch is shared with gnupg2.spec
+Patch4:		%{name}-gcc.patch
 URL:		http://www.gnupg.org/
 BuildRequires:	automake
 BuildRequires:	bzip2-devel
@@ -179,6 +181,7 @@ kluczy.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
+%patch4 -p0
 
 rm -f po/stamp-po
 

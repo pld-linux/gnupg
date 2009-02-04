@@ -13,7 +13,7 @@ Summary(uk.UTF-8):	GNU Privacy Guard - вільна заміна PGP
 Summary(zh_CN.UTF-8):	GPL的PGP加密程序
 Name:		gnupg
 Version:	1.4.9
-Release:	2
+Release:	3
 License:	GPL v3+
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/GnuPG/gnupg/%{name}-%{version}.tar.bz2
@@ -30,7 +30,7 @@ BuildRequires:	bzip2-devel
 BuildRequires:	curl-devel
 BuildRequires:	gettext-devel
 BuildRequires:	libcap-devel
-BuildRequires:	libusb-devel
+BuildRequires:	libusb-compat-devel
 %{?with_ldap:BuildRequires:	openldap-devel >= 2.3.0}
 BuildRequires:	readline-devel
 BuildRequires:	texinfo

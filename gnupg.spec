@@ -12,13 +12,14 @@ Summary(ru.UTF-8):	GNU Privacy Guard - свободная замена PGP
 Summary(uk.UTF-8):	GNU Privacy Guard - вільна заміна PGP
 Summary(zh_CN.UTF-8):	GPL的PGP加密程序
 Name:		gnupg
-Version:	1.4.8
-Release:	2
+Version:	1.4.10
+Release:	1
 License:	GPL v3+
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/GnuPG/gnupg/%{name}-%{version}.tar.bz2
-# Source0-md5:	e5be39ea81bb07de006e7dd44439cb76
+# Source0-md5:	dcf7ed712997888d616e029637bfc303
 Patch0:		%{name}-info.patch
+# send it upstream after updating !
 Patch1:		%{name}-pl.po-update.patch
 Patch2:		%{name}-fix.patch
 Patch3:		%{name}-sparc64.patch
@@ -176,7 +177,7 @@ kluczy.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
+#%patch1 -p1
 %patch2 -p1
 %patch3 -p1
 
@@ -202,6 +203,9 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+install -d $RPM_BUILD_ROOT%{_mandir}/ru/man1
+mv -f $RPM_BUILD_ROOT%{_mandir}/man1/gpg.ru.1 $RPM_BUILD_ROOT%{_mandir}/ru/man1/gpg.1
+
 %find_lang %{name}
 
 rm -f $RPM_BUILD_ROOT{%{_datadir}/gnupg/{FAQ,faq.html},%{_infodir}/dir}
@@ -209,21 +213,28 @@ rm -f $RPM_BUILD_ROOT{%{_datadir}/gnupg/{FAQ,faq.html},%{_infodir}/dir}
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p	/sbin/postshell
+%post	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
-%postun	-p	/sbin/postshell
+%postun	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README THANKS TODO doc/{DETAILS,FAQ,OpenPGP}
-%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/gpg
+%attr(755,root,root) %{_bindir}/gpg-zip
+%attr(755,root,root) %{_bindir}/gpgsplit
+%attr(755,root,root) %{_bindir}/gpgv
 %dir %{_libexecdir}/gnupg
 %dir %{_datadir}/gnupg
 %{_datadir}/gnupg/options.skel
-%{_mandir}/man?/*
-%{_infodir}/*.info*
+%{_mandir}/man1/gpg.1*
+%{_mandir}/man1/gpg-zip.1*
+%{_mandir}/man1/gpgv.1*
+%{_mandir}/man7/gnupg.7*
+%lang(ru) %{_mandir}/ru/man1/gpg.1*
+%{_infodir}/gnupg1.info*
 
 %files plugin-keys_finger
 %defattr(644,root,root,755)

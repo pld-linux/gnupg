@@ -1,5 +1,5 @@
---- gnupg-1.4.6/doc/gnupg1.texi.orig	2006-12-04 14:58:25.000000000 +0100
-+++ gnupg-1.4.6/doc/gnupg1.texi	2006-12-07 19:35:47.565125013 +0100
+--- gnupg-1.4.11/doc/gnupg1.texi.orig	2010-01-29 10:10:00.000000000 +0100
++++ gnupg-1.4.11/doc/gnupg1.texi	2010-10-24 10:58:21.127741882 +0200
 @@ -46,9 +46,9 @@
  @end copying
  
@@ -7,8 +7,8 @@
 -@dircategory GNU Utilities
 +@dircategory Miscellaneous:
  @direntry
--* gpg: (gpg).            OpenPGP encryption and signing tool (v1).
-+* gpg: (gpg).				OpenPGP encryption and signing tool (v1)
+-* gpg: (gnupg1).            OpenPGP encryption and signing tool (v1).
++* gpg: (gnupg1).			OpenPGP encryption and signing tool (v1)
  @end direntry
  
  

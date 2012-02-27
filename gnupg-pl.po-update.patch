@@ -1,15 +1,20 @@
---- gnupg-1.4.11/po/pl.po.orig	2010-10-18 10:54:30.000000000 +0200
-+++ gnupg-1.4.11/po/pl.po	2010-10-24 11:00:24.567741882 +0200
-@@ -5,10 +5,10 @@
+--- gnupg-1.4.12/po/pl.po.orig	2012-01-23 09:36:23.000000000 +0100
++++ gnupg-1.4.12/po/pl.po	2012-02-27 18:00:51.756107157 +0100
+@@ -1,14 +1,14 @@
+ # Gnu Privacy Guard.
+ # Copyright (C) 1998, 1999, 2000, 2001, 2002 Free Software Foundation, Inc.
+ # Janusz A. Urbanowicz <alex@bofh.net.pl>, 1999, 2000, 2001, 2002, 2003, 2004, 2007.
+-# fixes and updates by Jakub Bogusz <qboosh@pld-linux.org>, 2003-2010.
++# fixes and updates by Jakub Bogusz <qboosh@pld-linux.org>, 2003-2012.
  #
  msgid ""
  msgstr ""
 -"Project-Id-Version: gnupg-1.4.8\n"
-+"Project-Id-Version: gnupg-1.4.11\n"
++"Project-Id-Version: gnupg-1.4.12\n"
  "Report-Msgid-Bugs-To: gnupg-i18n@gnupg.org\n"
- "POT-Creation-Date: 2010-10-10 11:31+0200\n"
+ "POT-Creation-Date: 2012-01-23 09:36+0100\n"
 -"PO-Revision-Date: 2010-10-18 10:14+0200\n"
-+"PO-Revision-Date: 2010-10-24 10:59+0200\n"
++"PO-Revision-Date: 2012-02-27 18:00+0100\n"
  "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
  "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
  "MIME-Version: 1.0\n"
@@ -25,14 +30,14 @@
 @@ -2667,9 +2667,9 @@
  msgstr "klucz %s: nie obs³ugiwany algorytm asymetryczny\n"
  
- #: g10/import.c:1453
+ #: g10/import.c:1450
 -#, fuzzy, c-format
 +#, c-format
  msgid "key %s: invalid direct key signature\n"
 -msgstr "klucz %s: dodano bezpo¶redni podpis\n"
 +msgstr "klucz %s: b³êdny podpis bezpo¶redni\n"
  
- #: g10/import.c:1466
+ #: g10/import.c:1463
  #, c-format
 @@ -6427,6 +6427,3 @@
  #: util/secmem.c:360

@@ -1,5 +1,5 @@
---- gnupg-1.4.13/po/pl.po.orig	2012-12-20 19:06:12.000000000 +0100
-+++ gnupg-1.4.13/po/pl.po	2013-01-02 21:06:52.464698818 +0100
+--- gnupg-1.4.14/po/pl.po.orig	2013-07-25 10:47:47.000000000 +0200
++++ gnupg-1.4.14/po/pl.po	2013-08-22 21:25:53.263491181 +0200
 @@ -1,14 +1,14 @@
  # Gnu Privacy Guard.
  # Copyright (C) 1998, 1999, 2000, 2001, 2002 Free Software Foundation, Inc.
@@ -10,11 +10,11 @@
  msgid ""
  msgstr ""
 -"Project-Id-Version: gnupg-1.4.8\n"
-+"Project-Id-Version: gnupg-1.4.13\n"
++"Project-Id-Version: gnupg-1.4.14\n"
  "Report-Msgid-Bugs-To: gnupg-i18n@gnupg.org\n"
- "POT-Creation-Date: 2012-12-20 19:06+0100\n"
+ "POT-Creation-Date: 2013-07-25 10:47+0200\n"
 -"PO-Revision-Date: 2012-08-24 17:25+0200\n"
-+"PO-Revision-Date: 2013-01-02 21:02+0100\n"
++"PO-Revision-Date: 2013-08-22 21:22+0200\n"
  "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
  "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
  "Language: pl\n"

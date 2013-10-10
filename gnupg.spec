@@ -12,12 +12,12 @@ Summary(ru.UTF-8):	GNU Privacy Guard - свободная замена PGP
 Summary(uk.UTF-8):	GNU Privacy Guard - вільна заміна PGP
 Summary(zh_CN.UTF-8):	GPL的PGP加密程序
 Name:		gnupg
-Version:	1.4.14
+Version:	1.4.15
 Release:	1
 License:	GPL v3+
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/GnuPG/gnupg/%{name}-%{version}.tar.bz2
-# Source0-md5:	99dede468204cb6ee22de7e3e3772ab1
+# Source0-md5:	58bb873ecf17d3205a98c545248d7b04
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pl.po-update.patch
 Patch2:		%{name}-fix.patch

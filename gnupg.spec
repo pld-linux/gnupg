@@ -12,12 +12,12 @@ Summary(ru.UTF-8):	GNU Privacy Guard - свободная замена PGP
 Summary(uk.UTF-8):	GNU Privacy Guard - вільна заміна PGP
 Summary(zh_CN.UTF-8):	GPL的PGP加密程序
 Name:		gnupg
-Version:	1.4.15
+Version:	1.4.16
 Release:	1
 License:	GPL v3+
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/GnuPG/gnupg/%{name}-%{version}.tar.bz2
-# Source0-md5:	58bb873ecf17d3205a98c545248d7b04
+# Source0-md5:	6df73c57d3ece1dd36dc2a7679f00fb0
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pl.po-update.patch
 Patch2:		%{name}-fix.patch
@@ -189,8 +189,6 @@ cp -f /usr/share/automake/config.sub scripts
 	--with-capabilities \
 	%{?with_ldap:--enable-ldap} \
 	%{!?with_ldap:--disable-ldap} \
-	--disable-m-debug \
-	--disable-m-guard \
 	--enable-mailto \
 	--without-included-gettext \
 	--with-mailprog=/usr/sbin/sendmail

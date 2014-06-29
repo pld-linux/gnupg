@@ -1,20 +1,20 @@
---- gnupg-1.4.16/po/pl.po.orig	2013-12-13 09:35:14.000000000 +0100
-+++ gnupg-1.4.16/po/pl.po	2013-12-22 11:17:31.482834661 +0100
+--- gnupg-1.4.17/po/pl.po.orig	2014-06-23 17:19:03.000000000 +0200
++++ gnupg-1.4.17/po/pl.po	2014-06-29 19:35:04.971073840 +0200
 @@ -1,14 +1,14 @@
  # Gnu Privacy Guard.
  # Copyright (C) 1998, 1999, 2000, 2001, 2002 Free Software Foundation, Inc.
  # Janusz A. Urbanowicz <alex@bofh.net.pl>, 1999, 2000, 2001, 2002, 2003, 2004, 2007.
 -# fixes and updates by Jakub Bogusz <qboosh@pld-linux.org>, 2003-2010.
-+# fixes and updates by Jakub Bogusz <qboosh@pld-linux.org>, 2003-2013.
++# fixes and updates by Jakub Bogusz <qboosh@pld-linux.org>, 2003-2014.
  #
  msgid ""
  msgstr ""
 -"Project-Id-Version: gnupg-1.4.8\n"
-+"Project-Id-Version: gnupg-1.4.16\n"
++"Project-Id-Version: gnupg-1.4.17\n"
  "Report-Msgid-Bugs-To: gnupg-i18n@gnupg.org\n"
- "POT-Creation-Date: 2013-12-13 09:35+0100\n"
+ "POT-Creation-Date: 2014-06-23 16:46+0200\n"
 -"PO-Revision-Date: 2012-08-24 17:25+0200\n"
-+"PO-Revision-Date: 2013-12-22 11:15+0100\n"
++"PO-Revision-Date: 2014-06-29 19:33+0200\n"
  "Last-Translator: Jakub Bogusz <qboosh@pld-linux.org>\n"
  "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
  "Language: pl\n"
@@ -27,15 +27,46 @@
  
  #: g10/card-util.c:1864
  msgid "Admin-only command\n"
-@@ -2639,9 +2639,9 @@
+@@ -2454,14 +2454,13 @@
+ msgstr "klucz %s: brak identyfikatora u¿ytkownika\n"
+ 
+ #: g10/import.c:795
+-#, fuzzy, c-format
+-#| msgid "skipped \"%s\": %s\n"
++#, c-format
+ msgid "key %s: %s\n"
+-msgstr "pominiêty ,,%s'': %s\n"
++msgstr "klucz %s: %s\n"
+ 
+ #: g10/import.c:796 g10/import.c:1187
+ msgid "rejected by import filter"
+-msgstr ""
++msgstr "odrzucony przez filtr importu"
+ 
+ #: g10/import.c:825
+ #, c-format
+@@ -2584,10 +2583,9 @@
+ msgstr "klucz %s: ,,%s'' bez zmian\n"
+ 
+ #: g10/import.c:1186
+-#, fuzzy, c-format
+-#| msgid "secret key \"%s\" not found: %s\n"
++#, c-format
+ msgid "secret key %s: %s\n"
+-msgstr "klucz prywatny ,,%s'' nie zosta³ odnaleziony: %s\n"
++msgstr "klucz prywatny %s: %s\n"
+ 
+ #: g10/import.c:1206 g10/import.c:1229
+ msgid "importing secret keys not allowed\n"
+@@ -2655,9 +2653,9 @@
  msgstr "klucz %s: nie obs³ugiwany algorytm asymetryczny\n"
  
- #: g10/import.c:1477
+ #: g10/import.c:1504
 -#, fuzzy, c-format
 +#, c-format
  msgid "key %s: invalid direct key signature\n"
 -msgstr "klucz %s: dodano bezpo¶redni podpis\n"
 +msgstr "klucz %s: b³êdny podpis bezpo¶redni\n"
  
- #: g10/import.c:1490
+ #: g10/import.c:1517
  #, c-format

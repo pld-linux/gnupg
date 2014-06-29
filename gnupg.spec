@@ -12,12 +12,12 @@ Summary(ru.UTF-8):	GNU Privacy Guard - свободная замена PGP
 Summary(uk.UTF-8):	GNU Privacy Guard - вільна заміна PGP
 Summary(zh_CN.UTF-8):	GPL的PGP加密程序
 Name:		gnupg
-Version:	1.4.16
+Version:	1.4.17
 Release:	1
 License:	GPL v3+
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/GnuPG/gnupg/%{name}-%{version}.tar.bz2
-# Source0-md5:	6df73c57d3ece1dd36dc2a7679f00fb0
+# Source0-md5:	4a646a35a3a36331baccb75e6c5ea2f6
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pl.po-update.patch
 Patch2:		%{name}-fix.patch
@@ -201,9 +201,6 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT%{_mandir}/ru/man1
-mv -f $RPM_BUILD_ROOT%{_mandir}/man1/gpg.ru.1 $RPM_BUILD_ROOT%{_mandir}/ru/man1/gpg.1
-
 %find_lang %{name}
 
 rm -f $RPM_BUILD_ROOT{%{_datadir}/gnupg/{FAQ,faq.html},%{_infodir}/dir}
@@ -231,7 +228,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/gpg-zip.1*
 %{_mandir}/man1/gpgv.1*
 %{_mandir}/man7/gnupg.7*
-%lang(ru) %{_mandir}/ru/man1/gpg.1*
 %{_infodir}/gnupg1.info*
 
 %files plugin-keys_finger

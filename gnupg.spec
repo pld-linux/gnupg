@@ -13,7 +13,7 @@ Summary(uk.UTF-8):	GNU Privacy Guard - вільна заміна PGP
 Summary(zh_CN.UTF-8):	GPL的PGP加密程序
 Name:		gnupg
 Version:	1.4.18
-Release:	1
+Release:	2
 License:	GPL v3+
 Group:		Applications/File
 Source0:	ftp://ftp.gnupg.org/GnuPG/gnupg/%{name}-%{version}.tar.bz2
@@ -186,10 +186,9 @@ kluczy.
 %build
 cp -f /usr/share/automake/config.sub scripts
 %configure \
-	--with-capabilities \
-	%{?with_ldap:--enable-ldap} \
-	%{!?with_ldap:--disable-ldap} \
+	--enable-ldap%{!?with_ldap:=no} \
 	--enable-mailto \
+	--with-capabilities \
 	--without-included-gettext \
 	--with-mailprog=/usr/sbin/sendmail
 
@@ -203,7 +202,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %find_lang %{name}
 
-rm -f $RPM_BUILD_ROOT{%{_datadir}/gnupg/{FAQ,faq.html},%{_infodir}/dir}
+# packaged as %doc
+%{__rm} $RPM_BUILD_ROOT%{_datadir}/gnupg/FAQ
+# packaged in gnupg2-common
+%{__rm} $RPM_BUILD_ROOT%{_mandir}/man7/gnupg.7
+%{__rm} -f $RPM_BUILD_ROOT%{_infodir}/dir
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -227,7 +230,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/gpg.1*
 %{_mandir}/man1/gpg-zip.1*
 %{_mandir}/man1/gpgv.1*
-%{_mandir}/man7/gnupg.7*
 %{_infodir}/gnupg1.info*
 
 %files plugin-keys_finger

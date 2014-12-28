@@ -26,7 +26,7 @@ URL:		http://www.gnupg.org/
 BuildRequires:	automake >= 1:1.9.3
 BuildRequires:	bzip2-devel
 BuildRequires:	curl-devel
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	libcap-devel
 BuildRequires:	libusb-compat-devel
 %{?with_ldap:BuildRequires:	openldap-devel >= 2.3.0}

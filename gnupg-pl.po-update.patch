@@ -1,54 +1,18 @@
---- gnupg-1.4.17/po/pl.po.orig	2014-06-23 17:19:03.000000000 +0200
-+++ gnupg-1.4.17/po/pl.po	2014-06-29 19:35:04.971073840 +0200
-@@ -776,7 +776,7 @@
+--- gnupg-1.4.19/po/pl.po.orig	2015-03-02 20:57:04.197366800 +0100
++++ gnupg-1.4.19/po/pl.po	2015-03-02 20:58:17.927363705 +0100
+@@ -3565,13 +3565,11 @@
  
- #: g10/card-util.c:1823
- msgid "gpg/card> "
+ #: g10/keyedit.c:3007
+ msgid "WARNING: Your encryption subkey expires soon.\n"
 -msgstr ""
-+msgstr "gpg/karta> "
++msgstr "UWAGA: podklucz szyfrujƒÖcy wkr√≥tce wyga≈õnie.\n"
  
- #: g10/card-util.c:1864
- msgid "Admin-only command\n"
-@@ -2454,14 +2454,13 @@
- msgstr "klucz %s: brak identyfikatora uøytkownika\n"
+ #: g10/keyedit.c:3008
+-#, fuzzy
+-#| msgid "You can't change the expiration date of a v3 key\n"
+ msgid "You may want to change its expiration date too.\n"
+-msgstr "Nie mo≈ºna zmieniƒá daty wa≈ºno≈õci klucza w wersji 3.\n"
++msgstr "Mo≈ºna tak≈ºe zmieniƒá jego datƒô wyga≈õniƒôcia.\n"
  
- #: g10/import.c:795
--#, fuzzy, c-format
--#| msgid "skipped \"%s\": %s\n"
-+#, c-format
- msgid "key %s: %s\n"
--msgstr "pominiÍty ,,%s'': %s\n"
-+msgstr "klucz %s: %s\n"
- 
- #: g10/import.c:796 g10/import.c:1187
- msgid "rejected by import filter"
--msgstr ""
-+msgstr "odrzucony przez filtr importu"
- 
- #: g10/import.c:825
- #, c-format
-@@ -2584,10 +2583,9 @@
- msgstr "klucz %s: ,,%s'' bez zmian\n"
- 
- #: g10/import.c:1186
--#, fuzzy, c-format
--#| msgid "secret key \"%s\" not found: %s\n"
-+#, c-format
- msgid "secret key %s: %s\n"
--msgstr "klucz prywatny ,,%s'' nie zosta≥ odnaleziony: %s\n"
-+msgstr "klucz prywatny %s: %s\n"
- 
- #: g10/import.c:1206 g10/import.c:1229
- msgid "importing secret keys not allowed\n"
-@@ -2655,9 +2653,9 @@
- msgstr "klucz %s: nie obs≥ugiwany algorytm asymetryczny\n"
- 
- #: g10/import.c:1504
--#, fuzzy, c-format
-+#, c-format
- msgid "key %s: invalid direct key signature\n"
--msgstr "klucz %s: dodano bezpo∂redni podpis\n"
-+msgstr "klucz %s: b≥Ídny podpis bezpo∂redni\n"
- 
- #: g10/import.c:1517
- #, c-format
+ #: g10/keyedit.c:3069
+ msgid ""

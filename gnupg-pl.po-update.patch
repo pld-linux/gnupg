@@ -16,3 +16,29 @@
  
  #: g10/keyedit.c:3069
  msgid ""
+@@ -4917,10 +4917,9 @@
+ msgstr "nieznana opcja ,,%s''\n"
+ 
+ #: g10/misc.c:1331
+-#, fuzzy, c-format
+-#| msgid "Unknown signature type `%s'\n"
++#, c-format
+ msgid "Unknown weak digest '%s'\n"
+-msgstr "Nieznany typ podpisu ,,%s''\n"
++msgstr "Nieznany słaby algorytm skrótu ,,%s''\n"
+ 
+ #: g10/openfile.c:88
+ #, c-format
+@@ -5673,10 +5672,9 @@
+ msgstr "UWAGA: klucz podpisujący %s przekroczył datę ważności %s\n"
+ 
+ #: g10/sig-check.c:254
+-#, fuzzy, c-format
+-#| msgid "%s signature, digest algorithm %s\n"
++#, c-format
+ msgid "Note: signatures using the %s algorithm are rejected\n"
+-msgstr "podpis %s, skrót %s\n"
++msgstr "Uwaga: podpisy złożone przy użyciu algorytmu %s są odrzucane\n"
+ 
+ #: g10/sig-check.c:345
+ #, c-format

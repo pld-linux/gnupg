@@ -13,15 +13,17 @@ Summary(uk.UTF-8):	GNU Privacy Guard - вільна заміна PGP
 Summary(zh_CN.UTF-8):	GPL的PGP加密程序
 Name:		gnupg
 Version:	1.4.23
-Release:	3
+Release:	4
 License:	GPL v3+
 Group:		Applications/File
-Source0:	ftp://ftp.gnupg.org/gcrypt/gnupg/%{name}-%{version}.tar.bz2
+Source0:	https://www.gnupg.org/ftp/gcrypt/gnupg/%{name}-%{version}.tar.bz2
 # Source0-md5:	b1df02c73572f27bc859ac05ff2259ab
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pl.po-update.patch
 Patch2:		%{name}-fix.patch
-URL:		http://www.gnupg.org/
+Patch3:		gcc10.patch
+Patch4:		ldap.patch
+URL:		https://www.gnupg.org/
 BuildRequires:	automake >= 1:1.9.3
 BuildRequires:	bzip2-devel
 BuildRequires:	curl-devel
@@ -178,11 +180,14 @@ kluczy.
 %patch -P0 -p1
 %patch -P1 -p1
 %patch -P2 -p1
+%patch -P3 -p1
+%patch -P4 -p1
 
 %{__rm} po/stamp-po
 
 %build
 cp -f /usr/share/automake/config.sub scripts
+%{__autoconf}
 %configure \
 	--enable-ldap%{!?with_ldap:=no} \
 	--enable-mailto \

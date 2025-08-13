@@ -1,0 +1,38 @@
+From ddc6f7d194918791ac9dff0e5af4b80933189afd Mon Sep 17 00:00:00 2001
+From: NIIBE Yutaka <gniibe@fsij.org>
+Date: Thu, 15 Sep 2022 11:21:28 +0900
+Subject: [PATCH] build: Use LDAP_DEPRECATED to detect ldap library.
+
+* m4/ldap.m4: Define LDAP_DEPRECATED when test.
+
+--
+
+Signed-off-by: NIIBE Yutaka <gniibe@fsij.org>
+---
+ m4/ldap.m4 | 2 ++
+ 1 file changed, 2 insertions(+)
+
+--- a/m4/ldap.m4
++++ b/m4/ldap.m4
+@@ -42,19 +42,21 @@ if test x$_ldap_with != xno ; then
+     AC_TRY_LINK([
+ #ifdef _WIN32
+ #include <winsock2.h>
+ #include <winldap.h>
+ #else
++#define LDAP_DEPRECATED 1
+ #include <ldap.h>
+ #endif
+ ],[ldap_open("foobar",1234);],
+                 [gnupg_cv_func_ldap_init=yes],[gnupg_cv_func_ldap_init=no])
+     AC_MSG_RESULT([$gnupg_cv_func_ldap_init])
+ 
+     if test $gnupg_cv_func_ldap_init = no; then
+       AC_MSG_CHECKING([whether I can make LDAP be sane with lber.h])
+       AC_TRY_LINK([#include <lber.h>
++#define LDAP_DEPRECATED 1
+ #include <ldap.h>],[ldap_open("foobar",1234);],
+          [gnupg_cv_func_ldaplber_init=yes],[gnupg_cv_func_ldaplber_init=no])
+       AC_MSG_RESULT([$gnupg_cv_func_ldaplber_init])
+     fi
+ 
